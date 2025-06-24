@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 // Página principal
-Route::get('/edudata', function () {
+Route::get('/', function () {
     return view('edudata.index');
 })->name('edudata.index');
 
