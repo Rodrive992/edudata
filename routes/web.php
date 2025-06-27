@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PrespuestoEduGralController;
 
 // Página principal
 Route::get('/', function () {
@@ -10,9 +11,8 @@ Route::get('/', function () {
 // Secciones de información
 Route::prefix('edudata')->group(function () {
     // Presupuesto
-    Route::get('/presupuesto', function () {
-        return view('edudata.presupuesto.index');
-    })->name('edudata.presupuesto');
+    // Presupuesto - ahora con controlador
+    Route::get('/presupuesto', [PrespuestoEduGralController::class, 'index'])->name('edudata.presupuesto');
     
     // Fondos a escuelas
     Route::get('/fondos-escuelas', function () {
