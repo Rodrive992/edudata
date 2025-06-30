@@ -17,6 +17,12 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+
+            // Campos agregados
+            $table->string('dependencia')->nullable();
+            $table->string('sub_dependencia')->nullable();
+            $table->enum('role', ['admin', 'carga', 'requerimiento', 'receptor_reque'])->default('carga');
+
             $table->rememberToken();
             $table->timestamps();
         });

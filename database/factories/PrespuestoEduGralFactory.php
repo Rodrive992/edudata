@@ -18,7 +18,18 @@ class PrespuestoEduGralFactory extends Factory
                 'Subsecretaría de Planificación',
                 'Consejo Provincial de Educación'
             ]),
-            'concepto' => $this->faker->sentence(3),
+            'concepto' => $this->faker->randomElement([
+                'Obra 1',
+                'Obra 2',
+                'Escuela 1',
+                'Escuela 2',
+                'Programa 1',
+                'Programa 2',
+                'Mejora Edilicia',
+                'Equipamiento Escolar',
+                'Capacitación Docente',
+                'Conectividad Escolar'
+            ]),
             'ano' => $this->faker->numberBetween(2020, 2025),
             'presupuesto_vigente' => $this->faker->randomFloat(2, 100000, 5000000),
             'devengado' => $this->faker->randomFloat(2, 50000, 4000000),

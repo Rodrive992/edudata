@@ -221,23 +221,23 @@
         </div>
     </div>
 
-    <!-- Sección informativa adicional -->
-    <div class="mt-16 bg-blue-50 rounded-xl p-8">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-2xl font-bold text-gray-800 mb-4">¿Cómo utilizar el portal EduData?</h2>
-            <p class="text-gray-600 mb-6">
-                EduData proporciona acceso transparente a la información educativa. Seleccione cualquier sección para ver los datos disponibles.
-                Todos los datos se actualizan periódicamente para garantizar su precisión.
-            </p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="#" class="px-6 py-3 bg-white text-blue-600 rounded-lg border border-blue-200 hover:bg-blue-100 transition-colors">
-                    <span class="font-medium">Descargar manual de uso</span>
-                </a>
-                <a href="#" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-                    <span class="font-medium">Solicitar información adicional</span>
-                </a>
-            </div>
+   <!-- Sección informativa adicional -->
+<div class="mt-16 bg-blue-50 rounded-xl p-8">
+    <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">¿Pertenece a EduRed?</h2>
+        <p class="text-gray-600 mb-6">
+            EduRed proporciona acceso transparente a la información educativa. Si usted forma parte de la red educativa y desea realizar un requerimiento, ingrese aquí.
+            Todos los datos se actualizan periódicamente para garantizar su precisión.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="#" class="px-6 py-3 bg-white text-blue-600 rounded-lg border border-blue-200 hover:bg-blue-100 transition-colors">
+                <span class="font-medium">Descargar manual de uso</span>
+            </a>
+            <a href="{{ route('edured.index') }}" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                <span class="font-medium">Ingresar a EduRed</span>
+            </a>
         </div>
     </div>
+</div>
 </div>
 @endsection

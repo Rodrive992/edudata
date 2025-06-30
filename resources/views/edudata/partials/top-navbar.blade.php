@@ -2,9 +2,11 @@
     <div class="container mx-auto px-5">
         <div class="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0">
             <!-- Logo ministerio -->
-            <div class="sm:w-1/4 flex justify-start">
-                <img src="{{ asset('images/logo-ministerio.png') }}" alt="Logo Ministerio" 
-                     class="h-14 md:h-16">
+           <div class="sm:w-1/4 flex justify-start">
+            <a href="{{ route('edudata.index') }}">
+            <img src="{{ asset('images/logo-ministerio.png') }}" alt="Logo Ministerio" 
+             class="h-14 md:h-16">
+            </a>
             </div>
             
             <!-- Título central con ícono y estilo mejorado -->
@@ -106,11 +108,11 @@
             </div>
             
             <!-- Sección de Contenido -->
-            <div>
+           <!-- <div>
                 <h4 class="text-xl font-semibold text-gray-700 mb-4 border-b pb-2">Contenido del Portal</h4>
                 <div class="space-y-6">
-                    <!-- Item 1 -->
-                    <div class="flex">
+                    Item 1 -->
+                    <!-- <div class="flex">
                         <div class="mr-4 mt-1">
                             <div class="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center font-bold">1</div>
                         </div>
@@ -118,10 +120,10 @@
                             <h5 class="font-medium text-gray-800">Organigrama institucional y autoridades</h5>
                             <p class="text-gray-600 text-sm">Funciones de cada dirección, nombres de funcionarios y datos de contacto</p>
                         </div>
-                    </div>
+                    </div>-->
                     
                     <!-- Item 2 -->
-                    <div class="flex">
+                    <!--<div class="flex">
                         <div class="mr-4 mt-1">
                             <div class="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center font-bold">2</div>
                         </div>
@@ -130,11 +132,10 @@
                             <p class="text-gray-600 text-sm">Presupuesto anual aprobado y su distribución por programas</p>
                         </div>
                     </div>
+                   
                     
-                    <!-- ... (otros items similares) ... -->
-                    
-                    <!-- Item 8 -->
-                    <div class="flex">
+                     Item 8 -->
+                   <!-- <div class="flex">
                         <div class="mr-4 mt-1">
                             <div class="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center font-bold">8</div>
                         </div>
@@ -144,17 +145,17 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
             
             <!-- CTA -->
-            <div class="mt-8 pt-6 border-t border-gray-200 text-center">
+            <!--<div class="mt-8 pt-6 border-t border-gray-200 text-center">
                 <a href="#" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
                     Generar Solicitud
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                 </a>
-            </div>
+            </div>-->
         </div>
     </div>
 </nav>

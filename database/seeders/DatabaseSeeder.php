@@ -20,5 +20,7 @@ class DatabaseSeeder extends Seeder
 
         // Llama al seeder de presupuesto
         $this->call(PrespuestoEduGralSeeder::class);
+        
+        $this->call(UserSeeder::class);
     }
 }
