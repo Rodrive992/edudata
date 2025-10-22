@@ -1,190 +1,203 @@
- <nav class="bg-gray-200 shadow-sm" x-data="{ openEduData: false }">
-     <div class="container mx-auto px-5 py-4">
-         <div class="flex items-center justify-between">
-             <!-- Logo y título a la izquierda -->
-             <div class="flex items-center space-x-4">
-                 <a href="{{ route('edudata.index') }}">
-                     <img src="{{ asset('images/edudatalogo3.png') }}" alt="EDUDATA Logo" class="h-12">
-                 </a>
-                 <div class="text-left leading-tight">
-                     <div class="text-xs font-medium text-gray-700 tracking-tight">DIRECCIÓN DE</div>
-                     <div class="text-sm font-semibold text-gray-800 tracking-tight">TRANSPARENCIA ACTIVA</div>
-                 </div>
-             </div>
+<nav class="sticky top-0 z-50 bg-[#6bbde5] before:content-[''] before:absolute before:inset-0 before:opacity-95">
+  <div class="relative z-10"
+       x-data="{ mobileMenuOpen: false, openSections: false, openTransp: false, openOrg: false }">
 
-             <!-- Espacio central (puede ser utilizado para otros elementos) -->
-             <div class="hidden md:block text-center space-y-1">
-                 <!-- Espacio intencionalmente dejado en blanco -->
-             </div>
+    <!-- TOP BAR -->
+    <div class="px-4">
+      <div class="max-w-7xl mx-auto py-3 md:py-2">
+        <div class="flex items-center justify-between">
 
-             <!-- Botón derecho -->
-             <div class="flex items-center">
-                 <button @click="openEduData = !openEduData"
-                     class="px-4 py-2 bg-gray-800 hover:bg-gray-600 text-white text-sm font-medium rounded-md shadow-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-                     ¿Qué es EDUDATA?
-                 </button>
-             </div>
-         </div>
-     </div>
-     <!-- Sub-nav con breadcrumbs -->
-     <div class="bg-gray-900 py-2 border-t border-gray-700">
-         <div class="container mx-auto px-5">
-             <nav class="flex" aria-label="Breadcrumb">
-                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
-                     @foreach (App\Helpers\Breadcrumbs::generate() as $index => $breadcrumb)
-                         <li class="inline-flex items-center">
-                             @if ($index < count(App\Helpers\Breadcrumbs::generate()) - 1)
-                                 <a href="{{ route($breadcrumb['route']) }}"
-                                     class="inline-flex items-center text-sm font-medium text-gray-300 hover:text-white">
-                                     @if ($index === 0)
-                                         <svg class="w-4 h-4 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                             fill="currentColor" viewBox="0 0 20 20">
-                                             <path
-                                                 d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z" />
-                                         </svg>
-                                     @endif
-                                     {{ $breadcrumb['title'] }}
-                                 </a>
-                             @else
-                                 <span class="inline-flex items-center text-sm font-medium text-white">
-                                     {{ $breadcrumb['title'] }}
-                                 </span>
-                             @endif
-                         </li>
-                         @if ($index < count(App\Helpers\Breadcrumbs::generate()) - 1)
-                             <li>
-                                 <div class="flex items-center">
-                                     <svg class="w-4 h-4 mx-1 text-gray-500" aria-hidden="true"
-                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                             stroke-width="2" d="m1 9 4-4-4-4" />
-                                     </svg>
-                                 </div>
-                             </li>
-                         @endif
-                     @endforeach
-                 </ol>
-             </nav>
-         </div>
-     </div>
+          <!-- Izquierda: Logo + título -->
+          <div class="flex items-center gap-1 md:gap-2 flex-shrink-0">
+            <a href="{{ route('edudata.index') }}" class="shrink-0">
+              <img src="{{ asset('images/logoedudata-blanco.png') }}" alt="EDUDATA Logo"
+                   class="h-10 sm:h-12 md:h-16">
+            </a>
 
-     <!-- Panel desplegable - CON x-cloak AGREGADO -->
-     <div x-cloak x-show="openEduData" x-transition:enter="transition ease-out duration-200"
-         x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
-         x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 scale-100"
-         x-transition:leave-end="opacity-0 scale-95"
-         class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-300/30 backdrop-blur-sm">
+            <!-- Título (más compacto) -->
+            <div class="select-none hidden sm:block">
+              <div class="text-[12px] sm:text-[13px] md:text-[16px] font-medium tracking-wide text-white/95 leading-[1.1]">
+                Dirección de
+              </div>
+              <div class="text-sm sm:text-base md:text-lg font-extrabold tracking-tight leading-[1.1] -mt-0.5">
+                <span class="text-[#162172]">Transparencia</span>
+                <span class="text-white/95 font-extrabold">Activa</span>
+              </div>
+            </div>
+          </div>
 
-         <div class="w-full max-w-2xl bg-white shadow-xl rounded-xl border border-gray-200 overflow-hidden">
-             <div class="max-h-[80vh] overflow-y-auto">
-                 <!-- Encabezado -->
-                 <div class="bg-gradient-to-r from-gray-900 to-gray-800 px-6 py-4">
-                     <div class="flex items-center">
-                         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none"
-                             viewBox="0 0 24 24" stroke="currentColor">
-                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                 d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                         </svg>
-                         <h3 class="ml-3 text-xl font-bold text-white">PORTAL DE TRANSPARENCIA
-                             "EDUDATA"</h3>
-                     </div>
-                 </div>
+          <!-- Menú para desktop -->
+          <div class="hidden md:flex justify-end items-center gap-3">
+            @php
+              $menuBtn  = 'group inline-flex items-center px-3 py-2 rounded-md
+                           text-white/95 hover:text-white
+                           bg-white/5 hover:bg-white/10
+                           border border-white/10
+                           transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-white/30
+                           text-[12px] font-semibold uppercase tracking-wide';
+              $chev     = 'w-4 h-4 ml-2 transition-transform duration-200 group-aria-expanded:rotate-180';
+              $panelBase= 'absolute right-0 mt-2 overflow-hidden rounded-xl z-40
+                           border border-white/15 bg-white/95 backdrop-blur-md';
+              $panelHead= 'px-4 pt-3 pb-2 text-xs uppercase tracking-wider
+                           bg-white text-[#0A1143]/80 font-semibold';
+              $itemBase = 'flex items-center px-4 py-2 rounded-md transition group/item
+                           text-[#0A1143] text-[15px]';
+              $itemFx   = 'hover:bg-[#f5f7ff]';
+              $itemCaret= 'ml-auto text-[#1890FF] opacity-0 group-hover/item:opacity-100 transition';
+            @endphp
 
-                 <!-- Contenido -->
-                 <div class="p-6">
-                     <!-- Fundamentación -->
-                     <div class="mb-6">
+            <!-- Secciones -->
+            <div class="relative" @click.outside="openSections=false" :aria-expanded="openSections">
+              <button @click="openSections = !openSections" class="{{ $menuBtn }}">
+                Secciones
+                <svg class="{{ $chev }}" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.51a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                </svg>
+              </button>
+              <div x-cloak x-show="openSections"
+                   x-transition.opacity.duration.120ms
+                   class="{{ $panelBase }} w-80">
+                <div class="{{ $panelHead }}">Secciones disponibles</div>
+                <ul class="px-2 py-2">
+                  <li><a href="#" class="{{ $itemBase }} {{ $itemFx }}">Mantenimiento Edilicio <span class="{{ $itemCaret }}">→</span></a></li>
+                  <li><a href="#" class="{{ $itemBase }} {{ $itemFx }}">Digesto Normativo <span class="{{ $itemCaret }}">→</span></a></li>
+                  <li><hr class="my-2 border-[#E1EAFF]"></li>
+                  <li><a href="#" class="{{ $itemBase }} {{ $itemFx }}">Educación Técnica <span class="{{ $itemCaret }}">→</span></a></li>
+                  <li><a href="#" class="{{ $itemBase }} {{ $itemFx }}">Innovación Educativa <span class="{{ $itemCaret }}">→</span></a></li>
+                  <li><a href="#" class="{{ $itemBase }} {{ $itemFx }}">Formación y Programación <span class="{{ $itemCaret }}">→</span></a></li>
+                  <li><a href="#" class="{{ $itemBase }} {{ $itemFx }}">Asuntos Jurídicos <span class="{{ $itemCaret }}">→</span></a></li>
+                  <li><a href="#" class="{{ $itemBase }} {{ $itemFx }}">Títulos <span class="{{ $itemCaret }}">→</span></a></li>
+                  <li><a href="#" class="{{ $itemBase }} {{ $itemFx }}">Programas y Proyectos <span class="{{ $itemCaret }}">→</span></a></li>
+                  <li><a href="#" class="{{ $itemBase }} {{ $itemFx }}">Residencia Universitaria <span class="{{ $itemCaret }}">→</span></a></li>
+                </ul>
+              </div>
+            </div>
 
-                         <p class="text-gray-700 mb-3">
-                             Este portal se sustenta en el principio de transparencia en la gestión pública, consagrado
-                             en la Constitución Nacional y reforzado por:
-                         </p>
-                         <ul class="list-disc pl-5 space-y-2 text-gray-700">
-                             <li>Ley Nacional N.º 27.275 de Acceso a la Información Pública</li>
-                             <li>Ley Provincial N.º 5336 de Acceso a la Información Pública</li>
-                             <li>Ley N.º 25.188 de Ética en la Función Pública</li>
-                             <li>Ley N.º 24.156 de Administración Financiera</li>
-                             <li>Decreto Acuerdo N.º 2849/2021</li>
-                             <li>Plan Provincial de Modernización del Estado</li>
-                         </ul>
-                     </div>
+            <!-- Transparencia -->
+            <div class="relative" @click.outside="openTransp=false" :aria-expanded="openTransp">
+              <button @click="openTransp = !openTransp" class="{{ $menuBtn }}">
+                Transparencia
+                <svg class="{{ $chev }}" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.51a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                </svg>
+              </button>
+              <div x-cloak x-show="openTransp"
+                   x-transition.opacity.duration.120ms
+                   class="{{ $panelBase }} w-80">
+                <div class="{{ $panelHead }}">Organigrama Institucional</div>
+                <ul class="px-2 py-2">
+                  <li><a href="#" class="{{ $itemBase }} {{ $itemFx }}">Ver organigrama <span class="{{ $itemCaret }}">→</span></a></li>
+                </ul>
+              </div>
+            </div>
 
-                     <!-- Objetivo General -->
-                     <div class="mb-6 bg-blue-50/60 rounded-lg p-4">
-                         <h4 class="text-lg font-semibold text-gray-800 mb-2">Objetivo</h4>
-                         <p class="text-gray-700">
-                             Implementar una plataforma digital que publique información relevante y actualizada sobre
-                             la
-                             gestión educativa, conforme a las leyes de acceso a la información pública.
-                         </p>
-                     </div>
+            <!-- Organigrama -->
+            <div class="relative" @click.outside="openOrg=false" :aria-expanded="openOrg">
+              <button @click="openOrg = !openOrg" class="{{ $menuBtn }}">
+                Solicitud
+                <svg class="{{ $chev }}" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.51a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                </svg>
+              </button>
+              <div x-cloak x-show="openOrg"
+                   x-transition.opacity.duration.120ms
+                   class="{{ $panelBase }} w-64">
+                <div class="{{ $panelHead }}">Solicitar Información</div>
+                <ul class="px-2 py-2">
+                  <li><a href="{{ route('edudata.solicitud-info') }}" class="{{ $itemBase }} {{ $itemFx }}">Ir al formulario<span class="{{ $itemCaret }}">→</span></a></li>
+                </ul>
+                <ul class="px-2 py-2">
+                  <li><a href="{{ route('edudata.solicitud-info.registro_solicitudes_info') }}" class="{{ $itemBase }} {{ $itemFx }}">Registro de Solicitudes<span class="{{ $itemCaret }}">→</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
-                     <!-- Objetivos Específicos -->
-                     <div class="mb-6">
-                         <h4 class="text-lg font-semibold text-gray-800 mb-3">Objetivos Específicos</h4>
-                         <ul class="space-y-3 text-gray-700">
-                             <li class="flex items-start">
-                                 <span class="flex-shrink-0 bg-blue-100 text-blue-800 rounded-full p-1 mr-3">
-                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-                                         viewBox="0 0 24 24" stroke="currentColor">
-                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                             d="M5 13l4 4L19 7" />
-                                     </svg>
-                                 </span>
-                                 <span>Visibilizar la estructura organizativa y recursos institucionales</span>
-                             </li>
-                             <li class="flex items-start">
-                                 <span class="flex-shrink-0 bg-blue-100 text-blue-800 rounded-full p-1 mr-3">
-                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-                                         viewBox="0 0 24 24" stroke="currentColor">
-                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                             d="M5 13l4 4L19 7" />
-                                     </svg>
-                                 </span>
-                                 <span>Publicar información sobre asignación de recursos públicos</span>
-                             </li>
-                             <li class="flex items-start">
-                                 <span class="flex-shrink-0 bg-blue-100 text-blue-800 rounded-full p-1 mr-3">
-                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-                                         viewBox="0 0 24 24" stroke="currentColor">
-                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                             d="M5 13l4 4L19 7" />
-                                     </svg>
-                                 </span>
-                                 <span>Facilitar el control ciudadano e institucional</span>
-                             </li>
-                             <li class="flex items-start">
-                                 <span class="flex-shrink-0 bg-blue-100 text-blue-800 rounded-full p-1 mr-3">
-                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-                                         viewBox="0 0 24 24" stroke="currentColor">
-                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                             d="M5 13l4 4L19 7" />
-                                     </svg>
-                                 </span>
-                                 <span>Promover cultura de transparencia y participación</span>
-                             </li>
-                         </ul>
-                     </div>
+          <!-- Botón menú móvil -->
+          <div class="md:hidden">
+            <button 
+              @click="mobileMenuOpen = !mobileMenuOpen" 
+              class="inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              :aria-expanded="mobileMenuOpen">
+              <span class="sr-only">Abrir menú principal</span>
+              <!-- Icono hamburguesa -->
+              <svg x-show="!mobileMenuOpen" class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+              <!-- Icono X -->
+              <svg x-show="mobileMenuOpen" class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
 
-                     <!-- Justificación -->
-                     <div class="mb-6">
-                         <h4 class="text-lg font-semibold text-gray-800 mb-2">Aplicación</h4>
-                         <p class="text-gray-700">
-                             Plataforma digital centralizada que integra y publica sistemáticamente todas las acciones
-                             relevantes de la gestión ministerial, incluyendo el control de fondos públicos, bienes y
-                             servicios.
-                         </p>
-                     </div>
+        </div>
 
-                     <!-- Pie con botón -->
-                     <div class="pt-4 border-t border-gray-200 text-right">
-                         <button @click="openEduData = false"
-                             class="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-800 rounded-lg transition-colors duration-200">
-                             Cerrar
-                         </button>
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </div>
- </nav>
+        <!-- Menú móvil -->
+        <div x-cloak x-show="mobileMenuOpen" 
+             x-transition:enter="transition ease-out duration-200"
+             x-transition:enter-start="opacity-0 scale-95"
+             x-transition:enter-end="opacity-100 scale-100"
+             x-transition:leave="transition ease-in duration-150"
+             x-transition:leave-start="opacity-100 scale-100"
+             x-transition:leave-end="opacity-0 scale-95"
+             class="md:hidden mt-4 pb-4 border-t border-white/20 pt-4">
+          
+          <!-- Secciones móvil -->
+          <div class="mb-3">
+            <button 
+              @click="openSections = !openSections"
+              class="w-full flex justify-between items-center px-4 py-3 text-left text-white bg-white/10 rounded-lg">
+              <span class="font-medium">Secciones</span>
+              <svg :class="openSections ? 'rotate-180' : ''" class="w-5 h-5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div x-show="openSections" class="mt-2 pl-4 space-y-2">
+              <a href="#" class="block py-2 px-4 text-white/90 hover:bg-white/10 rounded-md transition">Mantenimiento Edilicio</a>
+              <a href="#" class="block py-2 px-4 text-white/90 hover:bg-white/10 rounded-md transition">Digesto Normativo</a>
+              <a href="#" class="block py-2 px-4 text-white/90 hover:bg-white/10 rounded-md transition">Educación Técnica</a>
+              <a href="#" class="block py-2 px-4 text-white/90 hover:bg-white/10 rounded-md transition">Innovación Educativa</a>
+              <a href="#" class="block py-2 px-4 text-white/90 hover:bg-white/10 rounded-md transition">Formación y Programación</a>
+              <a href="#" class="block py-2 px-4 text-white/90 hover:bg-white/10 rounded-md transition">Asuntos Jurídicos</a>
+              <a href="#" class="block py-2 px-4 text-white/90 hover:bg-white/10 rounded-md transition">Títulos</a>
+              <a href="#" class="block py-2 px-4 text-white/90 hover:bg-white/10 rounded-md transition">Programas y Proyectos</a>
+              <a href="#" class="block py-2 px-4 text-white/90 hover:bg-white/10 rounded-md transition">Residencia Universitaria</a>
+            </div>
+          </div>
+
+          <!-- Transparencia móvil -->
+          <div class="mb-3">
+            <button 
+              @click="openTransp = !openTransp"
+              class="w-full flex justify-between items-center px-4 py-3 text-left text-white bg-white/10 rounded-lg">
+              <span class="font-medium">Transparencia</span>
+              <svg :class="openTransp ? 'rotate-180' : ''" class="w-5 h-5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div x-show="openTransp" class="mt-2 pl-4">
+              <a href="#" class="block py-2 px-4 text-white/90 hover:bg-white/10 rounded-md transition">Ver organigrama</a>
+            </div>
+          </div>
+
+          <!-- Solicitud móvil -->
+          <div class="mb-3">
+            <button 
+              @click="openOrg = !openOrg"
+              class="w-full flex justify-between items-center px-4 py-3 text-left text-white bg-white/10 rounded-lg">
+              <span class="font-medium">Solicitud de información</span>
+              <svg :class="openOrg ? 'rotate-180' : ''" class="w-5 h-5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div x-show="openOrg" class="mt-2 pl-4">
+              <a href="#" class="block py-2 px-4 text-white/90 hover:bg-white/10 rounded-md transition">Ir al formulario</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>  
+  </div>
+</nav>
