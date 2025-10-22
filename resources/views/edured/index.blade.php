@@ -5,17 +5,13 @@
 @section('content')
     <div class="container mx-auto px-4 py-8">
         @php
-            $permiso = auth()->user()->permiso ?? null;
+            $dependencia = auth()->user()->dependencia ?? null;
         @endphp
 
-        @if ($permiso === 'carga')
-            @include('edured.partials.carga-content')
-        @elseif ($permiso === 'control')
-            @include('edured.partials.control-content')
-        @elseif ($permiso === 'admin')
+        @if ($dependencia === 'dta')
             @include('edured.partials.admin-content')
-        @elseif ($permiso === 'dir_esc')
-            @include('edured.partials.dir_esc-content')
+        @elseif ($dependencia === 'dpme')
+            @include('edured.partials.dpme-content')       
         @else
             <p class="text-red-500">No tiene permisos para ver esta sección.</p>
         @endif

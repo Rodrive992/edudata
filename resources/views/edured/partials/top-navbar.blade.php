@@ -96,7 +96,7 @@
                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                          </svg>
-                         <h3 class="ml-3 text-xl font-bold text-white">SISTEMA DE GESTIÓN DE SOLICITUDES "EDURED"</h3>
+                         <h3 class="ml-3 text-xl font-bold text-white">SISTEMA DE GESTIÓN Y CARGA "EDURED"</h3>
                      </div>
                  </div>
 
@@ -107,7 +107,7 @@
                          <p class="text-gray-700 mb-3">
                              EDURED es un sistema digital desarrollado por el Ministerio de Educación, Ciencia y
                              Tecnología
-                             de la Provincia de Catamarca para optimizar la gestión de solicitudes internas.
+                             de la Provincia de Catamarca para adminstrar y gestionar el portal de transparencia EDUDATA.
                          </p>
                          <p class="text-gray-700">
                              A través de este portal, las instituciones educativas podrán gestionar de manera
