@@ -59,16 +59,15 @@
                    class="{{ $panelBase }} w-80">
                 <div class="{{ $panelHead }}">Secciones disponibles</div>
                 <ul class="px-2 py-2">
-                  <li><a href="#" class="{{ $itemBase }} {{ $itemFx }}">Mantenimiento Edilicio <span class="{{ $itemCaret }}">→</span></a></li>
-                  <li><a href="#" class="{{ $itemBase }} {{ $itemFx }}">Digesto Normativo <span class="{{ $itemCaret }}">→</span></a></li>
-                  <li><hr class="my-2 border-[#E1EAFF]"></li>
-                  <li><a href="#" class="{{ $itemBase }} {{ $itemFx }}">Educación Técnica <span class="{{ $itemCaret }}">→</span></a></li>
-                  <li><a href="#" class="{{ $itemBase }} {{ $itemFx }}">Innovación Educativa <span class="{{ $itemCaret }}">→</span></a></li>
-                  <li><a href="#" class="{{ $itemBase }} {{ $itemFx }}">Formación y Programación <span class="{{ $itemCaret }}">→</span></a></li>
-                  <li><a href="#" class="{{ $itemBase }} {{ $itemFx }}">Asuntos Jurídicos <span class="{{ $itemCaret }}">→</span></a></li>
-                  <li><a href="#" class="{{ $itemBase }} {{ $itemFx }}">Títulos <span class="{{ $itemCaret }}">→</span></a></li>
-                  <li><a href="#" class="{{ $itemBase }} {{ $itemFx }}">Programas y Proyectos <span class="{{ $itemCaret }}">→</span></a></li>
-                  <li><a href="#" class="{{ $itemBase }} {{ $itemFx }}">Residencia Universitaria <span class="{{ $itemCaret }}">→</span></a></li>
+                  <li><a href="{{ route('edudata.mantenimiento')}}"class="{{ $itemBase }} {{ $itemFx }}">Mantenimiento Edilicio <span class="{{ $itemCaret }}">→</span></a></li>
+                  <li><a href="{{ route('edudata.normativa')}}" class="{{ $itemBase }} {{ $itemFx }}">Digesto Normativo <span class="{{ $itemCaret }}">→</span></a></li>        
+                  <li><a href="{{ route('edudata.edutecnica')}}" class="{{ $itemBase }} {{ $itemFx }}">Educación Técnica <span class="{{ $itemCaret }}">→</span></a></li>
+                  <li><a href="{{ route('edudata.innovacion')}}" class="{{ $itemBase }} {{ $itemFx }}">Innovación Educativa <span class="{{ $itemCaret }}">→</span></a></li>
+                  <li><a href="{{ route('edudata.formacion')}}" class="{{ $itemBase }} {{ $itemFx }}">Formación y Programación <span class="{{ $itemCaret }}">→</span></a></li>
+                  <li><a href="{{ route('edudata.asuntos')}}" class="{{ $itemBase }} {{ $itemFx }}">Asuntos Jurídicos <span class="{{ $itemCaret }}">→</span></a></li>
+                  <li><a href="{{ route('edudata.titulos')}}" class="{{ $itemBase }} {{ $itemFx }}">Títulos <span class="{{ $itemCaret }}">→</span></a></li>
+                  <li><a href="{{ route('edudata.programas')}}" class="{{ $itemBase }} {{ $itemFx }}">Programas y Proyectos <span class="{{ $itemCaret }}">→</span></a></li>
+                  <li><a href="{{ route('edudata.residencia')}}" class="{{ $itemBase }} {{ $itemFx }}">Residencia Universitaria <span class="{{ $itemCaret }}">→</span></a></li>
                 </ul>
               </div>
             </div>
@@ -86,12 +85,12 @@
                    class="{{ $panelBase }} w-80">
                 <div class="{{ $panelHead }}">Organigrama Institucional</div>
                 <ul class="px-2 py-2">
-                  <li><a href="#" class="{{ $itemBase }} {{ $itemFx }}">Ver organigrama <span class="{{ $itemCaret }}">→</span></a></li>
+                  <li><a href="{{ route('edudata.organigrama')}}" class="{{ $itemBase }} {{ $itemFx }}">Ver organigrama <span class="{{ $itemCaret }}">→</span></a></li>
                 </ul>
               </div>
             </div>
 
-            <!-- Organigrama -->
+            <!-- Solicitud-->
             <div class="relative" @click.outside="openOrg=false" :aria-expanded="openOrg">
               <button @click="openOrg = !openOrg" class="{{ $menuBtn }}">
                 Solicitud
