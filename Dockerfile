@@ -36,6 +36,10 @@ RUN if [ -f package.json ]; then npm install && npm run build; fi
 # Configurar permisos
 RUN chown -R www-data:www-data storage bootstrap/cache
 
+# Copiar y dar permisos al script de entrada
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
 EXPOSE 8000
 
-CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
