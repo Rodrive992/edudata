@@ -28,7 +28,7 @@
 
         <!-- Copyright -->
         <div class="text-center text-sm text-gray-300 pt-4 border-t border-gray-700">
-            <p>&copy; {{ date('Y') }} | Secretaría de Modernización | Gobierno de Catamarca | Todos los derechos reservados.</p>
+            <p>&copy; {{ date('Y') }} | Ministerio de Educación, Ciencia y Tecnología | Gobierno de Catamarca | Todos los derechos reservados.</p>
         </div>
     </div>
 </footer>

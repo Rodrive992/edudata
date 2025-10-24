@@ -10,12 +10,17 @@ class Breadcrumbs
     {
         $currentRoute = Route::currentRouteName();
         $breadcrumbs = [];
-        
-        // Definir la estructura de las migas de pan
+
+        // Mapa de jerarquía (usa NOMBRES DE RUTA reales)
         $hierarchy = [
             'edudata.index' => [
                 'title' => 'Inicio',
                 'parent' => null,
+            ],
+
+            'edudata.organigrama' => [
+                'title' => 'Estructura Orgánica',
+                'parent' => 'edudata.index',
             ],
             'edudata.formacion' => [
                 'title' => 'Formación Profesional',
@@ -45,19 +50,41 @@ class Breadcrumbs
                 'title' => 'Programación y Proyectos',
                 'parent' => 'edudata.index',
             ],
-             'edudata.edutecnica' => [
+            'edudata.edutecnica' => [
                 'title' => 'Educación Técnica y Agrotecnica',
                 'parent' => 'edudata.index',
             ],
-
             'edudata.residencia' => [
                 'title' => 'Residencia Universitaria',
                 'parent' => 'edudata.index',
             ],
-            
+
+            // NORMATIVA (importante: usar los nombres de ruta reales)
+            'edudata.normativa' => [
+                'title' => 'Normativa',
+                'parent' => 'edudata.index',
+            ],
+            'edudata.normativa.show' => [
+                'title' => 'Archivos',
+                'parent' => 'edudata.normativa',
+            ],
+            // Alias técnicos que deben comportarse como "show"
+            'edudata.normativa.file' => [
+                'title' => 'Archivos',
+                'parent' => 'edudata.normativa',
+            ],
+            'edudata.normativa.download' => [
+                'title' => 'Archivos',
+                'parent' => 'edudata.normativa',
+            ],
+
             'edured.index' => [
                 'title' => 'EduRed',
                 'parent' => null,
+            ],
+            'edured.herramientas.digesto.index' => [
+                'title' => 'Carga Digesto',
+                'parent' => 'edured.index',
             ],
             'edured.historial' => [
                 'title' => 'Historial',
@@ -69,15 +96,21 @@ class Breadcrumbs
             ],
         ];
 
-        // Construir las migas de pan
+        // Parámetros actuales de la ruta (p.ej. id)
+        $params = request()->route()?->parameters() ?? [];
+
+        // Construcción
         if (isset($hierarchy[$currentRoute])) {
             $route = $currentRoute;
             while ($route !== null) {
-                array_unshift($breadcrumbs, [
-                    'title' => $hierarchy[$route]['title'],
-                    'route' => $route,
-                ]);
-                $route = $hierarchy[$route]['parent'];
+                $breadcrumbs = array_merge([[
+                    'title'  => $hierarchy[$route]['title'],
+                    'route'  => $route,
+                    // pasamos SIEMPRE los params; para rutas sin params no afectan
+                    'params' => $params,
+                ]], $breadcrumbs);
+
+                $route = $hierarchy[$route]['parent'] ?? null;
             }
         }
 
