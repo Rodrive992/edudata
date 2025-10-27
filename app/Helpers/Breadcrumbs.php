@@ -13,6 +13,7 @@ class Breadcrumbs
 
         // Mapa de jerarquía (usa NOMBRES DE RUTA reales)
         $hierarchy = [
+             // EDUDATA
             'edudata.index' => [
                 'title' => 'Inicio',
                 'parent' => null,
@@ -59,7 +60,6 @@ class Breadcrumbs
                 'parent' => 'edudata.index',
             ],
 
-            // NORMATIVA (importante: usar los nombres de ruta reales)
             'edudata.normativa' => [
                 'title' => 'Normativa',
                 'parent' => 'edudata.index',
@@ -68,7 +68,7 @@ class Breadcrumbs
                 'title' => 'Archivos',
                 'parent' => 'edudata.normativa',
             ],
-            // Alias técnicos que deben comportarse como "show"
+            
             'edudata.normativa.file' => [
                 'title' => 'Archivos',
                 'parent' => 'edudata.normativa',
@@ -78,6 +78,7 @@ class Breadcrumbs
                 'parent' => 'edudata.normativa',
             ],
 
+            //EDURED
             'edured.index' => [
                 'title' => 'EduRed',
                 'parent' => null,
@@ -90,9 +91,29 @@ class Breadcrumbs
                 'title' => 'Historial',
                 'parent' => 'edured.index',
             ],
+             'edured.herramientas.mantenimiento.realizadas.create' => [
+                'title' => 'Carga tareas realizadas',
+                'parent' => 'edured.index',
+            ],
+              'edured.herramientas.mantenimiento.realizadas.archivos.index' => [
+                'title' => 'Archivos tareas realizadas',
+                'parent' => 'edured.herramientas.mantenimiento.realizadas.create',
+            ],
             'login' => [
                 'title' => 'Iniciar sesión',
                 'parent' => null,
+            ],
+            'edured.herramientas.solicitudes-info.index' => [
+                'title' => 'Solicitudes',
+                'parent' => 'edured.index',
+            ],
+            'edured.herramientas.solicitudes-info.paso1' => [
+                'title' => 'Responder solicitud - Paso Nº1',
+                'parent' => 'edured.herramientas.solicitudes-info.index',
+            ],
+            'edured.herramientas.solicitudes-info.paso2' => [
+                'title' => 'Responder solicitud - Paso Nº2',
+                'parent' => 'edured.herramientas.solicitudes-info.index',
             ],
         ];
 

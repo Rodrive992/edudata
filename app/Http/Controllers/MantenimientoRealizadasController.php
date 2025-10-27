@@ -15,85 +15,66 @@ class MantenimientoRealizadasController extends Controller
 {
     public function index(Request $request)
     {
+        // Pestaña activa por defecto (solo para UI)
         $tarea = $request->input('tarea', 'realizadas'); // realizadas | pendientes | comisiones
 
-        // Variables comunes de filtros
+        // Filtros comunes
         $anio = $request->input('anio');
         $mes  = $request->input('mes');
 
-        // Para realizadas
-        $establecimiento = $request->input('establecimiento');
+        // Filtros específicos
+        $establecimiento = $request->input('establecimiento'); // realizadas
+        $localidadPend   = $request->input('localidad');       // pendientes
+        $qComisiones     = $request->input('q');               // comisiones (localidad o establecimiento)
 
-        // Para pendientes
-        $localidadPend = $request->input('localidad'); // input único para pendientes
+        // ===========================
+        // SIEMPRE CARGAR LAS TRES
+        // ===========================
 
-        // Para comisiones
-        $qComisiones = $request->input('q'); // busca por localidad o establecimiento
+        // REALIZADAS
+        $realizadasQuery = MantenimientoRealizadas::query()
+            ->when($anio, fn($q) => $q->whereYear('fecha', $anio))
+            ->when($mes,  fn($q) => $q->whereMonth('fecha', $mes))
+            ->when($establecimiento, fn($q) => $q->where('establecimiento', 'like', "%{$establecimiento}%"))
+            ->orderBy('fecha');
 
-        // Datos a pasar a la vista
-        $registros = collect();     // para realizadas (agrupados por tipo_tarea)
-        $pendientes = collect();    // para pendientes
-        $comisiones = collect();    // para comisiones
+        // Agrupadas por tipo_tarea (APH, ELEC, DEZM)
+        $registros = $realizadasQuery->get()->groupBy('tipo_tarea');
 
-        if ($tarea === 'realizadas') {
-            $query = MantenimientoRealizadas::query();
+        // PENDIENTES
+        $pendientesQuery = MantenimientoPendiente::query()
+            ->when($localidadPend, fn($q) => $q->where('localidad', 'like', "%{$localidadPend}%"))
+            ->orderByDesc('id');
 
-            if ($anio) {
-                $query->whereYear('fecha', $anio);
-            }
-            if ($mes) {
-                $query->whereMonth('fecha', $mes);
-            }
-            if ($establecimiento) {
-                $query->where('establecimiento', 'like', '%' . $establecimiento . '%');
-            }
+        $pendientes = $pendientesQuery->get();
 
-            $registros = $query->orderBy('fecha')->get()->groupBy('tipo_tarea');
-        }
-
-        if ($tarea === 'pendientes') {
-            $query = MantenimientoPendiente::query();
-
-            if ($localidadPend) {
-                $query->where('localidad', 'like', '%' . $localidadPend . '%');
-            }
-
-            $pendientes = $query->orderBy('id', 'desc')->get();
-        }
-
-        if ($tarea === 'comisiones') {
-            $query = MantenimientoComision::query();
-
-            if ($anio) {
-                $query->whereYear('fecha', $anio);
-            }
-            if ($mes) {
-                $query->whereMonth('fecha', $mes);
-            }
-            if ($qComisiones) {
-                $query->where(function ($qq) use ($qComisiones) {
-                    $qq->where('localidad', 'like', '%' . $qComisiones . '%')
-                        ->orWhere('establecimiento', 'like', '%' . $qComisiones . '%');
+        // COMISIONES
+        $comisionesQuery = MantenimientoComision::query()
+            ->when($anio, fn($q) => $q->whereYear('fecha', $anio))
+            ->when($mes,  fn($q) => $q->whereMonth('fecha', $mes))
+            ->when($qComisiones, function ($q) use ($qComisiones) {
+                $q->where(function ($qq) use ($qComisiones) {
+                    $qq->where('localidad', 'like', "%{$qComisiones}%")
+                       ->orWhere('establecimiento', 'like', "%{$qComisiones}%");
                 });
-            }
+            })
+            ->orderByDesc('fecha');
 
-            $comisiones = $query->orderBy('fecha', 'desc')->get();
-        }
+        $comisiones = $comisionesQuery->get();
 
         return view('edudata.mantenimiento.index', [
-            'tarea'           => $tarea,
+            'tarea'           => $tarea,           // para dejar "realizadas" al frente
             'anio'            => $anio,
             'mes'             => $mes,
             'establecimiento' => $establecimiento,
             'localidadPend'   => $localidadPend,
             'qComisiones'     => $qComisiones,
-            'registros'       => $registros,
-            'pendientes'      => $pendientes,
-            'comisiones'      => $comisiones,
+            'registros'       => $registros,       // realizadas (groupBy tipo_tarea)
+            'pendientes'      => $pendientes,      // siempre cargado
+            'comisiones'      => $comisiones,      // siempre cargado
         ]);
     }
 
-  
     // GET: formulario de carga
     public function create()
     {

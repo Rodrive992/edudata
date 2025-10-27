@@ -153,15 +153,15 @@
               </svg>
             </button>
             <div x-show="openSections" class="mt-2 pl-4 space-y-2">
-              <a href="#" class="block py-2 px-4 text-white/90 hover:bg-white/10 rounded-md transition">Mantenimiento Edilicio</a>
-              <a href="#" class="block py-2 px-4 text-white/90 hover:bg-white/10 rounded-md transition">Digesto Normativo</a>
-              <a href="#" class="block py-2 px-4 text-white/90 hover:bg-white/10 rounded-md transition">Educación Técnica</a>
-              <a href="#" class="block py-2 px-4 text-white/90 hover:bg-white/10 rounded-md transition">Innovación Educativa</a>
-              <a href="#" class="block py-2 px-4 text-white/90 hover:bg-white/10 rounded-md transition">Formación y Programación</a>
-              <a href="#" class="block py-2 px-4 text-white/90 hover:bg-white/10 rounded-md transition">Asuntos Jurídicos</a>
-              <a href="#" class="block py-2 px-4 text-white/90 hover:bg-white/10 rounded-md transition">Títulos</a>
-              <a href="#" class="block py-2 px-4 text-white/90 hover:bg-white/10 rounded-md transition">Programas y Proyectos</a>
-              <a href="#" class="block py-2 px-4 text-white/90 hover:bg-white/10 rounded-md transition">Residencia Universitaria</a>
+              <a href="{{ route('edudata.mantenimiento')}}" class="block py-2 px-4 text-white/90 hover:bg-white/10 rounded-md transition">Mantenimiento Edilicio</a>
+              <a href="{{ route('edudata.normativa')}}" class="block py-2 px-4 text-white/90 hover:bg-white/10 rounded-md transition">Digesto Normativo</a>
+              <a href="{{ route('edudata.edutecnica')}}" class="block py-2 px-4 text-white/90 hover:bg-white/10 rounded-md transition">Educación Técnica</a>
+              <a href="{{ route('edudata.innovacion')}}" class="block py-2 px-4 text-white/90 hover:bg-white/10 rounded-md transition">Innovación Educativa</a>
+              <a href="{{ route('edudata.formacion')}}" class="block py-2 px-4 text-white/90 hover:bg-white/10 rounded-md transition">Formación y Programación</a>
+              <a href="{{ route('edudata.asuntos')}}" class="block py-2 px-4 text-white/90 hover:bg-white/10 rounded-md transition">Asuntos Jurídicos</a>
+              <a href="{{ route('edudata.titulos')}}" class="block py-2 px-4 text-white/90 hover:bg-white/10 rounded-md transition">Títulos</a>
+              <a href="{{ route('edudata.programas')}}" class="block py-2 px-4 text-white/90 hover:bg-white/10 rounded-md transition">Programas y Proyectos</a>
+              <a href="{{ route('edudata.residencia')}}" class="block py-2 px-4 text-white/90 hover:bg-white/10 rounded-md transition">Residencia Universitaria</a>
             </div>
           </div>
 

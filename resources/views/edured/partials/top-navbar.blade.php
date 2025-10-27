@@ -3,7 +3,7 @@
          <div class="flex items-center justify-between">
              <!-- Logo y título a la izquierda -->
              <div class="flex items-center space-x-4">
-                 <a href="{{ route('edudata.index') }}">
+                 <a href="{{ route('edured.index') }}">
                      <img src="{{ asset('images/eduredlogo.png') }}" alt="EDURED Logo" class="h-12">
                  </a>
                  <div class="text-left leading-tight">
@@ -13,8 +13,13 @@
              </div>
 
 
-             <!-- Botón derecho -->
+
+             <!-- Botónes derecho -->
              <div class="flex items-center space-x-3">
+                 <a href="{{ route('edudata.index') }}"
+                     class="px-4 py-2 bg-gray-800 hover:bg-gray-600 text-white text-sm font-medium rounded-md shadow-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                     Ir al Portal
+                 </a>
                  <button @click="openEduData = !openEduData"
                      class="px-4 py-2 bg-gray-800 hover:bg-gray-600 text-white text-sm font-medium rounded-md shadow-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
                      ¿Qué es EDURED?
@@ -107,7 +112,8 @@
                          <p class="text-gray-700 mb-3">
                              EDURED es un sistema digital desarrollado por el Ministerio de Educación, Ciencia y
                              Tecnología
-                             de la Provincia de Catamarca para adminstrar y gestionar el portal de transparencia EDUDATA.
+                             de la Provincia de Catamarca para adminstrar y gestionar el portal de transparencia
+                             EDUDATA.
                          </p>
                          <p class="text-gray-700">
                              A través de este portal, las instituciones educativas podrán gestionar de manera
