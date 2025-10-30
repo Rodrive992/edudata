@@ -62,7 +62,7 @@
                     <p class="text-sm text-gray-500 mb-1">DNI - Frente</p>
                     @if($solicitud->dni_imagen_frente)
                         <a class="block text-blue-600 hover:underline text-sm break-all"
-                           href="{{ Storage::disk('public')->url($solicitud->dni_imagen_frente) }}" target="_blank">
+                           href="{{ route('solicitudes.file.dni_frente', $solicitud) }}" target="_blank">
                            Ver archivo
                         </a>
                     @else
@@ -73,7 +73,7 @@
                     <p class="text-sm text-gray-500 mb-1">DNI - Reverso</p>
                     @if($solicitud->dni_imagen_reverso)
                         <a class="block text-blue-600 hover:underline text-sm break-all"
-                           href="{{ Storage::disk('public')->url($solicitud->dni_imagen_reverso) }}" target="_blank">
+                           href="{{ route('solicitudes.file.dni_reverso', $solicitud) }}" target="_blank">
                            Ver archivo
                         </a>
                     @else

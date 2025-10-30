@@ -3,150 +3,98 @@
 @section('title', 'Edudata - Formación Profesional')
 
 @section('content')
-    <div class="container mx-auto px-4 py-8">
+    <div class="container mx-auto px-4 py-6">
         <!-- Tarjeta principal con encabezado de imagen -->
-        <div class="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden mb-10">
+        <div class="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden mb-6">
             <!-- Encabezado con imagen redondeada -->
-            <div class="p-6 pb-0">
-                <div class="rounded-xl overflow-hidden mb-6">
+            <div class="p-4 md:p-6 pb-0">
+                <!-- Imagen centrada y responsiva -->
+                <div class="rounded-xl overflow-hidden mb-4 md:mb-6 flex justify-center">
                     <img src="{{ asset('images/titulo-formacion.png') }}" alt="Formación Profesional"
-                        class="w-full h-auto object-cover rounded-xl">
+                        class="w-full max-w-2xl h-auto object-contain rounded-xl">
                 </div>
 
                 <!-- Texto descriptivo mejorado -->
-                <div class="mb-6">
+                <div class="mb-4 md:mb-6">
                     <div class="space-y-4">
-                        <p class="text-gray-700 leading-relaxed text-lg">
-                            Desde la <span class="font-semibold text-blue-700">Dirección Provincial de Desarrollo
-                                Profesional y Evaluación Educativa</span>
-                            se coordinan <span class="bg-yellow-100 px-1 rounded">programas de formación continua</span>
-                            que fortalecen el <span class="font-medium text-green-600">desempeño docente</span>
-                            y promueven la excelencia educativa a través de la actualización pedagógica permanente.
-                        </p>
-                        <!-- Sección de funcionalidades con fondo claro -->
-                        <div
-                            class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-100 p-4 sm:p-6 lg:p-8 my-6 sm:my-8 shadow-lg border border-blue-200">
-                            <!-- Elementos decorativos de fondo -->
-                            <div
-                                class="absolute top-0 right-0 w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 bg-blue-200/30 rounded-full -translate-y-8 sm:-translate-y-12 lg:-translate-y-16 translate-x-8 sm:translate-x-12 lg:translate-x-16">
-                            </div>
-                            <div
-                                class="absolute bottom-0 left-0 w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-indigo-200/30 rounded-full translate-y-8 sm:translate-y-10 lg:translate-y-12 -translate-x-6 sm:-translate-x-8 lg:-translate-x-12">
+                        <!-- Sección de características - MEJORADO -->
+                        <div class="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-xl p-4 md:p-5 my-4 border border-blue-200">
+                            <!-- Descripción principal -->
+                            <div class="text-center mb-4 md:mb-5">
+                                <p class="text-gray-700 leading-relaxed text-base md:text-lg">
+                                    Desde la <span class="font-semibold text-blue-700">Dirección Provincial de Desarrollo
+                                        Profesional y Evaluación Educativa</span>
+                                    se coordinan programas de formación continua
+                                    que fortalecen el desempeño docente
+                                    y promueven la excelencia educativa a través de la actualización pedagógica permanente.
+                                </p>
                             </div>
 
-                            <div class="relative z-10">
-
-                                <!-- Grid de funcionalidades -->
-                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-                                    <!-- Tarjeta 1: Búsqueda avanzada -->
-                                    <div
-                                        class="group relative bg-white/80 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-blue-100 hover:bg-white transition-all duration-300 hover:scale-105 shadow-sm flex flex-col h-full">
-                                        <div class="absolute -top-2 -left-2 sm:-top-3 sm:-left-3">
-                                            <div
-                                                class="h-6 w-6 sm:h-8 sm:w-8 rounded-full bg-[#f5cb58] flex items-center justify-center shadow-lg">
-                                                <span class="text-white font-bold text-xs sm:text-sm">01</span>
-                                            </div>
+                            <!-- Características en grid mejorado -->
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
+                                <!-- Característica 1 -->
+                                <div class="feature-card group p-3">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-yellow-100 flex items-center justify-center flex-shrink-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-yellow-600"
+                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                            </svg>
                                         </div>
-                                        <div class="mb-3 sm:mb-4">
-                                            <div
-                                                class="h-10 w-10 sm:h-12 sm:w-12 rounded-lg bg-gradient-to-br from-[#f5cb58] to-[#ddb750] flex items-center justify-center mb-2 sm:mb-3">
-                                                <svg xmlns="http://www.w3.org/2000/svg"
-                                                    class="h-5 w-5 sm:h-6 sm:w-6 text-white" fill="none"
-                                                    viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                                                </svg>
-                                            </div>
-                                        </div>
-                                        <h4 class="text-lg sm:text-xl font-bold text-gray-800 mb-2 sm:mb-3">Búsqueda
-                                            Avanzada</h4>
-                                        <p class="text-gray-600 leading-relaxed flex-grow text-sm sm:text-base">Encuentra
-                                            capacitaciones específicas filtrando por año, mes, localidad, modalidad y tipo
-                                            de formación</p>
-                                        <div class="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-gray-200">
-                                            <span class="text-green-600 text-sm font-semibold">🔍 Filtros múltiples
-                                                disponibles</span>
-                                        </div>
-                                    </div>
-
-                                    <!-- Tarjeta 2: Información detallada -->
-                                    <div
-                                        class="group relative bg-white/80 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-[#6bbde5] hover:bg-white transition-all duration-300 hover:scale-105 shadow-sm flex flex-col h-full">
-                                        <div class="absolute -top-2 -left-2 sm:-top-3 sm:-left-3">
-                                            <div
-                                                class="h-6 w-6 sm:h-8 sm:w-8 rounded-full bg-[#6bbde5] flex items-center justify-center shadow-lg">
-                                                <span class="text-white font-bold text-xs sm:text-sm">02</span>
-                                            </div>
-                                        </div>
-                                        <div class="mb-3 sm:mb-4">
-                                            <div
-                                                class="h-10 w-10 sm:h-12 sm:w-12 rounded-lg bg-gradient-to-br from-[#6bbde5] to-[#5aadd5] flex items-center justify-center mb-2 sm:mb-3">
-                                                <svg xmlns="http://www.w3.org/2000/svg"
-                                                    class="h-5 w-5 sm:h-6 sm:w-6 text-white" fill="none"
-                                                    viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                                                </svg>
-                                            </div>
-                                        </div>
-                                        <h4 class="text-lg sm:text-xl font-bold text-gray-800 mb-2 sm:mb-3">Información
-                                            Detallada</h4>
-                                        <p class="text-gray-600 leading-relaxed flex-grow text-sm sm:text-base">Accede a
-                                            datos completos de cada capacitación: oferente, denominación, ejes temáticos,
-                                            fechas y ubicación</p>
-                                        <div class="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-gray-200">
-                                            <span class="text-cyan-600 text-sm font-semibold">📊 Datos completos</span>
-                                        </div>
-                                    </div>
-
-                                    <!-- Tarjeta 3: Seguimiento -->
-                                    <div
-                                        class="group relative bg-white/80 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-blue-100 hover:bg-white transition-all duration-300 hover:scale-105 shadow-sm flex flex-col h-full md:col-span-2 lg:col-span-1">
-                                        <div class="absolute -top-2 -left-2 sm:-top-3 sm:-left-3">
-                                            <div
-                                                class="h-6 w-6 sm:h-8 sm:w-8 rounded-full bg-green-500 flex items-center justify-center shadow-lg">
-                                                <span class="text-white font-bold text-xs sm:text-sm">03</span>
-                                            </div>
-                                        </div>
-                                        <div class="mb-3 sm:mb-4">
-                                            <div
-                                                class="h-10 w-10 sm:h-12 sm:w-12 rounded-lg bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center mb-2 sm:mb-3">
-                                                <svg xmlns="http://www.w3.org/2000/svg"
-                                                    class="h-5 w-5 sm:h-6 sm:w-6 text-white" fill="none"
-                                                    viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                        d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                                                </svg>
-                                            </div>
-                                        </div>
-                                        <h4 class="text-lg sm:text-xl font-bold text-gray-800 mb-2 sm:mb-3">Seguimiento
-                                            Continuo</h4>
-                                        <p class="text-gray-600 leading-relaxed flex-grow text-sm sm:text-base">Monitorea el
-                                            desarrollo de las capacitaciones a través del tiempo con información actualizada
-                                            periódicamente</p>
-                                        <div class="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-gray-200">
-                                            <span class="text-green-600 text-sm font-semibold">📈 Actualización
-                                                constante</span>
+                                        <div class="flex-1 min-w-0">
+                                            <p class="text-sm font-semibold text-gray-800">Búsqueda avanzada</p>
+                                            <p class="text-xs text-gray-600 mt-1">Por año, mes, localidad y modalidad</p>
                                         </div>
                                     </div>
                                 </div>
 
+                                <!-- Característica 2 -->
+                                <div class="feature-card group p-3">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-cyan-100 flex items-center justify-center flex-shrink-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-cyan-600"
+                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                            </svg>
+                                        </div>
+                                        <div class="flex-1 min-w-0">
+                                            <p class="text-sm font-semibold text-gray-800">Información detallada</p>
+                                            <p class="text-xs text-gray-600 mt-1">Datos completos de cada capacitación</p>
+                                        </div>
+                                    </div>
+                                </div>
 
+                                <!-- Característica 3 -->
+                                <div class="feature-card group p-3">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-green-100 flex items-center justify-center flex-shrink-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-green-600"
+                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                                            </svg>
+                                        </div>
+                                        <div class="flex-1 min-w-0">
+                                            <p class="text-sm font-semibold text-gray-800">Seguimiento continuo</p>
+                                            <p class="text-xs text-gray-600 mt-1">Actualización periódica</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="flex flex-wrap gap-2 mt-4">
-                            <div class="inline-flex items-center bg-gray-100 px-3 py-1 rounded-full text-sm text-gray-700">
-                                <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
-                                Capacitación docente
-                            </div>
-                            <div class="inline-flex items-center bg-gray-100 px-3 py-1 rounded-full text-sm text-gray-700">
-                                <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
-                                Desarrollo profesional
-                            </div>
-                            <div class="inline-flex items-center bg-gray-100 px-3 py-1 rounded-full text-sm text-gray-700">
-                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
-                                Actualización continua
+                            <!-- Etiquetas informativas -->
+                            <div class="flex flex-wrap gap-2 mt-4 justify-center">
+                                <div class="inline-flex items-center bg-white px-3 py-1 rounded-full text-xs md:text-sm text-gray-700 border border-gray-200">
+                                    <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>Capacitación docente
+                                </div>
+                                <div class="inline-flex items-center bg-white px-3 py-1 rounded-full text-xs md:text-sm text-gray-700 border border-gray-200">
+                                    <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>Desarrollo profesional
+                                </div>
+                                <div class="inline-flex items-center bg-white px-3 py-1 rounded-full text-xs md:text-sm text-gray-700 border border-gray-200">
+                                    <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>Actualización continua
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -154,23 +102,22 @@
             </div>
 
             <!-- Contenido de filtros y tabla -->
-            <div class="p-6 pt-4">
+            <div class="p-4 md:p-6 pt-4">
                 <!-- Tarjeta de filtros compacta en una sola línea -->
-                <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-4 mb-10">
-                    <h2 class="text-base md:text-lg font-semibold text-gray-800 mb-3">Capacitaciones brindadas</h2>
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-4 md:p-6 mb-6">
+                    <h2 class="text-base md:text-lg font-semibold text-gray-800 mb-4">Filtrar capacitaciones</h2>
 
                     @php
                         $anioActual = now()->year;
-                        // Lista de años descendente (ajusta el año inicial si querés acotar)
                         $anios = array_reverse(range(2025, $anioActual));
                     @endphp
 
-                    <form id="filtrosForm" method="GET" class="flex flex-wrap items-end gap-3">
+                    <form id="filtrosForm" method="GET" class="flex flex-wrap items-end gap-4">
                         <!-- Año -->
                         <div class="w-full sm:w-auto">
                             <label class="block text-xs font-medium text-gray-700 mb-1">Año</label>
                             <select name="anio"
-                                class="w-40 rounded-md border border-gray-300 py-2 px-3 focus:border-gray-700 focus:ring-1 focus:ring-gray-700 transition">
+                                class="w-full sm:w-40 rounded-lg border border-gray-300 py-2 px-3 focus:border-gray-700 focus:ring-1 focus:ring-gray-700 transition text-sm">
                                 <option value="">Todos</option>
                                 @foreach ($anios as $a)
                                     <option value="{{ $a }}" {{ request('anio') == $a ? 'selected' : '' }}>
@@ -183,7 +130,7 @@
                         <div class="w-full sm:w-auto">
                             <label class="block text-xs font-medium text-gray-700 mb-1">Mes</label>
                             <select name="mes"
-                                class="w-48 rounded-md border border-gray-300 py-2 px-3 focus:border-gray-700 focus:ring-1 focus:ring-gray-700 transition">
+                                class="w-full sm:w-48 rounded-lg border border-gray-300 py-2 px-3 focus:border-gray-700 focus:ring-1 focus:ring-gray-700 transition text-sm">
                                 <option value="">Todos</option>
                                 @foreach (range(1, 12) as $m)
                                     <option value="{{ $m }}" {{ request('mes') == $m ? 'selected' : '' }}>
@@ -197,7 +144,7 @@
                         <div class="flex-1 min-w-[14rem]">
                             <label class="block text-xs font-medium text-gray-700 mb-1">Localidad</label>
                             <input type="text" name="localidad" value="{{ request('localidad') }}"
-                                class="w-full rounded-md border border-gray-300 py-2 px-3 focus:border-gray-700 focus:ring-1 focus:ring-gray-700 transition"
+                                class="w-full rounded-lg border border-gray-300 py-2 px-3 focus:border-gray-700 focus:ring-1 focus:ring-gray-700 transition text-sm"
                                 placeholder="Buscar por localidad">
                         </div>
 
@@ -205,7 +152,7 @@
                         <div class="w-full sm:w-auto">
                             <label class="block text-xs font-medium text-gray-700 mb-1">Modalidad</label>
                             <select name="modalidad"
-                                class="w-48 rounded-md border border-gray-300 py-2 px-3 focus:border-gray-700 focus:ring-1 focus:ring-gray-700 transition">
+                                class="w-full sm:w-48 rounded-lg border border-gray-300 py-2 px-3 focus:border-gray-700 focus:ring-1 focus:ring-gray-700 transition text-sm">
                                 <option value="">Todas</option>
                                 <option value="Virtual" {{ request('modalidad') == 'Virtual' ? 'selected' : '' }}>Virtual
                                 </option>
@@ -218,40 +165,70 @@
                         <!-- Botón Buscar -->
                         <div class="w-full sm:w-auto">
                             <button type="submit"
-                                class="w-full sm:w-auto bg-gray-800 hover:bg-gray-700 text-white font-semibold py-2.5 px-5 rounded-md shadow-sm transition focus:outline-none focus:ring-2 focus:ring-gray-500">
+                                class="w-full sm:w-auto bg-gray-800 hover:bg-gray-700 text-white font-semibold py-2.5 px-5 rounded-lg shadow-sm transition focus:outline-none focus:ring-2 focus:ring-gray-500 text-sm">
                                 Buscar
                             </button>
                         </div>
+
+                        @if (request()->hasAny(['anio', 'mes', 'localidad', 'modalidad']))
+                            <div class="w-full sm:w-auto">
+                                <a href="{{ route('edudata.capacitaciones') }}"
+                                    class="w-full sm:w-auto bg-white hover:bg-gray-50 text-gray-800 font-semibold py-2.5 px-5 rounded-lg border border-gray-300 shadow-sm transition focus:outline-none focus:ring-2 focus:ring-gray-500 text-sm inline-flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2"
+                                        viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                    Limpiar
+                                </a>
+                            </div>
+                        @endif
                     </form>
+
+                    <!-- Información de resultados -->
+                    @if (($capacitaciones->total() ?? 0) > 0)
+                        <div class="mt-4 text-sm text-gray-600 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5 text-green-500"
+                                viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <span>Mostrando {{ $capacitaciones->firstItem() }}–{{ $capacitaciones->lastItem() }} de
+                                {{ $capacitaciones->total() }} resultados</span>
+                        </div>
+                    @endif
                 </div>
 
                 <!-- Ancla para resultados -->
                 <div id="resultados"></div>
 
                 {{-- ===== TABLA MEJORADA ===== --}}
-                @php
-                    $scrollCaps = isset($capacitaciones) && $capacitaciones->count() > 15;
-                @endphp
-
-                <div class="bg-white rounded-2xl shadow-md border border-gray-200 overflow-hidden">
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
                     <!-- Header resumen -->
-                    <div class="px-6 py-4 border-b border-gray-100 bg-gradient-to-r from-blue-50 to-indigo-50">
+                    <div class="px-4 md:px-6 py-4 border-b border-gray-100 bg-gray-50">
                         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
                             <h3 class="text-base md:text-lg font-semibold text-gray-800">
                                 Capacitaciones registradas
                             </h3>
-                            <p class="text-sm text-gray-600">
-                                Año: <strong>{{ request('anio') ?: 'Todos' }}</strong> ·
-                                Mes: <strong>
-                                    @if (request('mes'))
-                                        {{ ucfirst(\Carbon\Carbon::create()->month((int) request('mes'))->locale('es')->isoFormat('MMMM')) }}
-                                    @else
-                                        Todos
-                                    @endif
-                                </strong> ·
-                                Localidad: <strong>{{ request('localidad') ?: 'Todas' }}</strong> ·
-                                Modalidad: <strong>{{ request('modalidad') ?: 'Todas' }}</strong> ·
-                                Registros: <strong>{{ $capacitaciones->total() ?? $capacitaciones->count() }}</strong>
+                            <p class="text-xs md:text-sm text-gray-600">
+                                @if (request()->hasAny(['anio', 'mes', 'localidad', 'modalidad']))
+                                    <span class="hidden sm:inline">
+                                        Filtros: 
+                                        <strong>{{ request('anio') ?: 'Todos' }}</strong> ·
+                                        <strong>
+                                            @if (request('mes'))
+                                                {{ ucfirst(\Carbon\Carbon::create()->month((int) request('mes'))->locale('es')->isoFormat('MMMM')) }}
+                                            @else
+                                                Todos
+                                            @endif
+                                        </strong> ·
+                                        <strong>{{ request('localidad') ?: 'Todas' }}</strong> ·
+                                        <strong>{{ request('modalidad') ?: 'Todas' }}</strong>
+                                    </span>
+                                @endif
+                                <span class="font-semibold">{{ $capacitaciones->total() }} registros</span>
                             </p>
                         </div>
                     </div>
@@ -380,14 +357,13 @@
                     </div>
 
                     <!-- Paginación -->
-                    <div class="p-4 border-t border-gray-100">
+                    <div class="px-4 py-3 border-t border-gray-100 bg-gray-50">
                         {{ $capacitaciones->appends(request()->query())->links() }}
                     </div>
                 </div>
                 {{-- ===== FIN TABLA MEJORADA ===== --}}
             </div>
         </div>
-
     </div>
 
     {{-- Restaurar posición de scroll tras enviar el formulario --}}
@@ -416,4 +392,18 @@
             });
         })();
     </script>
+
+    <style>
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+    </style>
 @endsection

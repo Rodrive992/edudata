@@ -3,114 +3,94 @@
 @section('title', 'Edudata - Organigrama Ministerial')
 
 @section('content')
-    <div class="container mx-auto px-4 py-8">
+    <div class="container mx-auto px-4 py-6">
         <!-- Tarjeta principal con encabezado de imagen -->
-        <div class="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden mb-10">
+        <div class="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden mb-6">
             <!-- Encabezado con imagen redondeada -->
-            <div class="p-6 pb-0">
-                <div class="rounded-xl overflow-hidden mb-6">
+            <div class="p-4 md:p-6 pb-0">
+                <div class="rounded-xl overflow-hidden mb-4 md:mb-6 flex justify-center">
                     <img src="{{ asset('images/titulo-organigrama.png') }}" 
                          alt="Organigrama Ministerial" 
-                         class="w-full h-auto object-cover rounded-xl">
+                         class="w-full max-w-2xl h-auto object-contain rounded-xl">
                 </div>
                 
                 <!-- Texto descriptivo mejorado -->
-                <div class="mb-6">                
+                <div class="mb-4 md:mb-6">                
                     <div class="space-y-4">
-                        <p class="text-gray-700 leading-relaxed text-lg">
-                            El <span class="font-semibold text-blue-700">Ministerio de Educación, Ciencia y Tecnología</span> 
-                            de Catamarca está compuesto por diversas <span class="bg-yellow-100 px-1 rounded">secretarías y direcciones provinciales</span> 
-                            que trabajan de manera coordinada para garantizar una <span class="font-medium text-green-600">educación de calidad</span> 
-                            en todos los niveles y modalidades del sistema educativo provincial.
-                        </p>
+                        <!-- Sección de características - MEJORADO -->
+                        <div class="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-xl p-4 md:p-5 my-4 border border-blue-200">
+                            <!-- Descripción principal -->
+                            <div class="text-center mb-4 md:mb-5">
+                                <p class="text-gray-700 leading-relaxed text-base md:text-lg">
+                                    El <span class="font-semibold text-blue-700">Ministerio de Educación, Ciencia y Tecnología</span> 
+                                    de Catamarca está compuesto por diversas <span class="bg-yellow-100 px-1 rounded">secretarías y direcciones provinciales</span> 
+                                    que trabajan de manera coordinada para garantizar una <span class="font-medium text-green-600">educación de calidad</span> 
+                                    en todos los niveles y modalidades del sistema educativo provincial.
+                                </p>
+                            </div>
 
-                        <!-- Sección de funcionalidades con fondo claro -->
-                        <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-100 p-4 sm:p-6 lg:p-8 my-6 sm:my-8 shadow-lg border border-blue-200">
-                            <!-- Elementos decorativos de fondo -->
-                            <div class="absolute top-0 right-0 w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 bg-blue-200/30 rounded-full -translate-y-8 sm:-translate-y-12 lg:-translate-y-16 translate-x-8 sm:translate-x-12 lg:translate-x-16"></div>
-                            <div class="absolute bottom-0 left-0 w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-indigo-200/30 rounded-full translate-y-8 sm:translate-y-10 lg:translate-y-12 -translate-x-6 sm:-translate-x-8 lg:-translate-x-12"></div>
-
-                            <div class="relative z-10">
-                                <!-- Grid de funcionalidades -->
-                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
-                                    <!-- Tarjeta 1: Estructura Organizativa -->
-                                    <div class="group relative bg-white/80 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-blue-100 hover:bg-white transition-all duration-300 hover:scale-105 shadow-sm flex flex-col h-full">
-                                        <div class="absolute -top-2 -left-2 sm:-top-3 sm:-left-3">
-                                            <div class="h-6 w-6 sm:h-8 sm:w-8 rounded-full bg-[#f5cb58] flex items-center justify-center shadow-lg">
-                                                <span class="text-white font-bold text-xs sm:text-sm">01</span>
-                                            </div>
+                            <!-- Características en grid mejorado -->
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
+                                <!-- Característica 1 -->
+                                <div class="feature-card group p-3">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-blue-100 flex items-center justify-center flex-shrink-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                            </svg>
                                         </div>
-                                        <div class="mb-3 sm:mb-4">
-                                            <div class="h-10 w-10 sm:h-12 sm:w-12 rounded-lg bg-gradient-to-br from-[#f5cb58] to-[#ddb750] flex items-center justify-center mb-2 sm:mb-3">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                                                </svg>
-                                            </div>
-                                        </div>
-                                        <h4 class="text-lg sm:text-xl font-bold text-gray-800 mb-2 sm:mb-3">Estructura Organizativa</h4>
-                                        <p class="text-gray-600 leading-relaxed flex-grow text-sm sm:text-base">Organización compuesta por secretarías y direcciones provinciales especializadas en cada área educativa</p>
-                                        <div class="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-gray-200">
-                                            <span class="text-green-600 text-sm font-semibold">🏛️ Estructura ministerial</span>
+                                        <div class="flex-1 min-w-0">
+                                            <p class="text-sm font-semibold text-gray-800">Estructura Organizativa</p>
+                                            <p class="text-xs text-gray-600 mt-1">Secretarías y direcciones especializadas</p>
                                         </div>
                                     </div>
+                                </div>
 
-                                    <!-- Tarjeta 2: Equipo de Gestión -->
-                                    <div class="group relative bg-white/80 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-[#6bbde5] hover:bg-white transition-all duration-300 hover:scale-105 shadow-sm flex flex-col h-full">
-                                        <div class="absolute -top-2 -left-2 sm:-top-3 sm:-left-3">
-                                            <div class="h-6 w-6 sm:h-8 sm:w-8 rounded-full bg-[#6bbde5] flex items-center justify-center shadow-lg">
-                                                <span class="text-white font-bold text-xs sm:text-sm">02</span>
-                                            </div>
+                                <!-- Característica 2 -->
+                                <div class="feature-card group p-3">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-green-100 flex items-center justify-center flex-shrink-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                            </svg>
                                         </div>
-                                        <div class="mb-3 sm:mb-4">
-                                            <div class="h-10 w-10 sm:h-12 sm:w-12 rounded-lg bg-gradient-to-br from-[#6bbde5] to-[#5aadd5] flex items-center justify-center mb-2 sm:mb-3">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                                                </svg>
-                                            </div>
-                                        </div>
-                                        <h4 class="text-lg sm:text-xl font-bold text-gray-800 mb-2 sm:mb-3">Equipo de Gestión</h4>
-                                        <p class="text-gray-600 leading-relaxed flex-grow text-sm sm:text-base">Liderado por el Ministro Nicolás Rosales Matienzo con un equipo de secretarios y directores especializados</p>
-                                        <div class="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-gray-200">
-                                            <span class="text-cyan-600 text-sm font-semibold">👥 Liderazgo especializado</span>
+                                        <div class="flex-1 min-w-0">
+                                            <p class="text-sm font-semibold text-gray-800">Equipo de Gestión</p>
+                                            <p class="text-xs text-gray-600 mt-1">Liderazgo especializado por áreas</p>
                                         </div>
                                     </div>
+                                </div>
 
-                                    <!-- Tarjeta 3: Coordinación Articulada -->
-                                    <div class="group relative bg-white/80 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-blue-100 hover:bg-white transition-all duration-300 hover:scale-105 shadow-sm flex flex-col h-full">
-                                        <div class="absolute -top-2 -left-2 sm:-top-3 sm:-left-3">
-                                            <div class="h-6 w-6 sm:h-8 sm:w-8 rounded-full bg-green-500 flex items-center justify-center shadow-lg">
-                                                <span class="text-white font-bold text-xs sm:text-sm">03</span>
-                                            </div>
+                                <!-- Característica 3 -->
+                                <div class="feature-card group p-3">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-purple-100 flex items-center justify-center flex-shrink-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                            </svg>
                                         </div>
-                                        <div class="mb-3 sm:mb-4">
-                                            <div class="h-10 w-10 sm:h-12 sm:w-12 rounded-lg bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center mb-2 sm:mb-3">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                                </svg>
-                                            </div>
-                                        </div>
-                                        <h4 class="text-lg sm:text-xl font-bold text-gray-800 mb-2 sm:mb-3">Coordinación Articulada</h4>
-                                        <p class="text-gray-600 leading-relaxed flex-grow text-sm sm:text-base">Trabajo conjunto entre áreas para implementar políticas educativas innovadoras y de calidad</p>
-                                        <div class="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-gray-200">
-                                            <span class="text-green-600 text-sm font-semibold">🔄 Trabajo en equipo</span>
+                                        <div class="flex-1 min-w-0">
+                                            <p class="text-sm font-semibold text-gray-800">Coordinación Articulada</p>
+                                            <p class="text-xs text-gray-600 mt-1">Trabajo conjunto entre áreas</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="flex flex-wrap gap-2 mt-4">
-                            <div class="inline-flex items-center bg-gray-100 px-3 py-1 rounded-full text-sm text-gray-700">
-                                <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
-                                Estructura organizativa
-                            </div>
-                            <div class="inline-flex items-center bg-gray-100 px-3 py-1 rounded-full text-sm text-gray-700">
-                                <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
-                                Equipo de gestión
-                            </div>
-                            <div class="inline-flex items-center bg-gray-100 px-3 py-1 rounded-full text-sm text-gray-700">
-                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
-                                Coordinación articulada
+                            <!-- Etiquetas informativas -->
+                            <div class="flex flex-wrap gap-2 mt-4 justify-center">
+                                <div class="inline-flex items-center bg-white px-3 py-1 rounded-full text-xs md:text-sm text-gray-700 border border-gray-200">
+                                    <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                                    Estructura organizativa
+                                </div>
+                                <div class="inline-flex items-center bg-white px-3 py-1 rounded-full text-xs md:text-sm text-gray-700 border border-gray-200">
+                                    <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                                    Equipo de gestión
+                                </div>
+                                <div class="inline-flex items-center bg-white px-3 py-1 rounded-full text-xs md:text-sm text-gray-700 border border-gray-200">
+                                    <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                                    Coordinación articulada
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -118,58 +98,62 @@
             </div>
 
             <!-- Contenido específico del Organigrama -->
-            <div class="p-6 pt-4">
+            <div class="p-4 md:p-6 pt-4">
                 <!-- Nivel Ministerial -->
-                <div class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden mb-10">
-                    <div class="px-6 py-4 border-b border-gray-100 bg-gradient-to-r from-blue-50 to-purple-50">
-                        <div class="flex items-center gap-3">
-                            <div class="bg-blue-100 p-2 rounded-lg">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-blue-600">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-semibold text-gray-800">Nivel Ministerial</h3>
-                                <p class="text-gray-600 text-sm">Liderazgo y dirección general del Ministerio</p>
-                            </div>
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden mb-6">
+                    <div class="px-4 md:px-6 py-4 border-b border-gray-100 bg-gray-50">
+                        <div class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-blue-600 mr-2" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                            <h3 class="text-base md:text-lg font-semibold text-gray-800">Nivel Ministerial</h3>
                         </div>
                     </div>
 
-                    <div class="p-6">
-                        <div class="bg-blue-50 p-6 rounded-lg border border-blue-100 mb-6">
-                            <h4 class="text-lg font-semibold text-blue-800 mb-3">Ministro</h4>
-                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div class="p-4 md:p-6">
+                        <div class="bg-gradient-to-r from-blue-50 to-blue-100 p-4 md:p-6 rounded-lg border border-blue-200">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                                 <div class="flex-1">
-                                    <p class="text-blue-900 font-bold text-xl">Nicolás Rosales Matienzo</p>
-                                    <p class="text-blue-700">Pabellón N° 11 - CAPE</p>
-                                    <p class="text-blue-600">educacion@catamarca.edu.ar</p>
+                                    <h4 class="text-lg md:text-xl font-bold text-blue-800 mb-2">Ministro</h4>
+                                    <p class="text-blue-900 font-bold text-xl md:text-2xl mb-1">Nicolás Rosales Matienzo</p>
+                                    <div class="space-y-1 text-blue-700 text-sm md:text-base">
+                                        <p class="flex items-center gap-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                            </svg>
+                                            Pabellón N° 11 - CAPE
+                                        </p>
+                                        <p class="flex items-center gap-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                            </svg>
+                                            educacion@catamarca.edu.ar
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="bg-white px-4 py-2 rounded-lg border border-blue-200">
-                                    <span class="text-blue-700 font-medium text-sm">Liderazgo Ministerial</span>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Secretarías -->
-                <div class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden mb-10">
-                    <div class="px-6 py-4 border-b border-gray-100 bg-gradient-to-r from-green-50 to-teal-50">
-                        <div class="flex items-center gap-3">
-                            <div class="bg-green-100 p-2 rounded-lg">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-semibold text-gray-800">Secretarías</h3>
-                                <p class="text-gray-600 text-sm">Áreas estratégicas de gestión educativa</p>
-                            </div>
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden mb-6">
+                    <div class="px-4 md:px-6 py-4 border-b border-gray-100 bg-gray-50">
+                        <div class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-green-600 mr-2" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                            </svg>
+                            <h3 class="text-base md:text-lg font-semibold text-gray-800">Secretarías</h3>
                         </div>
                     </div>
 
-                    <div class="p-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="p-4 md:p-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                             @php
                                 $secretarias = [
                                     ['t' => 'Innovación Educativa', 'n' => 'Cesar Garetto', 'l' => 'Pabellón N° 13 - CAPE', 'e' => 'innovacion@catamarca.edu.ar'],
@@ -181,23 +165,26 @@
                             @endphp
 
                             @foreach ($secretarias as $s)
-                                <div class="bg-green-50 p-5 rounded-lg border border-green-100 hover:border-green-300 transition-all duration-200 hover:shadow-md">
-                                    <h4 class="text-lg font-semibold text-green-800 mb-2">{{ $s['t'] }}</h4>
-                                    <div class="space-y-2">
-                                        <p class="text-green-900 font-semibold flex items-center gap-2">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                <div class="bg-white rounded-lg border border-gray-200 p-4 md:p-5 hover:border-green-300 hover:shadow-md transition-all duration-200 group">
+                                    <div class="flex items-start gap-3 mb-3">
+                                        <div class="bg-green-100 p-2 rounded-lg flex-shrink-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                                             </svg>
-                                            {{ $s['n'] }}
-                                        </p>
-                                        <p class="text-green-700 text-sm flex items-center gap-2">
+                                        </div>
+                                        <div class="flex-1 min-w-0">
+                                            <h4 class="text-base md:text-lg font-semibold text-gray-800 mb-1">{{ $s['t'] }}</h4>
+                                            <p class="text-green-700 font-medium text-sm md:text-base">{{ $s['n'] }}</p>
+                                        </div>
+                                    </div>
+                                    <div class="space-y-2 pl-11">
+                                        <p class="text-gray-600 text-sm flex items-center gap-2">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                             </svg>
                                             {{ $s['l'] }}
                                         </p>
-                                        <p class="text-green-600 text-sm flex items-center gap-2">
+                                        <p class="text-gray-600 text-sm flex items-center gap-2">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                             </svg>
@@ -211,23 +198,20 @@
                 </div>
 
                 <!-- Direcciones Provinciales -->
-                <div class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden mb-10">
-                    <div class="px-6 py-4 border-b border-gray-100 bg-gradient-to-r from-purple-50 to-indigo-50">
-                        <div class="flex items-center gap-3">
-                            <div class="bg-purple-100 p-2 rounded-lg">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-semibold text-gray-800">Direcciones Provinciales</h3>
-                                <p class="text-gray-600 text-sm">Áreas especializadas de implementación y gestión</p>
-                            </div>
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden mb-6">
+                    <div class="px-4 md:px-6 py-4 border-b border-gray-100 bg-gray-50">
+                        <div class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-purple-600 mr-2" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                            </svg>
+                            <h3 class="text-base md:text-lg font-semibold text-gray-800">Direcciones Provinciales</h3>
                         </div>
                     </div>
 
-                    <div class="p-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="p-4 md:p-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                             @php
                                 $direcciones = [
                                     ['t'=>'Inteligencia Artificial y Alfabetización Digital','n'=>'Deborah Nancy Dumitru','l'=>'Pabellón N° 13 - CAPE','e'=>'dirinteligenciaartificial@catamarca.edu.ar'],
@@ -262,23 +246,26 @@
                             @endphp
 
                             @foreach ($direcciones as $d)
-                                <div class="bg-purple-50 p-5 rounded-lg border border-purple-100 hover:border-purple-300 transition-all duration-200 hover:shadow-md">
-                                    <h4 class="text-lg font-semibold text-purple-800 mb-2">{{ $d['t'] }}</h4>
-                                    <div class="space-y-2">
-                                        <p class="text-purple-900 font-semibold flex items-center gap-2">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                <div class="bg-white rounded-lg border border-gray-200 p-4 md:p-5 hover:border-purple-300 hover:shadow-md transition-all duration-200 group">
+                                    <div class="flex items-start gap-3 mb-3">
+                                        <div class="bg-purple-100 p-2 rounded-lg flex-shrink-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                                             </svg>
-                                            {{ $d['n'] }}
-                                        </p>
-                                        <p class="text-purple-700 text-sm flex items-center gap-2">
+                                        </div>
+                                        <div class="flex-1 min-w-0">
+                                            <h4 class="text-base md:text-lg font-semibold text-gray-800 mb-1">{{ $d['t'] }}</h4>
+                                            <p class="text-purple-700 font-medium text-sm md:text-base">{{ $d['n'] }}</p>
+                                        </div>
+                                    </div>
+                                    <div class="space-y-2 pl-11">
+                                        <p class="text-gray-600 text-sm flex items-center gap-2">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                             </svg>
                                             {{ $d['l'] }}
                                         </p>
-                                        <p class="text-purple-600 text-sm flex items-center gap-2">
+                                        <p class="text-gray-600 text-sm flex items-center gap-2">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                             </svg>
@@ -290,7 +277,50 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Información Adicional -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-4 md:p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h2 class="text-lg md:text-xl font-semibold text-gray-800">Información General</h2>
+                    </div>
+
+                    <div class="pl-0 md:pl-12">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                            <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                                <h4 class="font-semibold text-gray-800 mb-2">Ubicación Central</h4>
+                                <p class="text-gray-700 text-sm">Complejo Administrativo Provincial de Ejecución (CAPE)</p>
+                                <p class="text-gray-600 text-sm mt-1">Pabellones 11 al 15 y 26</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                                <h4 class="font-semibold text-gray-800 mb-2">Horario de Atención</h4>
+                                <p class="text-gray-700 text-sm">Lunes a Viernes</p>
+                                <p class="text-gray-600 text-sm mt-1">07:00 - 14:00 hs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
+    <style>
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+    </style>
 @endsection

@@ -60,13 +60,14 @@
                 <div class="{{ $panelHead }}">Secciones disponibles</div>
                 <ul class="px-2 py-2">
                   <li><a href="{{ route('edudata.mantenimiento')}}"class="{{ $itemBase }} {{ $itemFx }}">Mantenimiento Edilicio <span class="{{ $itemCaret }}">→</span></a></li>
-                  <li><a href="{{ route('edudata.normativa')}}" class="{{ $itemBase }} {{ $itemFx }}">Digesto Normativo <span class="{{ $itemCaret }}">→</span></a></li>        
+                  <li><a href="{{ route('edudata.normativa')}}" class="{{ $itemBase }} {{ $itemFx }}">Digesto Normativo <span class="{{ $itemCaret }}">→</span></a></li>
+                  <li><a href="{{ route('edudata.asambleas')}}" class="{{ $itemBase }} {{ $itemFx }}">Cobertura de Cargos<span class="{{ $itemCaret }}">→</span></a></li>
+                  <li><a href="{{ route('edudata.formacion')}}" class="{{ $itemBase }} {{ $itemFx }}">Capacitaciones <span class="{{ $itemCaret }}">→</span></a></li>
+                  <li><a href="{{ route('edudata.programas')}}" class="{{ $itemBase }} {{ $itemFx }}">Programas y Proyectos <span class="{{ $itemCaret }}">→</span></a></li>       
                   <li><a href="{{ route('edudata.edutecnica')}}" class="{{ $itemBase }} {{ $itemFx }}">Educación Técnica <span class="{{ $itemCaret }}">→</span></a></li>
                   <li><a href="{{ route('edudata.innovacion')}}" class="{{ $itemBase }} {{ $itemFx }}">Innovación Educativa <span class="{{ $itemCaret }}">→</span></a></li>
-                  <li><a href="{{ route('edudata.formacion')}}" class="{{ $itemBase }} {{ $itemFx }}">Formación y Programación <span class="{{ $itemCaret }}">→</span></a></li>
                   <li><a href="{{ route('edudata.asuntos')}}" class="{{ $itemBase }} {{ $itemFx }}">Asuntos Jurídicos <span class="{{ $itemCaret }}">→</span></a></li>
-                  <li><a href="{{ route('edudata.titulos')}}" class="{{ $itemBase }} {{ $itemFx }}">Títulos <span class="{{ $itemCaret }}">→</span></a></li>
-                  <li><a href="{{ route('edudata.programas')}}" class="{{ $itemBase }} {{ $itemFx }}">Programas y Proyectos <span class="{{ $itemCaret }}">→</span></a></li>
+                  <li><a href="{{ route('edudata.titulos')}}" class="{{ $itemBase }} {{ $itemFx }}">Títulos <span class="{{ $itemCaret }}">→</span></a></li>                  
                   <li><a href="{{ route('edudata.residencia')}}" class="{{ $itemBase }} {{ $itemFx }}">Residencia Universitaria <span class="{{ $itemCaret }}">→</span></a></li>
                 </ul>
               </div>
@@ -75,7 +76,7 @@
             <!-- Transparencia -->
             <div class="relative" @click.outside="openTransp=false" :aria-expanded="openTransp">
               <button @click="openTransp = !openTransp" class="{{ $menuBtn }}">
-                Transparencia
+                Organigrama
                 <svg class="{{ $chev }}" viewBox="0 0 20 20" fill="currentColor">
                   <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.51a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
                 </svg>
@@ -170,13 +171,13 @@
             <button 
               @click="openTransp = !openTransp"
               class="w-full flex justify-between items-center px-4 py-3 text-left text-white bg-white/10 rounded-lg">
-              <span class="font-medium">Transparencia</span>
+              <span class="font-medium">Organigrama</span>
               <svg :class="openTransp ? 'rotate-180' : ''" class="w-5 h-5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </button>
             <div x-show="openTransp" class="mt-2 pl-4">
-              <a href="#" class="block py-2 px-4 text-white/90 hover:bg-white/10 rounded-md transition">Ver organigrama</a>
+              <a href="{{ route('edudata.organigrama')}}" class="block py-2 px-4 text-white/90 hover:bg-white/10 rounded-md transition">Ver organigrama</a>
             </div>
           </div>
 
@@ -191,7 +192,7 @@
               </svg>
             </button>
             <div x-show="openOrg" class="mt-2 pl-4">
-              <a href="#" class="block py-2 px-4 text-white/90 hover:bg-white/10 rounded-md transition">Ir al formulario</a>
+              <a href="{{ route('edudata.solicitud-info') }}"class="block py-2 px-4 text-white/90 hover:bg-white/10 rounded-md transition">Ir al formulario</a>
             </div>
           </div>
 

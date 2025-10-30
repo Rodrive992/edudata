@@ -5,7 +5,7 @@
 @section('content')
 <div class="container mx-auto px-4 py-8">
     <div class="mb-6 flex items-center justify-between">
-        <a href="{{ route('edured.herramientas.solicitudes-info.index') }}" class="text-sm text-gray-600 hover:text-gray-800">&larr; Volver</a>
+        <a href="{{route('edured.herramientas.solicitudes-info.index')}}" class="text-sm text-gray-600 hover:text-gray-800">&larr; Volver</a>
         <span class="text-sm text-gray-500">Solicitud #{{ $solicitud->id }} — Estado: <strong>{{ ucfirst($solicitud->estado_solicitud) }}</strong></span>
     </div>
 
@@ -69,11 +69,40 @@
                     @enderror
 
                     @if($solicitud->archivo_respuesta_solicitud)
-                        <div class="mt-2">
+                        <div class="mt-3 space-y-2">
+                            <!-- Ver inline usando la ruta del controller -->
                             <a class="text-sm text-blue-600 hover:underline"
-                               href="{{ Storage::disk('public')->url($solicitud->archivo_respuesta_solicitud) }}" target="_blank">
+                               href="{{ route('solicitudes.file.respuesta', $solicitud) }}" target="_blank">
                                 Ver archivo de respuesta actual
                             </a>
+
+                            <!-- Preview embebido (si es PDF o imagen) -->
+                            @php
+                                $p = $solicitud->archivo_respuesta_solicitud;
+                                $esPdf = \Illuminate\Support\Str::of($p)->lower()->endsWith('.pdf');
+                                $esImg = \Illuminate\Support\Str::of($p)->lower()->endsWith(['.jpg','.jpeg','.png','.webp','.gif']);
+                            @endphp
+
+                            @if($esPdf)
+                                <div class="mt-2 border border-gray-200 rounded-lg overflow-hidden">
+                                    <iframe src="{{ route('solicitudes.file.respuesta', $solicitud) }}"
+                                            class="w-full h-[60vh]" title="Vista previa PDF" loading="lazy"></iframe>
+                                </div>
+                            @elseif($esImg)
+                                <div class="mt-2">
+                                    <img src="{{ route('solicitudes.file.respuesta', $solicitud) }}"
+                                         alt="Archivo de respuesta"
+                                         class="max-h-[60vh] rounded-lg border border-gray-200 object-contain">
+                                </div>
+                            @endif
+
+                            <!-- Descargar -->
+                            <div>
+                                <a class="text-sm text-gray-700 hover:underline"
+                                   href="{{ route('solicitudes.download.respuesta', $solicitud) }}">
+                                    Descargar archivo
+                                </a>
+                            </div>
                         </div>
                     @endif
                 </div>
