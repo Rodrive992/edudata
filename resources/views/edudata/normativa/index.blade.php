@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
-@extends('layouts.app')
-
 @section('title', 'Edudata - Normativa')
 
 @section('content')
@@ -427,4 +425,6 @@
             </div> <!-- /contenido búsqueda y resultados -->
         </div> <!-- /tarjeta principal -->
     </div>
+    @include('edudata.partials.normativa-info')
+
 @endsection
