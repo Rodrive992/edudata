@@ -382,7 +382,235 @@
         animation: pulse-glow-normativa 2s infinite;
     }
 
-    /* Media queries mejoradas */
+    /* =========================== */
+    /* MEDIA QUERIES PARA MÓVILES  */
+    /* =========================== */
+    
+    /* Para tablets y móviles */
+    @media (max-width: 1024px) {
+        .normativa-panel {
+            position: fixed;
+            top: auto;
+            bottom: 20px;
+            right: 20px;
+            left: auto;
+            transform: none;
+            z-index: 88;
+        }
+
+        /* Solapa móvil - botón flotante */
+        .normativa-panel .normativa-trigger {
+            position: relative;
+            left: auto;
+            top: auto;
+            transform: none;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 2px solid var(--panel-border);
+            padding: 0;
+            flex-direction: row;
+            justify-content: center;
+            box-shadow: 
+                0 8px 25px rgba(0, 0, 0, 0.15),
+                0 0 0 1px rgba(255, 255, 255, 0.8);
+        }
+
+        .normativa-panel .normativa-trigger:hover {
+            transform: scale(1.1);
+        }
+
+        .normativa-panel .normativa-trigger .normativa-trigger-label {
+            display: none; /* Ocultar label en móvil */
+        }
+
+        .normativa-panel .normativa-trigger img {
+            width: 35px;
+            height: 35px;
+            margin: 0;
+        }
+
+        /* Panel móvil - ocupa toda la pantalla */
+        .normativa-panel .normativa-surface {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100vw;
+            max-width: none;
+            min-width: auto;
+            max-height: 100vh;
+            border-radius: 0;
+            border: none;
+            z-index: 100;
+        }
+
+        /* Header móvil más compacto */
+        .normativa-panel .normativa-head {
+            padding: 12px 16px;
+        }
+
+        .normativa-panel .normativa-head h3 {
+            font-size: 1.1rem;
+        }
+
+        .normativa-panel .normativa-head h3::after {
+            right: -25px;
+            font-size: 0.8rem;
+        }
+
+        /* Body móvil con mejor espaciado */
+        .normativa-panel .normativa-body {
+            padding: 16px;
+            gap: 1rem;
+            height: calc(100vh - 60px);
+        }
+
+        /* Contenido móvil más compacto */
+        .normativa-content {
+            gap: 1.25rem;
+        }
+
+        /* Icono móvil */
+        .normativa-icon {
+            width: 55px;
+            height: 55px;
+            font-size: 1.3rem;
+        }
+
+        /* Mensaje móvil */
+        .normativa-message {
+            font-size: 0.9rem;
+            padding: 0;
+        }
+
+        /* Botón móvil */
+        .btn-solicitud {
+            padding: 0.85rem 1.25rem;
+            font-size: 0.95rem;
+            max-width: 260px;
+        }
+
+        /* Pasos móviles más compactos */
+        .normativa-steps {
+            gap: 0.6rem;
+        }
+
+        .normativa-step {
+            padding: 0.65rem;
+            gap: 0.65rem;
+        }
+
+        .step-number {
+            width: 22px;
+            height: 22px;
+            font-size: 0.7rem;
+        }
+
+        .step-title {
+            font-size: 0.85rem;
+        }
+
+        .step-description {
+            font-size: 0.75rem;
+        }
+
+        /* Nota móvil */
+        .normativa-note {
+            font-size: 0.75rem;
+            padding: 0.65rem;
+            margin-top: 0.5rem;
+        }
+    }
+
+    /* Para móviles muy pequeños */
+    @media (max-width: 480px) {
+        .normativa-panel {
+            bottom: 15px;
+            right: 15px;
+        }
+
+        .normativa-panel .normativa-trigger {
+            width: 60px;
+            height: 60px;
+        }
+
+        .normativa-panel .normativa-trigger img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .normativa-panel .normativa-head h3 {
+            font-size: 1rem;
+        }
+
+        .normativa-panel .normativa-body {
+            padding: 12px;
+            gap: 0.85rem;
+        }
+
+        .normativa-content {
+            gap: 1rem;
+        }
+
+        .normativa-icon {
+            width: 50px;
+            height: 50px;
+            font-size: 1.2rem;
+        }
+
+        .normativa-message {
+            font-size: 0.85rem;
+        }
+
+        .btn-solicitud {
+            padding: 0.8rem 1rem;
+            font-size: 0.9rem;
+            max-width: 240px;
+        }
+
+        .normativa-steps {
+            gap: 0.5rem;
+        }
+
+        .normativa-step {
+            padding: 0.6rem;
+            gap: 0.6rem;
+        }
+
+        .step-number {
+            width: 20px;
+            height: 20px;
+            font-size: 0.65rem;
+        }
+
+        .step-title {
+            font-size: 0.8rem;
+        }
+
+        .step-description {
+            font-size: 0.7rem;
+        }
+
+        .normativa-note {
+            font-size: 0.7rem;
+            padding: 0.6rem;
+        }
+    }
+
+    /* Para tablets en orientación horizontal */
+    @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+        .normativa-panel .normativa-surface {
+            max-height: 85vh;
+        }
+
+        .normativa-panel .normativa-body {
+            height: calc(85vh - 60px);
+        }
+    }
+
+    /* Media queries existentes para desktop */
     @media (max-width: 1400px) {
         .normativa-panel .normativa-surface {
             width: 45vw;
@@ -405,10 +633,6 @@
             font-size: 0.95rem;
             max-width: 250px;
         }
-    }
-
-    @media (max-width: 1024px) { 
-        .normativa-panel { display: none; } 
     }
 
     /* Para pantallas más pequeñas en altura */
