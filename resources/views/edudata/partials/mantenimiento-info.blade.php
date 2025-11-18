@@ -26,17 +26,17 @@
 <style>
     .mantenimiento-panel {
         --panel-bg: {{ $panelColor }};
-        --panel-grad: linear-gradient(180deg, #f5cb58 0%, #e2e8f0 100%);
+        --panel-grad: linear-gradient(180deg, var(--sec-500) 0%, var(--pri-500) 100%);
         --panel-text: #334155;
         --panel-border: rgba(100, 116, 139, 0.2);
         --shadow-soft: 0 20px 40px rgba(0, 0, 0, 0.1);
-        --accent-primary: #3b82f6;
-        --accent-secondary: #10b981;
-        --accent-tertiary: #f59e0b;
-        --accent-aph: #ef4444;
-        --accent-elec: #f59e0b;
-        --accent-dezm: #10b981;
-        --hover-glow: 0 0 20px rgba(59, 130, 246, 0.3);
+        --accent-primary: var(--pri-700);
+        --accent-secondary: var(--ter-500);
+        --accent-tertiary: var(--sec-500);
+        --accent-aph: var(--acc-500);
+        --accent-elec: var(--sec-500);
+        --accent-dezm: var(--ter-500);
+        --hover-glow: 0 0 20px rgba(64, 92, 164, 0.3);
     }
 
     .mantenimiento-panel {
@@ -46,7 +46,7 @@
         transform: translateY(-50%);
         z-index: 90;
         pointer-events: none;
-        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        font-family: 'Open Sans', sans-serif;
     }
 
     /* Solapa lateral */
@@ -57,7 +57,7 @@
         transform: translateY(-50%);
         width: 90px;
         border-radius: 20px 0 0 20px;
-        background: #6bbde5;
+        background: var(--pri-700);
         color: var(--panel-text);
         border: 2px solid var(--panel-border);
         border-right: none;
@@ -80,8 +80,8 @@
         box-shadow:
             var(--hover-glow),
             0 8px 25px rgba(0, 0, 0, 0.15),
-            0 0 0 1px rgba(59, 130, 246, 0.3);
-        background: linear-gradient(180deg, #f1f5f9   0%, #6bbde5 100%);
+            0 0 0 1px rgba(64, 92, 164, 0.3);
+        background: linear-gradient(180deg, var(--pri-500) 0%, var(--pri-700) 100%);
     }
 
     .mantenimiento-panel .mantenimiento-trigger img {
@@ -94,7 +94,7 @@
 
     .mantenimiento-panel .mantenimiento-trigger:hover img {
         transform: scale(1.1) rotate(5deg);
-        filter: drop-shadow(0 4px 8px rgba(59, 130, 246, 0.3));
+        filter: drop-shadow(0 4px 8px rgba(64, 92, 164, 0.3));
     }
 
     .mantenimiento-panel .mantenimiento-trigger .mantenimiento-trigger-label {
@@ -105,8 +105,9 @@
         font-weight: 700;
         text-transform: uppercase;
         color: #ffffff;
-        
+        font-family: 'Open Sans', sans-serif;
     }
+
     /* Panel principal - MÁS COMPACTO */
     .mantenimiento-panel .mantenimiento-surface {
         width: 55vw;
@@ -133,7 +134,7 @@
         padding: 12px 16px;
         border-bottom: 1px solid rgba(100, 116, 139, 0.1);
         text-align: center;
-        background: linear-gradient(90deg, rgba(59, 130, 246, 0.05), rgba(16, 185, 129, 0.05));
+        background: linear-gradient(90deg, rgba(64, 92, 164, 0.05), rgba(101, 168, 163, 0.05));
         position: relative;
         overflow: hidden;
         flex-shrink: 0;
@@ -149,21 +150,22 @@
         left: 0;
         right: 0;
         height: 3px;
-        background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary), var(--accent-tertiary));
+        background: linear-gradient(90deg, var(--pri-700), var(--ter-500), var(--sec-500));
         border-radius: 0 0 3px 3px;
     }
 
     .mantenimiento-panel .mantenimiento-head h3 {
-        font-size: 1.5rem;
+        font-size: 1.1rem;
         font-weight: 800;
         margin: 0;
         position: relative;
         display: inline-block;
-        background: linear-gradient(135deg, #162172, #132172, #162172);
+        background: linear-gradient(135deg, var(--pri-900), var(--pri-700), var(--pri-900));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
         letter-spacing: -0.01em;
+        font-family: 'Open Sans', sans-serif;
     }
 
     .mantenimiento-panel .mantenimiento-head h3::after {
@@ -219,12 +221,12 @@
 
     /* Tarjeta de total general - MÁS COMPACTA */
     .total-card {
-        background: #162172;
+        background: var(--pri-900);
         color: white; 
         border-radius: 12px;
         padding: 1rem;
         text-align: center;
-        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.25);
+        box-shadow: 0 6px 20px rgba(34, 42, 89, 0.25);
         position: relative;
         overflow: hidden;
     }
@@ -247,12 +249,13 @@
     }
 
     .total-label {
-        font-size: 0.75rem;
+        font-size: 0.6rem;
         font-weight: 600;
         opacity: 0.9;
-        margin-bottom: 0.25rem;
+        margin-bottom: 0.1rem;
         text-transform: uppercase;
         letter-spacing: 0.05em;
+        font-family: 'Open Sans', sans-serif;
     }
 
     .total-value {
@@ -261,12 +264,14 @@
         line-height: 1;
         margin-bottom: 0.25rem;
         text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        font-family: 'Open Sans', sans-serif;
     }
 
     .total-subtitle {
         font-size: 0.7rem;
         opacity: 0.8;
         font-weight: 500;
+        font-family: 'Open Sans', sans-serif;
     }
 
     /* Tarjetas de categorías - MÁS COMPACTAS */
@@ -317,17 +322,17 @@
     }
 
     .category-card.aph .category-icon {
-        background: linear-gradient(135deg, #fef2f2, #fee2e2);
+        background: linear-gradient(135deg, #f8f7fc, #e8e6f9);
         color: var(--accent-aph);
     }
 
     .category-card.elec .category-icon {
-        background: linear-gradient(135deg, #fffbeb, #fef3c7);
+        background: linear-gradient(135deg, #f7fce7, #eef7d3);
         color: var(--accent-elec);
     }
 
     .category-card.dezm .category-icon {
-        background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+        background: linear-gradient(135deg, #f0f9f8, #e0f3f1);
         color: var(--accent-dezm);
     }
 
@@ -340,12 +345,14 @@
         font-weight: 600;
         color: #374151;
         margin-bottom: 0.1rem;
+        font-family: 'Open Sans', sans-serif;
     }
 
     .category-description {
         font-size: 0.65rem;
         color: #6b7280;
         line-height: 1.2;
+        font-family: 'Open Sans', sans-serif;
     }
 
     .category-count {
@@ -354,6 +361,7 @@
         color: #1f2937;
         min-width: 45px;
         text-align: right;
+        font-family: 'Open Sans', sans-serif;
     }
 
     .category-card.aph .category-count {
@@ -380,6 +388,7 @@
         font-weight: 600;
         color: #475569;
         margin-bottom: 0.4rem;
+        font-family: 'Open Sans', sans-serif;
     }
 
     .progress-bar {
@@ -397,9 +406,9 @@
         transition: width 1.5s ease-in-out;
     }
 
-    .progress-fill.aph { background: linear-gradient(90deg, var(--accent-aph), #f87171); }
-    .progress-fill.elec { background: linear-gradient(90deg, var(--accent-elec), #fbbf24); }
-    .progress-fill.dezm { background: linear-gradient(90deg, var(--accent-dezm), #34d399); }
+    .progress-fill.aph { background: linear-gradient(90deg, var(--accent-aph), #9d97c7); }
+    .progress-fill.elec { background: linear-gradient(90deg, var(--accent-elec), #b8bd37); }
+    .progress-fill.dezm { background: linear-gradient(90deg, var(--accent-dezm), #4a8772); }
 
     /* Scrollbar personalizado */
     .mantenimiento-body::-webkit-scrollbar {
@@ -413,25 +422,25 @@
     }
 
     .mantenimiento-body::-webkit-scrollbar-thumb {
-        background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+        background: linear-gradient(135deg, var(--pri-700), var(--ter-500));
         border-radius: 3px;
         border: 1px solid rgba(255, 255, 255, 0.3);
     }
 
     .mantenimiento-body::-webkit-scrollbar-thumb:hover {
-        background: linear-gradient(135deg, #1d4ed8, #059669);
+        background: linear-gradient(135deg, var(--pri-900), var(--ter-500));
     }
 
     /* Animaciones para dinamismo */
     @keyframes pulse-glow {
         0% {
-            box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+            box-shadow: 0 0 0 0 rgba(64, 92, 164, 0.4);
         }
         70% {
-            box-shadow: 0 0 0 6px rgba(59, 130, 246, 0);
+            box-shadow: 0 0 0 6px rgba(64, 92, 164, 0);
         }
         100% {
-            box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+            box-shadow: 0 0 0 0 rgba(64, 92, 164, 0);
         }
     }
 
@@ -529,7 +538,7 @@
         }
 
         .total-value {
-            font-size: 1.5rem;
+            font-size: 0.1rem;
         }
 
         .category-card {

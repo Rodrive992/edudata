@@ -5,7 +5,7 @@
 @section('content')
 <div class="relative">
     <!-- Fondo con degradé sutil y patrón -->
-    <div class="absolute inset-0 -z-10 bg-gray-200"></div>
+    <div class="absolute inset-0 -z-10 bg-white"></div>
 
     <div class="container mx-auto px-4 py-10">
         <!-- Encabezado / Branding -->

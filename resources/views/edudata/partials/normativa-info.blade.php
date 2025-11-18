@@ -12,14 +12,14 @@
 <style>
     .normativa-panel {
         --panel-bg: {{ $panelColor }};
-        --panel-grad: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+        --panel-grad: linear-gradient(180deg, var(--pri-100) 0%, #e2e8f0 100%);
         --panel-text: #334155;
         --panel-border: rgba(100, 116, 139, 0.2);
         --shadow-soft: 0 20px 40px rgba(0, 0, 0, 0.1);
-        --accent-primary: #059669;
-        --accent-secondary: #2563eb;
-        --accent-tertiary: #7c3aed;
-        --hover-glow: 0 0 20px rgba(5, 150, 105, 0.3);
+        --accent-primary: var(--ter-500);
+        --accent-secondary: var(--pri-700);
+        --accent-tertiary: var(--acc-500);
+        --hover-glow: 0 0 20px rgba(101, 168, 163, 0.3);
     }
 
     .normativa-panel {
@@ -29,7 +29,7 @@
         transform: translateY(-50%);
         z-index: 88;
         pointer-events: none;
-        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        font-family: 'Open Sans', sans-serif;
     }
 
     /* Solapa lateral - MANTENIENDO TAMAÑO ORIGINAL */
@@ -63,8 +63,8 @@
         box-shadow: 
             var(--hover-glow),
             0 8px 25px rgba(0, 0, 0, 0.15),
-            0 0 0 1px rgba(5, 150, 105, 0.3);
-        background: linear-gradient(180deg, #ffffff 0%, #e2e8f0 100%);
+            0 0 0 1px rgba(101, 168, 163, 0.3);
+        background: linear-gradient(180deg, #ffffff 0%, var(--pri-100) 100%);
     }
 
     .normativa-panel .normativa-trigger img {
@@ -77,7 +77,7 @@
 
     .normativa-panel .normativa-trigger:hover img {
         transform: scale(1.1) rotate(5deg);
-        filter: drop-shadow(0 4px 8px rgba(5, 150, 105, 0.3));
+        filter: drop-shadow(0 4px 8px rgba(101, 168, 163, 0.3));
     }
 
     .normativa-panel .normativa-trigger .normativa-trigger-label {
@@ -89,6 +89,7 @@
         text-transform: uppercase;
         color: #475569;
         text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+        font-family: 'Open Sans', sans-serif;
     }
 
     /* Panel principal - MÁS COMPACTO PERO MANTENIENDO PROPORCIONES */
@@ -115,7 +116,7 @@
         padding: 16px 20px;
         border-bottom: 1px solid rgba(100, 116, 139, 0.1);
         text-align: center;
-        background: linear-gradient(90deg, rgba(5, 150, 105, 0.05), rgba(37, 99, 235, 0.05));
+        background: linear-gradient(90deg, rgba(101, 168, 163, 0.05), rgba(64, 92, 164, 0.05));
         position: relative;
         overflow: hidden;
     }
@@ -137,11 +138,12 @@
         margin: 0;
         position: relative;
         display: inline-block;
-        background: linear-gradient(135deg, #059669, #1d4ed8, #7c3aed);
+        background: linear-gradient(135deg, var(--ter-500), var(--pri-700), var(--acc-500));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
         letter-spacing: -0.01em;
+        font-family: 'Open Sans', sans-serif;
     }
 
     .normativa-panel .normativa-head h3::after {
@@ -181,14 +183,14 @@
         width: 60px;
         height: 60px;
         margin: 0 auto;
-        background: linear-gradient(135deg, #10b981, #3b82f6);
+        background: linear-gradient(135deg, var(--ter-500), var(--pri-700));
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 1.5rem;
         color: white;
-        box-shadow: 0 6px 20px rgba(16, 185, 129, 0.2);
+        box-shadow: 0 6px 20px rgba(101, 168, 163, 0.2);
         animation: float 3s ease-in-out infinite;
     }
 
@@ -205,6 +207,7 @@
         text-align: center;
         margin: 0;
         padding: 0 0.5rem;
+        font-family: 'Open Sans', sans-serif;
     }
 
     .normativa-message strong {
@@ -218,7 +221,7 @@
     }
 
     .btn-solicitud {
-        background: linear-gradient(135deg, #10b981, #059669);
+        background: linear-gradient(135deg, var(--ter-500), var(--pri-700));
         color: white;
         border: none;
         border-radius: 10px;
@@ -230,18 +233,19 @@
         align-items: center;
         gap: 0.5rem;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+        box-shadow: 0 4px 15px rgba(101, 168, 163, 0.4);
         cursor: pointer;
         width: 100%;
         justify-content: center;
         max-width: 280px;
         margin: 0 auto;
+        font-family: 'Open Sans', sans-serif;
     }
 
     .btn-solicitud:hover {
         transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(16, 185, 129, 0.5);
-        background: linear-gradient(135deg, #059669, #047857);
+        box-shadow: 0 8px 25px rgba(101, 168, 163, 0.5);
+        background: linear-gradient(135deg, var(--pri-700), var(--pri-900));
         color: white;
         text-decoration: none;
     }
@@ -259,6 +263,7 @@
         color: #94a3b8;
         font-size: 0.8rem;
         font-weight: 600;
+        font-family: 'Open Sans', sans-serif;
     }
 
     .normativa-separator::before,
@@ -308,6 +313,7 @@
         font-weight: 700;
         flex-shrink: 0;
         margin-top: 0.1rem;
+        font-family: 'Open Sans', sans-serif;
     }
 
     .step-content {
@@ -320,6 +326,7 @@
         color: #1e293b;
         margin-bottom: 0.2rem;
         font-size: 0.9rem;
+        font-family: 'Open Sans', sans-serif;
     }
 
     .step-description {
@@ -327,6 +334,7 @@
         font-size: 0.8rem;
         line-height: 1.4;
         margin: 0;
+        font-family: 'Open Sans', sans-serif;
     }
 
     /* Nota final compacta */
@@ -340,6 +348,7 @@
         border-radius: 8px;
         border: 1px solid rgba(100, 116, 139, 0.1);
         line-height: 1.4;
+        font-family: 'Open Sans', sans-serif;
     }
 
     .normativa-note strong {
@@ -362,19 +371,19 @@
     }
 
     .normativa-body::-webkit-scrollbar-thumb:hover {
-        background: linear-gradient(135deg, #059669, #1d4ed8);
+        background: linear-gradient(135deg, var(--pri-700), var(--pri-900));
     }
 
     /* Animaciones para dinamismo */
     @keyframes pulse-glow-normativa {
         0% {
-            box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.4);
+            box-shadow: 0 0 0 0 rgba(101, 168, 163, 0.4);
         }
         70% {
-            box-shadow: 0 0 0 8px rgba(5, 150, 105, 0);
+            box-shadow: 0 0 0 8px rgba(101, 168, 163, 0);
         }
         100% {
-            box-shadow: 0 0 0 0 rgba(5, 150, 105, 0);
+            box-shadow: 0 0 0 0 rgba(101, 168, 163, 0);
         }
     }
 

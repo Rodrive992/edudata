@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
-@section('title', 'Edudata - Formación Profesional')
+@section('title', 'Capacitaciones')
 
 @section('content')
     <div class="container mx-auto px-4 py-6">
         <!-- Tarjeta principal con encabezado de imagen -->
-        <div class="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden mb-6">
+        <div class="bg-white rounded-xl shadow-md border border-[color:var(--gray-200)] overflow-hidden mb-6">
             <!-- Encabezado con imagen redondeada -->
             <div class="p-4 md:p-6 pb-0">
                 <!-- Imagen centrada y responsiva -->
@@ -18,11 +18,11 @@
                 <div class="mb-4 md:mb-6">
                     <div class="space-y-4">
                         <!-- Sección de características - MEJORADO -->
-                        <div class="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-xl p-4 md:p-5 my-4 border border-blue-200">
+                        <div class="bg-gradient-to-br from-[#f0f4ff] to-[#f8f7ff] rounded-xl p-4 md:p-5 my-4 border border-[color:var(--pri-500)]/20" style="--tw-gradient-from: #f0f4ff; --tw-gradient-to: #f8f7ff;">
                             <!-- Descripción principal -->
                             <div class="text-center mb-4 md:mb-5">
-                                <p class="text-gray-700 leading-relaxed text-base md:text-lg">
-                                    Desde la <span class="font-semibold text-blue-700">Dirección Provincial de Desarrollo
+                                <p class="text-[color:var(--ink)] leading-relaxed text-base md:text-lg">
+                                    Desde la <span class="font-semibold text-[color:var(--pri-700)]">Dirección Provincial de Desarrollo
                                         Profesional y Evaluación Educativa</span>
                                     se coordinan programas de formación continua
                                     que fortalecen el desempeño docente
@@ -35,15 +35,15 @@
                                 <!-- Característica 1 -->
                                 <div class="feature-card group p-3">
                                     <div class="flex items-center gap-3">
-                                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-yellow-100 flex items-center justify-center flex-shrink-0">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-yellow-600"
+                                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[color:var(--sec-500)]/10 flex items-center justify-center flex-shrink-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-[color:var(--sec-500)]"
                                                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                     d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                                             </svg>
                                         </div>
                                         <div class="flex-1 min-w-0">
-                                            <p class="text-sm font-semibold text-gray-800">Búsqueda avanzada</p>
+                                            <p class="text-sm font-semibold text-[color:var(--ink)]">Búsqueda avanzada</p>
                                             <p class="text-xs text-gray-600 mt-1">Por año, mes, localidad y modalidad</p>
                                         </div>
                                     </div>
@@ -52,15 +52,15 @@
                                 <!-- Característica 2 -->
                                 <div class="feature-card group p-3">
                                     <div class="flex items-center gap-3">
-                                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-cyan-100 flex items-center justify-center flex-shrink-0">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-cyan-600"
+                                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[color:var(--pri-500)]/10 flex items-center justify-center flex-shrink-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-[color:var(--pri-500)]"
                                                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                     d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                             </svg>
                                         </div>
                                         <div class="flex-1 min-w-0">
-                                            <p class="text-sm font-semibold text-gray-800">Información detallada</p>
+                                            <p class="text-sm font-semibold text-[color:var(--ink)]">Información detallada</p>
                                             <p class="text-xs text-gray-600 mt-1">Datos completos de cada capacitación</p>
                                         </div>
                                     </div>
@@ -69,15 +69,15 @@
                                 <!-- Característica 3 -->
                                 <div class="feature-card group p-3">
                                     <div class="flex items-center gap-3">
-                                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-green-100 flex items-center justify-center flex-shrink-0">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-green-600"
+                                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[color:var(--ter-500)]/10 flex items-center justify-center flex-shrink-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-[color:var(--ter-500)]"
                                                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                     d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                                             </svg>
                                         </div>
                                         <div class="flex-1 min-w-0">
-                                            <p class="text-sm font-semibold text-gray-800">Seguimiento continuo</p>
+                                            <p class="text-sm font-semibold text-[color:var(--ink)]">Seguimiento continuo</p>
                                             <p class="text-xs text-gray-600 mt-1">Actualización periódica</p>
                                         </div>
                                     </div>
@@ -86,14 +86,14 @@
 
                             <!-- Etiquetas informativas -->
                             <div class="flex flex-wrap gap-2 mt-4 justify-center">
-                                <div class="inline-flex items-center bg-white px-3 py-1 rounded-full text-xs md:text-sm text-gray-700 border border-gray-200">
-                                    <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>Capacitación docente
+                                <div class="inline-flex items-center bg-white px-3 py-1 rounded-full text-xs md:text-sm text-gray-700 border border-[color:var(--gray-200)]">
+                                    <span class="w-2 h-2 bg-[color:var(--pri-500)] rounded-full mr-2"></span>Capacitación docente
                                 </div>
-                                <div class="inline-flex items-center bg-white px-3 py-1 rounded-full text-xs md:text-sm text-gray-700 border border-gray-200">
-                                    <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>Desarrollo profesional
+                                <div class="inline-flex items-center bg-white px-3 py-1 rounded-full text-xs md:text-sm text-gray-700 border border-[color:var(--gray-200)]">
+                                    <span class="w-2 h-2 bg-[color:var(--sec-500)] rounded-full mr-2"></span>Desarrollo profesional
                                 </div>
-                                <div class="inline-flex items-center bg-white px-3 py-1 rounded-full text-xs md:text-sm text-gray-700 border border-gray-200">
-                                    <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>Actualización continua
+                                <div class="inline-flex items-center bg-white px-3 py-1 rounded-full text-xs md:text-sm text-gray-700 border border-[color:var(--gray-200)]">
+                                    <span class="w-2 h-2 bg-[color:var(--ter-500)] rounded-full mr-2"></span>Actualización continua
                                 </div>
                             </div>
                         </div>
@@ -104,8 +104,8 @@
             <!-- Contenido de filtros y tabla -->
             <div class="p-4 md:p-6 pt-4">
                 <!-- Tarjeta de filtros compacta en una sola línea -->
-                <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-4 md:p-6 mb-6">
-                    <h2 class="text-base md:text-lg font-semibold text-gray-800 mb-4">Filtrar capacitaciones</h2>
+                <div class="bg-white rounded-xl shadow-sm border border-[color:var(--gray-200)] p-4 md:p-6 mb-6">
+                    <h2 class="text-base md:text-lg font-semibold text-[color:var(--ink)] mb-4">Filtrar capacitaciones</h2>
 
                     @php
                         $anioActual = now()->year;
@@ -115,9 +115,9 @@
                     <form id="filtrosForm" method="GET" class="flex flex-wrap items-end gap-4">
                         <!-- Año -->
                         <div class="w-full sm:w-auto">
-                            <label class="block text-xs font-medium text-gray-700 mb-1">Año</label>
+                            <label class="block text-xs font-medium text-[color:var(--ink)] mb-1">Año</label>
                             <select name="anio"
-                                class="w-full sm:w-40 rounded-lg border border-gray-300 py-2 px-3 focus:border-gray-700 focus:ring-1 focus:ring-gray-700 transition text-sm">
+                                class="w-full sm:w-40 rounded-lg border border-[color:var(--gray-200)] py-2 px-3 focus:border-[color:var(--pri-500)] focus:ring-1 focus:ring-[color:var(--pri-500)] transition text-sm">
                                 <option value="">Todos</option>
                                 @foreach ($anios as $a)
                                     <option value="{{ $a }}" {{ request('anio') == $a ? 'selected' : '' }}>
@@ -128,9 +128,9 @@
 
                         <!-- Mes -->
                         <div class="w-full sm:w-auto">
-                            <label class="block text-xs font-medium text-gray-700 mb-1">Mes</label>
+                            <label class="block text-xs font-medium text-[color:var(--ink)] mb-1">Mes</label>
                             <select name="mes"
-                                class="w-full sm:w-48 rounded-lg border border-gray-300 py-2 px-3 focus:border-gray-700 focus:ring-1 focus:ring-gray-700 transition text-sm">
+                                class="w-full sm:w-48 rounded-lg border border-[color:var(--gray-200)] py-2 px-3 focus:border-[color:var(--pri-500)] focus:ring-1 focus:ring-[color:var(--pri-500)] transition text-sm">
                                 <option value="">Todos</option>
                                 @foreach (range(1, 12) as $m)
                                     <option value="{{ $m }}" {{ request('mes') == $m ? 'selected' : '' }}>
@@ -142,17 +142,17 @@
 
                         <!-- Localidad -->
                         <div class="flex-1 min-w-[14rem]">
-                            <label class="block text-xs font-medium text-gray-700 mb-1">Localidad</label>
+                            <label class="block text-xs font-medium text-[color:var(--ink)] mb-1">Localidad</label>
                             <input type="text" name="localidad" value="{{ request('localidad') }}"
-                                class="w-full rounded-lg border border-gray-300 py-2 px-3 focus:border-gray-700 focus:ring-1 focus:ring-gray-700 transition text-sm"
+                                class="w-full rounded-lg border border-[color:var(--gray-200)] py-2 px-3 focus:border-[color:var(--pri-500)] focus:ring-1 focus:ring-[color:var(--pri-500)] transition text-sm"
                                 placeholder="Buscar por localidad">
                         </div>
 
                         <!-- Modalidad -->
                         <div class="w-full sm:w-auto">
-                            <label class="block text-xs font-medium text-gray-700 mb-1">Modalidad</label>
+                            <label class="block text-xs font-medium text-[color:var(--ink)] mb-1">Modalidad</label>
                             <select name="modalidad"
-                                class="w-full sm:w-48 rounded-lg border border-gray-300 py-2 px-3 focus:border-gray-700 focus:ring-1 focus:ring-gray-700 transition text-sm">
+                                class="w-full sm:w-48 rounded-lg border border-[color:var(--gray-200)] py-2 px-3 focus:border-[color:var(--pri-500)] focus:ring-1 focus:ring-[color:var(--pri-500)] transition text-sm">
                                 <option value="">Todas</option>
                                 <option value="Virtual" {{ request('modalidad') == 'Virtual' ? 'selected' : '' }}>Virtual
                                 </option>
@@ -165,7 +165,7 @@
                         <!-- Botón Buscar -->
                         <div class="w-full sm:w-auto">
                             <button type="submit"
-                                class="w-full sm:w-auto bg-gray-800 hover:bg-gray-700 text-white font-semibold py-2.5 px-5 rounded-lg shadow-sm transition focus:outline-none focus:ring-2 focus:ring-gray-500 text-sm">
+                                class="w-full sm:w-auto bg-[color:var(--pri-700)] hover:bg-[color:var(--pri-900)] text-white font-semibold py-2.5 px-5 rounded-lg shadow-sm transition focus:outline-none focus:ring-2 focus:ring-[color:var(--pri-500)] text-sm">
                                 Buscar
                             </button>
                         </div>
@@ -173,7 +173,7 @@
                         @if (request()->hasAny(['anio', 'mes', 'localidad', 'modalidad']))
                             <div class="w-full sm:w-auto">
                                 <a href="{{ route('edudata.capacitaciones') }}"
-                                    class="w-full sm:w-auto bg-white hover:bg-gray-50 text-gray-800 font-semibold py-2.5 px-5 rounded-lg border border-gray-300 shadow-sm transition focus:outline-none focus:ring-2 focus:ring-gray-500 text-sm inline-flex items-center justify-center">
+                                    class="w-full sm:w-auto bg-white hover:bg-[color:var(--gray-100)] text-[color:var(--ink)] font-semibold py-2.5 px-5 rounded-lg border border-[color:var(--gray-200)] shadow-sm transition focus:outline-none focus:ring-2 focus:ring-[color:var(--gray-300)] text-sm inline-flex items-center justify-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2"
                                         viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd"
@@ -189,7 +189,7 @@
                     <!-- Información de resultados -->
                     @if (($capacitaciones->total() ?? 0) > 0)
                         <div class="mt-4 text-sm text-gray-600 flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5 text-green-500"
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5 text-[color:var(--sec-500)]"
                                 viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd"
                                     d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -205,11 +205,11 @@
                 <div id="resultados"></div>
 
                 {{-- ===== TABLA MEJORADA ===== --}}
-                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="bg-white rounded-xl shadow-sm border border-[color:var(--gray-200)] overflow-hidden">
                     <!-- Header resumen -->
-                    <div class="px-4 md:px-6 py-4 border-b border-gray-100 bg-gray-50">
+                    <div class="px-4 md:px-6 py-4 border-b border-[color:var(--gray-200)] bg-[color:var(--gray-100)]">
                         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
-                            <h3 class="text-base md:text-lg font-semibold text-gray-800">
+                            <h3 class="text-base md:text-lg font-semibold text-[color:var(--ink)]">
                                 Capacitaciones registradas
                             </h3>
                             <p class="text-xs md:text-sm text-gray-600">
@@ -241,7 +241,7 @@
                                 <tr class="bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
                                     @php
                                         $thBase =
-                                            'px-4 py-3 text-left text-xs font-semibold tracking-wider uppercase text-gray-700 border-b-2 border-gray-200';
+                                            'px-4 py-3 text-left text-xs font-semibold tracking-wider uppercase text-[color:var(--ink)] border-b-2 border-[color:var(--gray-200)]';
                                     @endphp
                                     <th class="{{ $thBase }} w-48">Oferente</th>
                                     <th class="{{ $thBase }} min-w-80">Denominación</th>
@@ -256,11 +256,11 @@
                                 </tr>
                             </thead>
 
-                            <tbody class="divide-y divide-gray-100">
+                            <tbody class="divide-y divide-[color:var(--gray-200)]">
                                 @forelse($capacitaciones as $cap)
-                                    <tr class="odd:bg-gray-50/40 hover:bg-blue-50/60 transition-colors group">
+                                    <tr class="odd:bg-[color:var(--gray-100)]/40 hover:bg-[color:var(--pri-500)]/5 transition-colors group">
                                         {{-- Oferente --}}
-                                        <td class="px-4 py-3 text-gray-900">
+                                        <td class="px-4 py-3 text-[color:var(--ink)]">
                                             <div class="max-w-[12rem] group-hover:max-w-none transition-all duration-200">
                                                 <span class="block break-words font-medium">
                                                     {{ $cap->oferente }}
@@ -269,7 +269,7 @@
                                         </td>
 
                                         {{-- Denominación --}}
-                                        <td class="px-4 py-3 text-gray-900">
+                                        <td class="px-4 py-3 text-[color:var(--ink)]">
                                             <div class="max-w-[20rem] group-hover:max-w-none transition-all duration-200">
                                                 <span class="block break-words">
                                                     {{ $cap->denominacion_proyecto }}
@@ -278,9 +278,9 @@
                                         </td>
 
                                         {{-- Tipo --}}
-                                        <td class="px-4 py-3 text-gray-800">
+                                        <td class="px-4 py-3 text-[color:var(--ink)]">
                                             <span
-                                                class="inline-flex items-center rounded-md border border-gray-300 bg-white px-2 py-1 text-xs font-medium text-gray-700 whitespace-normal break-words">
+                                                class="inline-flex items-center rounded-md border border-[color:var(--gray-300)] bg-white px-2 py-1 text-xs font-medium text-[color:var(--ink)] whitespace-normal break-words">
                                                 {{ $cap->tipo_proyecto }}
                                             </span>
                                         </td>
@@ -294,8 +294,8 @@
                                                     true,
                                                 );
                                                 $modClasses = $isVirtual
-                                                    ? 'bg-blue-50 text-blue-700 ring-1 ring-inset ring-blue-200'
-                                                    : 'bg-emerald-50 text-emerald-700 ring-1 ring-inset ring-emerald-200';
+                                                    ? 'bg-[color:var(--pri-500)]/10 text-[color:var(--pri-700)] ring-1 ring-inset ring-[color:var(--pri-500)]/20'
+                                                    : 'bg-[color:var(--ter-500)]/10 text-[color:var(--ter-500)] ring-1 ring-inset ring-[color:var(--ter-500)]/20';
                                             @endphp
                                             <span
                                                 class="inline-flex items-center rounded-full px-2.5 py-1 text-xs font-semibold {{ $modClasses }} whitespace-nowrap">
@@ -306,7 +306,7 @@
                                         {{-- Eje (pill neutro) --}}
                                         <td class="px-4 py-3">
                                             <span
-                                                class="inline-flex items-center rounded-full bg-gray-100 text-gray-700 px-2.5 py-1 text-xs font-medium ring-1 ring-inset ring-gray-200 break-words max-w-full">
+                                                class="inline-flex items-center rounded-full bg-[color:var(--gray-100)] text-[color:var(--ink)] px-2.5 py-1 text-xs font-medium ring-1 ring-inset ring-[color:var(--gray-300)] break-words max-w-full">
                                                 {{ $cap->eje }}
                                             </span>
                                         </td>
@@ -314,13 +314,13 @@
                                         {{-- Nivel (pill neutro) --}}
                                         <td class="px-4 py-3">
                                             <span
-                                                class="inline-flex items-center rounded-full bg-slate-100 text-slate-700 px-2.5 py-1 text-xs font-medium ring-1 ring-inset ring-slate-200 whitespace-nowrap">
+                                                class="inline-flex items-center rounded-full bg-[color:var(--gray-100)] text-[color:var(--ink)] px-2.5 py-1 text-xs font-medium ring-1 ring-inset ring-[color:var(--gray-300)] whitespace-nowrap">
                                                 {{ $cap->nivel }}
                                             </span>
                                         </td>
 
                                         {{-- Localidad --}}
-                                        <td class="px-4 py-3 text-gray-800">
+                                        <td class="px-4 py-3 text-[color:var(--ink)]">
                                             <div class="max-w-[12rem] group-hover:max-w-none transition-all duration-200">
                                                 <span class="block break-words">
                                                     {{ $cap->localidad }}
@@ -329,7 +329,7 @@
                                         </td>
 
                                         {{-- Dirección --}}
-                                        <td class="px-4 py-3 text-gray-800">
+                                        <td class="px-4 py-3 text-[color:var(--ink)]">
                                             <div class="max-w-[16rem] group-hover:max-w-none transition-all duration-200">
                                                 <span class="block break-words">
                                                     {{ $cap->direccion }}
@@ -338,10 +338,10 @@
                                         </td>
 
                                         {{-- Fechas --}}
-                                        <td class="px-4 py-3 text-gray-900 whitespace-nowrap font-medium">
+                                        <td class="px-4 py-3 text-[color:var(--ink)] whitespace-nowrap font-medium">
                                             {{ \Carbon\Carbon::parse($cap->fecha_inicio)->format('d/m/Y') }}
                                         </td>
-                                        <td class="px-4 py-3 text-gray-900 whitespace-nowrap font-medium">
+                                        <td class="px-4 py-3 text-[color:var(--ink)] whitespace-nowrap font-medium">
                                             {{ \Carbon\Carbon::parse($cap->fecha_finalizacion)->format('d/m/Y') }}
                                         </td>
                                     </tr>
@@ -357,7 +357,7 @@
                     </div>
 
                     <!-- Paginación -->
-                    <div class="px-4 py-3 border-t border-gray-100 bg-gray-50">
+                    <div class="px-4 py-3 border-t border-[color:var(--gray-200)] bg-[color:var(--gray-100)]">
                         {{ $capacitaciones->appends(request()->query())->links() }}
                     </div>
                 </div>

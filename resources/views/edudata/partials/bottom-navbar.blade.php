@@ -1,10 +1,10 @@
-<footer class="bg-gray-800 text-white py-4">
+<footer class="bg-[var(--pri-900)] text-white py-4">
     <div class="container mx-auto px-6">
         <div class="flex flex-col sm:flex-row items-center justify-between">
             <!-- Copyright con mejor jerarquía -->
             <div class="text-center text-sm text-gray-300 flex-1 mb-4 sm:mb-0">
-                <p class="font-sans leading-relaxed">
-                    <span class="font-bold text-white border-b-2 border-blue-400 pb-0.5">Ministerio de Educación, Ciencia y Tecnología</span>
+                <p class="font-secondary leading-relaxed">
+                    <span class="font-bold text-white border-b-2 border-[var(--pri-500)] pb-0.5">Ministerio de Educación, Ciencia y Tecnología</span>
                     <br class="sm:hidden">
                     <span class="hidden sm:inline"> | </span>
                     <span class="font-medium">Gobierno de Catamarca</span>

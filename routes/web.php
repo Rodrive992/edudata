@@ -19,6 +19,7 @@ use App\Http\Controllers\SolicitudCargoController;
 use App\Models\MantenimientoRealizadas;
 use App\Http\Controllers\SolicitudInformacionController;
 use App\Http\Controllers\CoberturaCargosController;
+use App\Http\Controllers\DatosEstadisticasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,9 +30,7 @@ use App\Http\Controllers\CoberturaCargosController;
 */
 
 // Página principal - Acceso Publico
-Route::get('/', function () {
-    return view('edudata.index');
-})->name('edudata.index');
+Route::get('/', [DatosEstadisticasController::class, 'index'])->name('edudata.index');
 // Url Edured - Acceso Publico
 Route::get('/edured', [AuthController::class, 'showLoginForm'])->name('login');
 
@@ -151,3 +150,4 @@ Route::prefix('edured')->middleware('auth')->group(function () {
         });
     });
 });
+

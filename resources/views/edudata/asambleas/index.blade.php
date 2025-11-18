@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Edudata - Cobertura de Cargos')
+@section('title', 'Cobertura de Cargos')
 
 @section('content')
     <style>
@@ -34,7 +34,7 @@
         }
 
         .folder-tab:hover::before {
-            background: linear-gradient(90deg, #8b5cf6, #3b82f6);
+            background: linear-gradient(90deg, var(--pri-700), var(--pri-500));
         }
 
         @media (max-width:768px) {
@@ -55,7 +55,7 @@
         }
 
         .folder-tab.is-active::before {
-            background: linear-gradient(90deg, #8b5cf6, #3b82f6);
+            background: linear-gradient(90deg, var(--pri-700), var(--pri-500));
             height: 3px;
             bottom: -3px;
         }
@@ -119,7 +119,7 @@
         /* Tarjeta de búsqueda MÁS COMPACTA */
         .search-form-compact {
             background: #fff;
-            border: 2px solid #e2e8f0;
+            border: 2px solid var(--gray-200);
             border-radius: 0 12px 12px 12px;
             padding: 1.25rem;
             box-shadow: 0 4px 12px rgba(0, 0, 0, .05);
@@ -139,8 +139,8 @@
 
         /* Contenedor para las tarjetas de contenido */
         .folder-container {
-            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-            border: 2px solid #e2e8f0;
+            background: linear-gradient(135deg, var(--gray-100) 0%, #f1f5f9 100%);
+            border: 2px solid var(--gray-200);
             border-radius: 0 12px 12px 12px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
             position: relative;
@@ -167,7 +167,7 @@
         /* Estilos para tarjetas de archivo */
         .file-card {
             background: #fff;
-            border: 1px solid #e2e8f0;
+            border: 1px solid var(--gray-200);
             border-radius: 12px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, .04);
             transition: all .3s ease;
@@ -187,7 +187,7 @@
         }
 
         .section-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--pri-500) 0%, var(--pri-900) 100%);
             color: #fff;
             padding: 1rem 1.5rem;
             border-radius: 12px 12px 0 0;
@@ -272,11 +272,11 @@
 
         /* Estilos específicos para cobertura de cargos */
         .counter-card {
-            background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
+            background: linear-gradient(135deg, #fff 0%, var(--gray-100) 100%);
             border-radius: 12px;
             padding: 1.5rem;
             box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
-            border: 1px solid #e2e8f0;
+            border: 1px solid var(--gray-200);
             text-align: center;
             transition: all 0.3s ease;
         }
@@ -321,7 +321,7 @@
             border-radius: 12px;
             padding: 1.5rem;
             box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
-            border: 1px solid #e2e8f0;
+            border: 1px solid var(--gray-200);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -379,9 +379,9 @@
                         <!-- Descripción principal centrada -->
                         <div class="text-center mb-4 md:mb-6">
                             <p class="text-gray-700 leading-relaxed text-base md:text-lg">
-                                EL <span class="font-semibold text-blue-700">Ministerio de Educación, Ciencia y
+                                EL <span class="font-semibold text-primary-700">Ministerio de Educación, Ciencia y
                                     Tecnología</span>
-                                informa la cantidad de  cargos ofrecidos en las
+                                informa la cantidad de cargos ofrecidos en las
                                 asambleas ordinarias y extraordinarias del año 2025,
                                 organizados por nivel educativo y tipo de concurso.
                             </p>
@@ -390,33 +390,30 @@
                         <!-- Tarjetas de resumen en grid mejorado -->
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
                             <!-- Tarjeta 1 -->
-                            <div class="counter-card group p-4" style="border-left-color: #8b5cf6;">
+                            <div class="counter-card group p-4" style="border-left-color: var(--pri-700);">
                                 <div class="flex items-center gap-3">
-                                   
                                     <div class="flex-1 min-w-0">
-                                        <div class="counter-number text-purple-600">431</div>
+                                        <div class="counter-number text-primary-700">431</div>
                                         <div class="counter-label">Nivel Inicial, Primario, Especial y Adultos</div>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Tarjeta 2 -->
-                            <div class="counter-card group p-4" style="border-left-color: #3b82f6;">
+                            <div class="counter-card group p-4" style="border-left-color: var(--pri-500);">
                                 <div class="flex items-center gap-3">
-                                   
                                     <div class="flex-1 min-w-0">
-                                        <div class="counter-number text-blue-600">1,942</div>
+                                        <div class="counter-number text-primary-500">1,942</div>
                                         <div class="counter-label">Nivel Secundario y Modalidades</div>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Tarjeta 3 -->
-                            <div class="counter-card group p-4" style="border-left-color: #10b981;">
+                            <div class="counter-card group p-4" style="border-left-color: var(--ter-500);">
                                 <div class="flex items-center gap-3">
-                                    
                                     <div class="flex-1 min-w-0">
-                                        <div class="counter-number text-green-600">914</div>
+                                        <div class="counter-number text-tertiary-500">914</div>
                                         <div class="counter-label">Nivel Superior</div>
                                     </div>
                                 </div>
@@ -427,15 +424,15 @@
                         <div class="flex flex-wrap gap-2 mt-4 justify-center">
                             <div
                                 class="inline-flex items-center bg-white px-3 py-1 rounded-full text-xs md:text-sm text-gray-700 border border-gray-200">
-                                <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>Asambleas Ordinarias
+                                <span class="w-2 h-2 bg-primary-500 rounded-full mr-2"></span>Asambleas Ordinarias
                             </div>
                             <div
                                 class="inline-flex items-center bg-white px-3 py-1 rounded-full text-xs md:text-sm text-gray-700 border border-gray-200">
-                                <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>Asambleas Extraordinarias
+                                <span class="w-2 h-2 bg-secondary-500 rounded-full mr-2"></span>Asambleas Extraordinarias
                             </div>
                             <div
                                 class="inline-flex items-center bg-white px-3 py-1 rounded-full text-xs md:text-sm text-gray-700 border border-gray-200">
-                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>Concursos de Nivel Superior
+                                <span class="w-2 h-2 bg-accent-500 rounded-full mr-2"></span>Concursos de Nivel Superior
                             </div>
                         </div>
                     </div>
@@ -443,9 +440,8 @@
             </div>
         </div>
 
-
         <!-- Archivero MEJORADO con pestañas emergentes -->
-        <div  x-data="archiveroCargos()" x-init="initFromQuery('{{ request('nivel', 'inicial-primario') }}')">
+        <div x-data="archiveroCargos()" x-init="initFromQuery('{{ request('nivel', 'inicial-primario') }}')">
 
             {{-- Pestañas EMERGENTES --}}
             <div class="folder-container mb-4 md:mb-6">
@@ -481,76 +477,75 @@
 
                         <div class="results-grid mobile-card-container">
                             <!-- Asambleas Ordinarias -->
-                            <div class="file-card" style="border-left-color:#8b5cf6;">
+                            <div class="file-card" style="border-left-color: var(--pri-700);">
                                 <div class="section-header"
-                                    style="background:linear-gradient(135deg,#8b5cf6 0%,#7c3aed 100%);">
+                                    style="background:linear-gradient(135deg, var(--pri-700) 0%, var(--pri-900) 100%);">
                                     <h3 class="text-base md:text-lg font-bold text-white">Asambleas Ordinarias</h3>
-                                    
                                 </div>
                                 <div class="p-4 max-h-96 overflow-y-auto mobile-optimized">
-                                    <div class="assembly-card" style="border-left-color:#8b5cf6;">
+                                    <div class="assembly-card" style="border-left-color: var(--pri-700);">
                                         <div class="flex justify-between items-start">
                                             <div>
                                                 <h4 class="font-semibold text-gray-800">1° Asamblea ordinaria</h4>
                                                 <p class="text-sm text-gray-600">31 de mayo de 2025</p>
                                             </div>
                                             <span
-                                                class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-bold">67
+                                                class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-bold">67
                                                 cargos</span>
                                         </div>
                                     </div>
-                                    <div class="assembly-card" style="border-left-color:#8b5cf6;">
+                                    <div class="assembly-card" style="border-left-color: var(--pri-700);">
                                         <div class="flex justify-between items-start">
                                             <div>
                                                 <h4 class="font-semibold text-gray-800">2° Asamblea ordinaria</h4>
                                                 <p class="text-sm text-gray-600">12 de junio de 2025</p>
                                             </div>
                                             <span
-                                                class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-bold">66
+                                                class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-bold">66
                                                 cargos</span>
                                         </div>
                                     </div>
-                                    <div class="assembly-card" style="border-left-color:#8b5cf6;">
+                                    <div class="assembly-card" style="border-left-color: var(--pri-700);">
                                         <div class="flex justify-between items-start">
                                             <div>
                                                 <h4 class="font-semibold text-gray-800">3° Asamblea ordinaria</h4>
                                                 <p class="text-sm text-gray-600">03 de julio de 2025</p>
                                             </div>
                                             <span
-                                                class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-bold">69
+                                                class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-bold">69
                                                 cargos</span>
                                         </div>
                                     </div>
-                                    <div class="assembly-card" style="border-left-color:#8b5cf6;">
+                                    <div class="assembly-card" style="border-left-color: var(--pri-700);">
                                         <div class="flex justify-between items-start">
                                             <div>
                                                 <h4 class="font-semibold text-gray-800">4° Asamblea ordinaria</h4>
                                                 <p class="text-sm text-gray-600">21 de agosto de 2025</p>
                                             </div>
                                             <span
-                                                class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-bold">18
+                                                class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-bold">18
                                                 cargos</span>
                                         </div>
                                     </div>
-                                    <div class="assembly-card" style="border-left-color:#8b5cf6;">
+                                    <div class="assembly-card" style="border-left-color: var(--pri-700);">
                                         <div class="flex justify-between items-start">
                                             <div>
                                                 <h4 class="font-semibold text-gray-800">5° Asamblea ordinaria</h4>
                                                 <p class="text-sm text-gray-600">08 de septiembre de 2025</p>
                                             </div>
                                             <span
-                                                class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-bold">50
+                                                class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-bold">50
                                                 cargos</span>
                                         </div>
                                     </div>
-                                    <div class="assembly-card" style="border-left-color:#8b5cf6;">
+                                    <div class="assembly-card" style="border-left-color: var(--pri-700);">
                                         <div class="flex justify-between items-start">
                                             <div>
                                                 <h4 class="font-semibold text-gray-800">6° Asamblea ordinaria</h4>
                                                 <p class="text-sm text-gray-600">09 de octubre de 2025</p>
                                             </div>
                                             <span
-                                                class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-bold">110
+                                                class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-bold">110
                                                 cargos</span>
                                         </div>
                                     </div>
@@ -558,43 +553,42 @@
                             </div>
 
                             <!-- Asambleas Extraordinarias -->
-                            <div class="file-card" style="border-left-color:#3b82f6;">
+                            <div class="file-card" style="border-left-color: var(--sec-500);">
                                 <div class="section-header"
-                                    style="background:linear-gradient(135deg,#3b82f6 0%,#1d4ed8 100%);">
+                                    style="background:linear-gradient(135deg, var(--sec-500) 0%, #a8b41d 100%);">
                                     <h3 class="text-base md:text-lg font-bold text-white">Asambleas Extraordinarias</h3>
-                                    
                                 </div>
                                 <div class="p-4 max-h-96 overflow-y-auto mobile-optimized">
-                                    <div class="assembly-card" style="border-left-color:#3b82f6;">
+                                    <div class="assembly-card" style="border-left-color: var(--sec-500);">
                                         <div class="flex justify-between items-start">
                                             <div>
                                                 <h4 class="font-semibold text-gray-800">1° Asamblea extraordinaria</h4>
                                                 <p class="text-sm text-gray-600">08 de agosto de 2025</p>
                                             </div>
                                             <span
-                                                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-bold">27
+                                                class="bg-secondary-100 text-secondary-800 px-3 py-1 rounded-full text-sm font-bold">27
                                                 cargos</span>
                                         </div>
                                     </div>
-                                    <div class="assembly-card" style="border-left-color:#3b82f6;">
+                                    <div class="assembly-card" style="border-left-color: var(--sec-500);">
                                         <div class="flex justify-between items-start">
                                             <div>
                                                 <h4 class="font-semibold text-gray-800">2° Asamblea extraordinaria</h4>
                                                 <p class="text-sm text-gray-600">12 de septiembre de 2025</p>
                                             </div>
                                             <span
-                                                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-bold">13
+                                                class="bg-secondary-100 text-secondary-800 px-3 py-1 rounded-full text-sm font-bold">13
                                                 cargos</span>
                                         </div>
                                     </div>
-                                    <div class="assembly-card" style="border-left-color:#3b82f6;">
+                                    <div class="assembly-card" style="border-left-color: var(--sec-500);">
                                         <div class="flex justify-between items-start">
                                             <div>
                                                 <h4 class="font-semibold text-gray-800">3° Asamblea extraordinaria</h4>
                                                 <p class="text-sm text-gray-600">24 de octubre de 2025</p>
                                             </div>
                                             <span
-                                                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-bold">11
+                                                class="bg-secondary-100 text-secondary-800 px-3 py-1 rounded-full text-sm font-bold">11
                                                 cargos</span>
                                         </div>
                                     </div>
@@ -602,16 +596,16 @@
                             </div>
 
                             <!-- Resumen Total -->
-                            <div class="file-card" style="border-left-color:#10b981;">
+                            <div class="file-card" style="border-left-color: var(--ter-500);">
                                 <div class="section-header"
-                                    style="background:linear-gradient(135deg,#10b981 0%,#059669 100%);">
+                                    style="background:linear-gradient(135deg, var(--ter-500) 0%, #4f8c87 100%);">
                                     <h3 class="text-base md:text-lg font-bold text-white">Resumen Total</h3>
                                     <p class="text-xs md:text-sm text-white/90 mt-1">Nivel Inicial, Primario, Especial y
                                         Adultos</p>
                                 </div>
                                 <div class="p-4">
                                     <div class="text-center py-4">
-                                        <div class="text-4xl md:text-5xl font-bold text-green-600 mb-2">431</div>
+                                        <div class="text-4xl md:text-5xl font-bold text-tertiary-500 mb-2">431</div>
                                         <p class="text-lg font-semibold text-gray-700">Cargos Totales Ofrecidos</p>
                                         <div class="mt-4 space-y-2">
                                             <div class="flex justify-between">
@@ -624,7 +618,7 @@
                                             </div>
                                             <div class="flex justify-between border-t pt-2 mt-2">
                                                 <span class="text-gray-800 font-semibold">Total General:</span>
-                                                <span class="font-bold text-green-600">431 cargos</span>
+                                                <span class="font-bold text-tertiary-500">431 cargos</span>
                                             </div>
                                         </div>
                                     </div>
@@ -645,77 +639,75 @@
 
                         <div class="results-grid mobile-card-container">
                             <!-- Asambleas Ordinarias -->
-                            <div class="file-card" style="border-left-color:#f59e0b;">
+                            <div class="file-card" style="border-left-color: var(--pri-500);">
                                 <div class="section-header"
-                                    style="background:linear-gradient(135deg,#f59e0b 0%,#d97706 100%);">
+                                    style="background:linear-gradient(135deg, var(--pri-500) 0%, var(--pri-700) 100%);">
                                     <h3 class="text-base md:text-lg font-bold text-white">Asambleas Ordinarias</h3>
-                                    
-                                    </p>
                                 </div>
                                 <div class="p-4 max-h-96 overflow-y-auto mobile-optimized">
-                                    <div class="assembly-card" style="border-left-color:#f59e0b;">
+                                    <div class="assembly-card" style="border-left-color: var(--pri-500);">
                                         <div class="flex justify-between items-start">
                                             <div>
                                                 <h4 class="font-semibold text-gray-800">1° Asamblea ordinaria</h4>
                                                 <p class="text-sm text-gray-600">02 de junio de 2025</p>
                                             </div>
                                             <span
-                                                class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-bold">366
+                                                class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-bold">366
                                                 cargos</span>
                                         </div>
                                     </div>
-                                    <div class="assembly-card" style="border-left-color:#f59e0b;">
+                                    <div class="assembly-card" style="border-left-color: var(--pri-500);">
                                         <div class="flex justify-between items-start">
                                             <div>
                                                 <h4 class="font-semibold text-gray-800">2° Asamblea ordinaria</h4>
                                                 <p class="text-sm text-gray-600">11 de junio de 2025</p>
                                             </div>
                                             <span
-                                                class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-bold">259
+                                                class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-bold">259
                                                 cargos</span>
                                         </div>
                                     </div>
-                                    <div class="assembly-card" style="border-left-color:#f59e0b;">
+                                    <div class="assembly-card" style="border-left-color: var(--pri-500);">
                                         <div class="flex justify-between items-start">
                                             <div>
                                                 <h4 class="font-semibold text-gray-800">3° Asamblea ordinaria</h4>
                                                 <p class="text-sm text-gray-600">1° de Julio de 2025</p>
                                             </div>
                                             <span
-                                                class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-bold">462
+                                                class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-bold">462
                                                 cargos</span>
                                         </div>
                                     </div>
-                                    <div class="assembly-card" style="border-left-color:#f59e0b;">
+                                    <div class="assembly-card" style="border-left-color: var(--pri-500);">
                                         <div class="flex justify-between items-start">
                                             <div>
                                                 <h4 class="font-semibold text-gray-800">4° Asamblea ordinaria</h4>
                                                 <p class="text-sm text-gray-600">22 de agosto de 2025</p>
                                             </div>
                                             <span
-                                                class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-bold">344
+                                                class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-bold">344
                                                 cargos</span>
                                         </div>
                                     </div>
-                                    <div class="assembly-card" style="border-left-color:#f59e0b;">
+                                    <div class="assembly-card" style="border-left-color: var(--pri-500);">
                                         <div class="flex justify-between items-start">
                                             <div>
                                                 <h4 class="font-semibold text-gray-800">5° Asamblea ordinaria</h4>
                                                 <p class="text-sm text-gray-600">05 de septiembre de 2025</p>
                                             </div>
                                             <span
-                                                class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-bold">148
+                                                class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-bold">148
                                                 cargos</span>
                                         </div>
                                     </div>
-                                    <div class="assembly-card" style="border-left-color:#f59e0b;">
+                                    <div class="assembly-card" style="border-left-color: var(--pri-500);">
                                         <div class="flex justify-between items-start">
                                             <div>
                                                 <h4 class="font-semibold text-gray-800">6° Asamblea ordinaria</h4>
                                                 <p class="text-sm text-gray-600">13 de octubre de 2025</p>
                                             </div>
                                             <span
-                                                class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-bold">298
+                                                class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-bold">298
                                                 cargos</span>
                                         </div>
                                     </div>
@@ -723,36 +715,35 @@
                             </div>
 
                             <!-- Asambleas Extraordinarias -->
-                            <div class="file-card" style="border-left-color:#ef4444;">
+                            <div class="file-card" style="border-left-color: var(--acc-500);">
                                 <div class="section-header"
-                                    style="background:linear-gradient(135deg,#ef4444 0%,#dc2626 100%);">
+                                    style="background:linear-gradient(135deg, var(--acc-500) 0%, #6c6991 100%);">
                                     <h3 class="text-base md:text-lg font-bold text-white">Asambleas Extraordinarias</h3>
-                                    
                                 </div>
                                 <div class="p-4 max-h-96 overflow-y-auto mobile-optimized">
-                                    <div class="assembly-card" style="border-left-color:#ef4444;">
+                                    <div class="assembly-card" style="border-left-color: var(--acc-500);">
                                         <div class="flex justify-between items-start">
                                             <div>
                                                 <h4 class="font-semibold text-gray-800">1° Asamblea extraordinaria</h4>
                                                 <p class="text-sm text-gray-600">11 de agosto de 2025</p>
                                             </div>
                                             <span
-                                                class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-bold">26
+                                                class="bg-accent-100 text-accent-800 px-3 py-1 rounded-full text-sm font-bold">26
                                                 cargos</span>
                                         </div>
                                     </div>
-                                    <div class="assembly-card" style="border-left-color:#ef4444;">
+                                    <div class="assembly-card" style="border-left-color: var(--acc-500);">
                                         <div class="flex justify-between items-start">
                                             <div>
                                                 <h4 class="font-semibold text-gray-800">2° Asamblea extraordinaria</h4>
                                                 <p class="text-sm text-gray-600">14 de octubre de 2025</p>
                                             </div>
                                             <span
-                                                class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-bold">6
+                                                class="bg-accent-100 text-accent-800 px-3 py-1 rounded-full text-sm font-bold">6
                                                 cargos</span>
                                         </div>
                                     </div>
-                                    <div class="assembly-card" style="border-left-color:#ef4444;">
+                                    <div class="assembly-card" style="border-left-color: var(--acc-500);">
                                         <div class="flex justify-between items-start">
                                             <div>
                                                 <h4 class="font-semibold text-gray-800">3° Asamblea extraordinaria</h4>
@@ -760,18 +751,18 @@
                                                     Sierra)</p>
                                             </div>
                                             <span
-                                                class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-bold">15
+                                                class="bg-accent-100 text-accent-800 px-3 py-1 rounded-full text-sm font-bold">15
                                                 cargos</span>
                                         </div>
                                     </div>
-                                    <div class="assembly-card" style="border-left-color:#ef4444;">
+                                    <div class="assembly-card" style="border-left-color: var(--acc-500);">
                                         <div class="flex justify-between items-start">
                                             <div>
                                                 <h4 class="font-semibold text-gray-800">3° Asamblea extraordinaria</h4>
                                                 <p class="text-sm text-gray-600">24 de octubre de 2025</p>
                                             </div>
                                             <span
-                                                class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-bold">18
+                                                class="bg-accent-100 text-accent-800 px-3 py-1 rounded-full text-sm font-bold">18
                                                 cargos</span>
                                         </div>
                                     </div>
@@ -779,15 +770,15 @@
                             </div>
 
                             <!-- Resumen Total -->
-                            <div class="file-card" style="border-left-color:#8b5cf6;">
+                            <div class="file-card" style="border-left-color: var(--pri-700);">
                                 <div class="section-header"
-                                    style="background:linear-gradient(135deg,#8b5cf6 0%,#7c3aed 100%);">
+                                    style="background:linear-gradient(135deg, var(--pri-700) 0%, var(--pri-900) 100%);">
                                     <h3 class="text-base md:text-lg font-bold text-white">Resumen Total</h3>
                                     <p class="text-xs md:text-sm text-white/90 mt-1">Nivel Secundario y Modalidades</p>
                                 </div>
                                 <div class="p-4">
                                     <div class="text-center py-4">
-                                        <div class="text-4xl md:text-5xl font-bold text-purple-600 mb-2">1,942</div>
+                                        <div class="text-4xl md:text-5xl font-bold text-primary-700 mb-2">1,942</div>
                                         <p class="text-lg font-semibold text-gray-700">Cargos Totales Ofrecidos</p>
                                         <div class="mt-4 space-y-2">
                                             <div class="flex justify-between">
@@ -800,7 +791,7 @@
                                             </div>
                                             <div class="flex justify-between border-t pt-2 mt-2">
                                                 <span class="text-gray-800 font-semibold">Total General:</span>
-                                                <span class="font-bold text-purple-600">1,942 cargos</span>
+                                                <span class="font-bold text-primary-700">1,942 cargos</span>
                                             </div>
                                         </div>
                                     </div>
@@ -821,25 +812,24 @@
 
                         <div class="results-grid mobile-card-container">
                             <!-- Llamados a Concurso -->
-                            <div class="file-card" style="border-left-color:#06b6d4;">
+                            <div class="file-card" style="border-left-color: var(--ter-500);">
                                 <div class="section-header"
-                                    style="background:linear-gradient(135deg,#06b6d4 0%,#0891b2 100%);">
+                                    style="background:linear-gradient(135deg, var(--ter-500) 0%, #4f8c87 100%);">
                                     <h3 class="text-base md:text-lg font-bold text-white">Llamados a Concurso</h3>
-                            
                                 </div>
                                 <div class="p-4 max-h-96 overflow-y-auto mobile-optimized">
-                                    <div class="assembly-card" style="border-left-color:#06b6d4;">
+                                    <div class="assembly-card" style="border-left-color: var(--ter-500);">
                                         <div class="flex justify-between items-start">
                                             <div>
                                                 <h4 class="font-semibold text-gray-800">1º llamado a cobertura</h4>
                                                 <p class="text-sm text-gray-600">24 de junio de 2025</p>
                                             </div>
                                             <span
-                                                class="bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full text-sm font-bold">187
+                                                class="bg-tertiary-100 text-tertiary-800 px-3 py-1 rounded-full text-sm font-bold">187
                                                 cargos</span>
                                         </div>
                                     </div>
-                                    <div class="assembly-card" style="border-left-color:#06b6d4;">
+                                    <div class="assembly-card" style="border-left-color: var(--ter-500);">
                                         <div class="flex justify-between items-start">
                                             <div>
                                                 <h4 class="font-semibold text-gray-800">2º llamado a cobertura</h4>
@@ -847,29 +837,29 @@
                                                     2025</p>
                                             </div>
                                             <span
-                                                class="bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full text-sm font-bold">455
+                                                class="bg-tertiary-100 text-tertiary-800 px-3 py-1 rounded-full text-sm font-bold">455
                                                 cargos</span>
                                         </div>
                                     </div>
-                                    <div class="assembly-card" style="border-left-color:#06b6d4;">
+                                    <div class="assembly-card" style="border-left-color: var(--ter-500);">
                                         <div class="flex justify-between items-start">
                                             <div>
                                                 <h4 class="font-semibold text-gray-800">3º llamado a cobertura</h4>
                                                 <p class="text-sm text-gray-600">15 de septiembre de 2025</p>
                                             </div>
                                             <span
-                                                class="bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full text-sm font-bold">111
+                                                class="bg-tertiary-100 text-tertiary-800 px-3 py-1 rounded-full text-sm font-bold">111
                                                 cargos</span>
                                         </div>
                                     </div>
-                                    <div class="assembly-card" style="border-left-color:#06b6d4;">
+                                    <div class="assembly-card" style="border-left-color: var(--ter-500);">
                                         <div class="flex justify-between items-start">
                                             <div>
                                                 <h4 class="font-semibold text-gray-800">4º llamado a cobertura</h4>
                                                 <p class="text-sm text-gray-600">19 de septiembre de 2025</p>
                                             </div>
                                             <span
-                                                class="bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full text-sm font-bold">161
+                                                class="bg-tertiary-100 text-tertiary-800 px-3 py-1 rounded-full text-sm font-bold">161
                                                 cargos</span>
                                         </div>
                                     </div>
@@ -877,27 +867,27 @@
                             </div>
 
                             <!-- Distribución por Tipo -->
-                            <div class="file-card" style="border-left-color:#10b981;">
+                            <div class="file-card" style="border-left-color: var(--sec-500);">
                                 <div class="section-header"
-                                    style="background:linear-gradient(135deg,#10b981 0%,#059669 100%);">
+                                    style="background:linear-gradient(135deg, var(--sec-500) 0%, #a8b41d 100%);">
                                     <h3 class="text-base md:text-lg font-bold text-white">Distribución por Tipo</h3>
                                     <p class="text-xs md:text-sm text-white/90 mt-1">Nivel Superior 2025</p>
                                 </div>
                                 <div class="p-4">
                                     <div class="space-y-4">
-                                        <div class="flex items-center justify-between p-3 bg-green-50 rounded-lg">
+                                        <div class="flex items-center justify-between p-3 bg-secondary-50 rounded-lg">
                                             <div class="flex items-center">
-                                                <div class="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
+                                                <div class="w-3 h-3 bg-secondary-500 rounded-full mr-3"></div>
                                                 <span class="font-medium text-gray-700">Interinatos</span>
                                             </div>
-                                            <span class="font-bold text-green-700">65%</span>
+                                            <span class="font-bold text-secondary-700">65%</span>
                                         </div>
-                                        <div class="flex items-center justify-between p-3 bg-blue-50 rounded-lg">
+                                        <div class="flex items-center justify-between p-3 bg-primary-50 rounded-lg">
                                             <div class="flex items-center">
-                                                <div class="w-3 h-3 bg-blue-500 rounded-full mr-3"></div>
+                                                <div class="w-3 h-3 bg-primary-500 rounded-full mr-3"></div>
                                                 <span class="font-medium text-gray-700">Suplencias</span>
                                             </div>
-                                            <span class="font-bold text-blue-700">35%</span>
+                                            <span class="font-bold text-primary-700">35%</span>
                                         </div>
                                     </div>
                                     <div class="mt-6 bg-gray-50 rounded-lg p-4">
@@ -925,19 +915,19 @@
                             </div>
 
                             <!-- Resumen Total -->
-                            <div class="file-card" style="border-left-color:#f59e0b;">
+                            <div class="file-card" style="border-left-color: var(--pri-500);">
                                 <div class="section-header"
-                                    style="background:linear-gradient(135deg,#f59e0b 0%,#d97706 100%);">
+                                    style="background:linear-gradient(135deg, var(--pri-500) 0%, var(--pri-700) 100%);">
                                     <h3 class="text-base md:text-lg font-bold text-white">Resumen Total</h3>
                                     <p class="text-xs md:text-sm text-white/90 mt-1">Nivel Superior 2025</p>
                                 </div>
                                 <div class="p-4">
                                     <div class="text-center py-4">
-                                        <div class="text-4xl md:text-5xl font-bold text-amber-600 mb-2">914</div>
+                                        <div class="text-4xl md:text-5xl font-bold text-primary-500 mb-2">914</div>
                                         <p class="text-lg font-semibold text-gray-700">Cargos Totales Concursados</p>
                                         <div class="mt-4 space-y-3">
-                                            <div class="bg-amber-50 rounded-lg p-3">
-                                                <div class="text-sm text-amber-800 font-semibold">4 Llamados a Concurso
+                                            <div class="bg-primary-50 rounded-lg p-3">
+                                                <div class="text-sm text-primary-800 font-semibold">4 Llamados a Concurso
                                                 </div>
                                             </div>
                                             <div class="grid grid-cols-2 gap-2 text-sm">
@@ -969,17 +959,16 @@
                 {{-- Tira indicadora --}}
                 <div class="h-2"
                     :class="{
-                        'bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600': active==='inicial-primario',
-                        'bg-gradient-to-r from-amber-400 via-orange-500 to-amber-600': active==='secundario',
-                        'bg-gradient-to-r from-cyan-400 via-blue-500 to-cyan-600': active==='superior'
+                        'bg-gradient-to-r from-primary-500 via-primary-600 to-primary-700': active==='inicial-primario',
+                        'bg-gradient-to-r from-primary-400 via-primary-500 to-primary-600': active==='secundario',
+                        'bg-gradient-to-r from-tertiary-400 via-tertiary-500 to-tertiary-600': active==='superior'
                     }">
                 </div>
             </div>
         </div>
     </div>
-    </div>
-    </div>
-        @include('edudata.partials.coberturas-info')
+
+    @include('edudata.partials.coberturas-info')
 
     {{-- Alpine: controlador del archivero --}}
     <script>
@@ -988,20 +977,20 @@
                 tabs: [{
                         key: 'inicial-primario',
                         label: 'Inicial/Primario',
-                        bg: 'bg-purple-100 text-purple-800',
-                        activeBg: 'bg-purple-200 text-purple-900'
+                        bg: 'bg-primary-100 text-primary-800',
+                        activeBg: 'bg-primary-200 text-primary-900'
                     },
                     {
                         key: 'secundario',
                         label: 'Secundario',
-                        bg: 'bg-amber-100 text-amber-800',
-                        activeBg: 'bg-amber-200 text-amber-900'
+                        bg: 'bg-primary-100 text-primary-800',
+                        activeBg: 'bg-primary-200 text-primary-900'
                     },
                     {
                         key: 'superior',
                         label: 'Superior',
-                        bg: 'bg-cyan-100 text-cyan-800',
-                        activeBg: 'bg-cyan-200 text-cyan-900'
+                        bg: 'bg-tertiary-100 text-tertiary-800',
+                        activeBg: 'bg-tertiary-200 text-tertiary-900'
                     },
                 ],
                 active: 'inicial-primario',

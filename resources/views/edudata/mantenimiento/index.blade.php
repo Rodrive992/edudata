@@ -34,7 +34,7 @@
         }
 
         .folder-tab:hover::before {
-            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            background: linear-gradient(90deg, var(--pri-700), var(--acc-500));
         }
 
         @media (max-width:768px) {
@@ -55,7 +55,7 @@
         }
 
         .folder-tab.is-active::before {
-            background: linear-gradient(90deg, #f59e0b, #ef4444);
+            background: linear-gradient(90deg, var(--sec-500), var(--ter-500));
             height: 3px;
             bottom: -3px;
         }
@@ -278,7 +278,7 @@
         }
 
         .section-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--pri-700) 0%, var(--pri-900) 100%);
             color: #fff;
             padding: 1rem 1.5rem;
             border-radius: 12px 12px 0 0;
@@ -506,8 +506,8 @@
                         class="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-xl p-4 md:p-6 my-4 border border-gray-200">
                         <!-- Descripción principal centrada -->
                         <div class="text-center mb-4 md:mb-6">
-                            <p class="text-gray-700 leading-relaxed text-base md:text-lg">
-                                La <span class="font-semibold text-blue-700">Dirección de Programación y Mantenimiento
+                            <p class="text-gray-700 leading-relaxed text-base md:text-lg font-  ">
+                                La <span class="font-semibold text-[var(--pri-700)]">Dirección de Programación y Mantenimiento
                                     Edilicio</span>
                                 se encarga del mantenimiento integral de los establecimientos escolares de la provincia,
                                 llevando a cabo las tareas diarias para conservar el estado óptimo de los edificios
@@ -521,7 +521,7 @@
                             <div class="feature-card group">
                                 <div class="flex items-start gap-3 md:gap-4 mb-3 md:mb-4">
                                     <div
-                                        class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[#f5cb58] flex items-center justify-center flex-shrink-0">
+                                        class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[var(--sec-500)] flex items-center justify-center flex-shrink-0">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-white"
                                             fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -529,13 +529,13 @@
                                         </svg>
                                     </div>
                                     <div class="flex-1 min-w-0">
-                                        <h4 class="text-base md:text-lg font-bold text-gray-800 mb-1">Tareas de
+                                        <h4 class="text-base md:text-lg font-bold text-gray-800 mb-1 font-primary">Tareas de
                                             Mantenimiento Edilicio</h4>
                                         
                                     </div>
                                 </div>
                                 <div class="flex justify-center">
-                                    <a href="#tareas" class="action-button bg-[#f5cb58] hover:bg-[#e5bb48] text-white">
+                                    <a href="#tareas" class="action-button bg-[var(--sec-500)] hover:bg-[#b8bd37] text-white">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none"
                                             viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -550,7 +550,7 @@
                             <div class="feature-card group">
                                 <div class="flex items-start gap-3 md:gap-4 mb-3 md:mb-4">
                                     <div
-                                        class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[#6bbde5] flex items-center justify-center flex-shrink-0">
+                                        class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[var(--pri-500)] flex items-center justify-center flex-shrink-0">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-white"
                                             fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -560,14 +560,14 @@
                                         </svg>
                                     </div>
                                     <div class="flex-1 min-w-0">
-                                        <h4 class="text-base md:text-lg font-bold text-gray-800 mb-1">Ubicación de
+                                        <h4 class="text-base md:text-lg font-bold text-gray-800 mb-1 font-primary">Ubicación de
                                             Establecimientos</h4>
                                         
                                     </div>
                                 </div>
                                 <div class="flex justify-center">
                                     <a href="https://nimble-gumdrop-ccc062.netlify.app/" target="_blank" rel="noopener"
-                                        class="action-button bg-[#6bbde5] hover:bg-[#5aadd5] text-white">
+                                        class="action-button bg-[var(--pri-500)] hover:bg-[#5aadd5] text-white">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none"
                                             viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -582,7 +582,7 @@
                             <div class="feature-card group">
                                 <div class="flex items-start gap-3 md:gap-4 mb-3 md:mb-4">
                                     <div
-                                        class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-green-500 flex items-center justify-center flex-shrink-0">
+                                        class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[var(--ter-500)] flex items-center justify-center flex-shrink-0">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-white"
                                             fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -590,13 +590,13 @@
                                         </svg>
                                     </div>
                                     <div class="flex-1 min-w-0">
-                                        <h4 class="text-base md:text-lg font-bold text-gray-800 mb-1">Solicitudes de
+                                        <h4 class="text-base md:text-lg font-bold text-gray-800 mb-1 font-primary">Solicitudes de
                                             Mantenimiento Edilicio</h4>                                        
                                     </div>
                                 </div>
                                 <div class="flex justify-center">
                                     <a href="https://tad.catamarca.gob.ar/tramitesadistancia" target="_blank"
-                                        rel="noopener" class="action-button bg-green-600 hover:bg-green-700 text-white">
+                                        rel="noopener" class="action-button bg-[var(--ter-500)] hover:bg-[#5a9792] text-white">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none"
                                             viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -611,18 +611,18 @@
                         <!-- Badges informativos -->
                         <div class="flex flex-wrap gap-2 mt-4 md:mt-6 justify-center">
                             <div
-                                class="inline-flex items-center bg-gray-100 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-gray-700">
-                                <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                                class="inline-flex items-center bg-gray-100 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-gray-700 font-secondary">
+                                <span class="w-2 h-2 bg-[var(--pri-500)] rounded-full mr-2"></span>
                                 Transparencia en la gestión
                             </div>
                             <div
-                                class="inline-flex items-center bg-gray-100 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-gray-700">
-                                <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                                class="inline-flex items-center bg-gray-100 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-gray-700 font-secondary">
+                                <span class="w-2 h-2 bg-[var(--ter-500)] rounded-full mr-2"></span>
                                 Mantenimiento preventivo
                             </div>
                             <div
-                                class="inline-flex items-center bg-gray-100 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-gray-700">
-                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                                class="inline-flex items-center bg-gray-100 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-gray-700 font-secondary">
+                                <span class="w-2 h-2 bg-[var(--acc-500)] rounded-full mr-2"></span>
                                 Comunidad educativa
                             </div>
                         </div>
@@ -639,7 +639,7 @@
                         <div class="folder-stack px-4 md:px-6 pt-4 md:pt-6">
                             <template x-for="(tab,i) in tabs" :key="tab.key">
                                 <button type="button"
-                                    class="folder-tab px-3 md:px-6 py-2 md:py-3 mr-[-8px] md:mr-[-12px] border-2 border-b-0"
+                                    class="folder-tab px-3 md:px-6 py-2 md:py-3 mr-[-8px] md:mr-[-12px] border-2 border-b-0 font-primary"
                                     :class="[
                                         'text-sm md:text-base font-bold',
                                         i === 0 ? '' : 'ml-2 md:ml-4',
@@ -664,12 +664,12 @@
                                         class="search-grid-compact items-end">
                                         <input type="hidden" name="tarea" value="realizadas">
                                         <div>
-                                            <label class="block text-sm font-semibold text-gray-700 mb-2">Buscar
+                                            <label class="block text-sm font-semibold text-gray-700 mb-2 font-secondary">Buscar
                                                 Establecimiento</label>
                                             <div class="relative">
                                                 <input type="text" name="establecimiento"
                                                     value="{{ request('establecimiento') }}"
-                                                    class="w-full rounded-lg border-2 border-gray-300 py-2 px-3 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200 placeholder-gray-400 text-sm"
+                                                    class="w-full rounded-lg border-2 border-gray-300 py-2 px-3 focus:border-[var(--pri-500)] focus:ring-2 focus:ring-blue-200 transition-all duration-200 placeholder-gray-400 text-sm font-secondary"
                                                     placeholder="Ingrese el nombre del establecimiento...">
                                                 <div class="absolute right-3 top-1/2 -translate-y-1/2">
                                                     <svg xmlns="http://www.w3.org/2000/svg"
@@ -684,7 +684,7 @@
                                         </div>
                                         <div>
                                             <button type="submit"
-                                                class="btn-responsive bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold rounded-lg shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 h-11">
+                                                class="btn-responsive bg-gradient-to-r from-[var(--pri-700)] to-[var(--pri-900)] hover:from-[var(--pri-800)] hover:to-[var(--pri-900)] text-white font-bold rounded-lg shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 h-11 font-primary">
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
                                                     viewBox="0 0 24 24" stroke="currentColor">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -705,10 +705,10 @@
 
                                 <div id="resultados" class="results-grid mobile-card-container">
                                     <!-- APH - MEJORADO con nueva estructura -->
-                                    <div class="file-card" style="border-left-color:#8b5cf6;">
+                                    <div class="file-card" style="border-left-color:var(--acc-500);">
                                         <div class="section-header"
-                                            style="background:linear-gradient(135deg,#8b5cf6 0%,#7c3aed 100%);">
-                                            <h3 class="text-base md:text-lg font-bold text-white">Albañilería - Plomería
+                                            style="background:linear-gradient(135deg,var(--acc-500) 0%,var(--pri-900) 100%);">
+                                            <h3 class="text-base md:text-lg font-bold text-white font-primary">Albañilería - Plomería
                                                 -
                                                 Herrería</h3>
                                             
@@ -717,16 +717,16 @@
                                             @forelse($regAPH as $r)
                                                 <div class="task-card">
                                                     <div class="task-info">
-                                                        <span class="task-label">Fecha:</span>
-                                                        <span class="task-value font-semibold text-purple-600">
+                                                        <span class="task-label font-secondary">Fecha:</span>
+                                                        <span class="task-value font-semibold text-[var(--acc-500)] font-secondary">
                                                             {{ \Carbon\Carbon::parse($r->fecha)->format('d/m/Y') }}
                                                         </span>
 
-                                                        <span class="task-label">Establecimiento:</span>
-                                                        <span class="task-value">{{ $r->establecimiento }}</span>
+                                                        <span class="task-label font-secondary">Establecimiento:</span>
+                                                        <span class="task-value font-secondary">{{ $r->establecimiento }}</span>
 
-                                                        <span class="task-label">Tarea Realizada:</span>
-                                                        <span class="task-value">{{ $r->tarea }}</span>
+                                                        <span class="task-label font-secondary">Tarea Realizada:</span>
+                                                        <span class="task-value font-secondary">{{ $r->tarea }}</span>
                                                     </div>
                                                 </div>
                                             @empty
@@ -738,32 +738,32 @@
                                                             stroke-width="2"
                                                             d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                                     </svg>
-                                                    <p class="text-gray-500 italic text-sm">Sin tareas registradas</p>
+                                                    <p class="text-gray-500 italic text-sm font-secondary">Sin tareas registradas</p>
                                                 </div>
                                             @endforelse
                                         </div>
                                     </div>
 
                                     <!-- ELEC - MEJORADO con nueva estructura -->
-                                    <div class="file-card" style="border-left-color:#3b82f6;">
+                                    <div class="file-card" style="border-left-color:var(--pri-500);">
                                         <div class="section-header"
-                                            style="background:linear-gradient(135deg,#3b82f6 0%,#1d4ed8 100%);">
-                                            <h3 class="text-base md:text-lg font-bold text-white">Electricidad</h3>                                              
+                                            style="background:linear-gradient(135deg,var(--pri-500) 0%,var(--pri-700) 100%);">
+                                            <h3 class="text-base md:text-lg font-bold text-white font-primary">Electricidad</h3>                                              
                                         </div>
                                         <div class="p-4 tasks-container">
                                             @forelse($regELEC as $r)
                                                 <div class="task-card">
                                                     <div class="task-info">
-                                                        <span class="task-label">Fecha:</span>
-                                                        <span class="task-value font-semibold text-blue-600">
+                                                        <span class="task-label font-secondary">Fecha:</span>
+                                                        <span class="task-value font-semibold text-[var(--pri-500)] font-secondary">
                                                             {{ \Carbon\Carbon::parse($r->fecha)->format('d/m/Y') }}
                                                         </span>
 
-                                                        <span class="task-label">Establecimiento:</span>
-                                                        <span class="task-value">{{ $r->establecimiento }}</span>
+                                                        <span class="task-label font-secondary">Establecimiento:</span>
+                                                        <span class="task-value font-secondary">{{ $r->establecimiento }}</span>
 
-                                                        <span class="task-label">Tarea Realizada:</span>
-                                                        <span class="task-value">{{ $r->tarea }}</span>
+                                                        <span class="task-label font-secondary">Tarea Realizada:</span>
+                                                        <span class="task-value font-secondary">{{ $r->tarea }}</span>
                                                     </div>
                                                 </div>
                                             @empty
@@ -774,32 +774,32 @@
                                                         <path stroke-linecap="round" stroke-linejoin="round"
                                                             stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                                                     </svg>
-                                                    <p class="text-gray-500 italic text-sm">Sin tareas registradas</p>
+                                                    <p class="text-gray-500 italic text-sm font-secondary">Sin tareas registradas</p>
                                                 </div>
                                             @endforelse
                                         </div>
                                     </div>
 
                                     <!-- DEZM - MEJORADO con nueva estructura -->
-                                    <div class="file-card" style="border-left-color:#10b981;">
+                                    <div class="file-card" style="border-left-color:var(--ter-500);">
                                         <div class="section-header"
-                                            style="background:linear-gradient(135deg,#10b981 0%,#059669 100%);">
-                                            <h3 class="text-base md:text-lg font-bold text-white">Desmalezamiento</h3>                                               
+                                            style="background:linear-gradient(135deg,var(--ter-500) 0%,#059669 100%);">
+                                            <h3 class="text-base md:text-lg font-bold text-white font-primary">Desmalezamiento</h3>                                               
                                         </div>
                                         <div class="p-4 tasks-container">
                                             @forelse($regDEZM as $r)
                                                 <div class="task-card">
                                                     <div class="task-info">
-                                                        <span class="task-label">Fecha:</span>
-                                                        <span class="task-value font-semibold text-green-600">
+                                                        <span class="task-label font-secondary">Fecha:</span>
+                                                        <span class="task-value font-semibold text-[var(--ter-500)] font-secondary">
                                                             {{ \Carbon\Carbon::parse($r->fecha)->format('d/m/Y') }}
                                                         </span>
 
-                                                        <span class="task-label">Establecimiento:</span>
-                                                        <span class="task-value">{{ $r->establecimiento }}</span>
+                                                        <span class="task-label font-secondary">Establecimiento:</span>
+                                                        <span class="task-value font-secondary">{{ $r->establecimiento }}</span>
 
-                                                        <span class="task-label">Tarea Realizada:</span>
-                                                        <span class="task-value">{{ $r->tarea }}</span>
+                                                        <span class="task-label font-secondary">Tarea Realizada:</span>
+                                                        <span class="task-value font-secondary">{{ $r->tarea }}</span>
                                                     </div>
                                                 </div>
                                             @empty
@@ -811,7 +811,7 @@
                                                             stroke-width="2"
                                                             d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
                                                     </svg>
-                                                    <p class="text-gray-500 italic text-sm">Sin tareas registradas</p>
+                                                    <p class="text-gray-500 italic text-sm font-secondary">Sin tareas registradas</p>
                                                 </div>
                                             @endforelse
                                         </div>
@@ -827,12 +827,12 @@
                                         class="search-grid-compact items-end">
                                         <input type="hidden" name="tarea" value="pendientes">
                                         <div>
-                                            <label class="block text-sm font-semibold text-gray-700 mb-2">Filtrar
+                                            <label class="block text-sm font-semibold text-gray-700 mb-2 font-secondary">Filtrar
                                                 por Localidad</label>
                                             <div class="relative">
                                                 <input type="text" name="localidad"
                                                     value="{{ request('localidad') }}"
-                                                    class="w-full rounded-lg border-2 border-gray-300 py-2 px-3 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200 placeholder-gray-400 text-sm"
+                                                    class="w-full rounded-lg border-2 border-gray-300 py-2 px-3 focus:border-[var(--pri-500)] focus:ring-2 focus:ring-blue-200 transition-all duration-200 placeholder-gray-400 text-sm font-secondary"
                                                     placeholder="Ingrese el nombre de la localidad...">
                                                 <div class="absolute right-3 top-1/2 -translate-y-1/2">
                                                     <svg xmlns="http://www.w3.org/2000/svg"
@@ -849,7 +849,7 @@
                                         </div>
                                         <div>
                                             <button type="submit"
-                                                class="btn-responsive bg-gradient-to-r from-sky-600 to-sky-700 hover:from-sky-700 hover:to-sky-800 text-white font-bold rounded-lg shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 h-11">
+                                                class="btn-responsive bg-gradient-to-r from-[var(--pri-500)] to-[var(--pri-700)] hover:from-[var(--pri-600)] hover:to-[var(--pri-800)] text-white font-bold rounded-lg shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 h-11 font-primary">
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
                                                     viewBox="0 0 24 24" stroke="currentColor">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -870,11 +870,11 @@
 
                                 <div id="resultados-pend" class="data-table">
                                     <div class="section-header"
-                                        style="background:linear-gradient(135deg,#0ea5e9 0%,#0369a1 100%);">
+                                        style="background:linear-gradient(135deg,var(--pri-500) 0%,var(--pri-700) 100%);">
                                         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
-                                            <h3 class="text-base md:text-lg font-bold text-white">Tareas Pendientes</h3>
+                                            <h3 class="text-base md:text-lg font-bold text-white font-primary">Tareas Pendientes</h3>
                                             <div
-                                                class="flex items-center gap-2 md:gap-4 text-xs md:text-sm text-white/90">
+                                                class="flex items-center gap-2 md:gap-4 text-xs md:text-sm text-white/90 font-secondary">
                                                 <span>Localidad: <strong
                                                         class="text-white">{{ request('localidad') ?: 'Todas' }}</strong></span>
                                                 <span class="hidden md:inline">•</span>
@@ -888,33 +888,33 @@
                                         <table class="min-w-full text-sm">
                                             <caption class="sr-only">Listado de tareas pendientes</caption>
                                             <thead>
-                                                <tr class="bg-gradient-to-r from-sky-50 to-blue-50">
-                                                    @php $thBase='px-3 md:px-6 py-3 md:py-4 text-left text-xs font-bold tracking-wider uppercase text-sky-800 border-b-2 border-sky-200'; @endphp
+                                                <tr class="bg-gradient-to-r from-blue-50 to-[#e8f1fb]">
+                                                    @php $thBase='px-3 md:px-6 py-3 md:py-4 text-left text-xs font-bold tracking-wider uppercase text-[var(--pri-700)] border-b-2 border-blue-200 font-primary'; @endphp
                                                     <th class="{{ $thBase }} w-32 md:w-48">Localidad</th>
                                                     <th class="{{ $thBase }} w-40 md:w-56">Establecimiento</th>
                                                     <th class="{{ $thBase }} min-w-60 md:min-w-80">Pedido</th>
                                                 </tr>
                                             </thead>
-                                            <tbody class="divide-y divide-sky-100">
+                                            <tbody class="divide-y divide-blue-100">
                                                 @forelse($pend as $p)
                                                     <tr
-                                                        class="hover:bg-gradient-to-r hover:from-sky-50/80 hover:to-blue-50/80 transition-all duration-200 group">
+                                                        class="hover:bg-gradient-to-r hover:from-blue-50/80 hover:to-[#e8f1fb]/80 transition-all duration-200 group">
                                                         <td class="px-3 md:px-6 py-3 md:py-4">
                                                             <div class="max-w-[12rem]">
                                                                 <span
-                                                                    class="block break-words font-semibold text-sky-900 text-xs md:text-sm">{{ $p->localidad }}</span>
+                                                                    class="block break-words font-semibold text-[var(--pri-700)] text-xs md:text-sm font-secondary">{{ $p->localidad }}</span>
                                                             </div>
                                                         </td>
                                                         <td class="px-3 md:px-6 py-3 md:py-4">
                                                             <div class="max-w-[16rem]">
                                                                 <span
-                                                                    class="block break-words text-gray-800 text-xs md:text-sm">{{ $p->establecimiento }}</span>
+                                                                    class="block break-words text-gray-800 text-xs md:text-sm font-secondary">{{ $p->establecimiento }}</span>
                                                             </div>
                                                         </td>
                                                         <td class="px-3 md:px-6 py-3 md:py-4 cell-wrap">
                                                             <div class="max-w-[28rem] md:max-w-[36rem]">
                                                                 <span
-                                                                    class="block break-words text-gray-600 leading-relaxed text-xs md:text-sm">{{ $p->pedido }}</span>
+                                                                    class="block break-words text-gray-600 leading-relaxed text-xs md:text-sm font-secondary">{{ $p->pedido }}</span>
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -931,10 +931,10 @@
                                                                         stroke-linejoin="round" stroke-width="2"
                                                                         d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />
                                                                 </svg>
-                                                                <p class="text-gray-500 text-sm md:text-lg font-medium">
+                                                                <p class="text-gray-500 text-sm md:text-lg font-medium font-secondary">
                                                                     No
                                                                     hay tareas pendientes</p>
-                                                                <p class="text-gray-400 text-xs md:text-sm mt-1">Todos
+                                                                <p class="text-gray-400 text-xs md:text-sm mt-1 font-secondary">Todos
                                                                     los
                                                                     mantenimientos están al día</p>
                                                             </div>
@@ -946,7 +946,7 @@
                                     </div>
 
                                     @if ($scrollPend)
-                                        <div class="px-4 py-2 text-xs md:text-sm text-gray-500 text-center">
+                                        <div class="px-4 py-2 text-xs md:text-sm text-gray-500 text-center font-secondary">
                                             <span class="inline-flex items-center">
                                                 <svg xmlns="http://www.w3.org/2000/svg"
                                                     class="h-3 w-3 md:h-4 md:w-4 mr-1 md:mr-2" fill="none"
@@ -969,11 +969,11 @@
                                         class="search-grid-compact items-end">
                                         <input type="hidden" name="tarea" value="comisiones">
                                         <div>
-                                            <label class="block text-sm font-semibold text-gray-700 mb-2">Buscar
+                                            <label class="block text-sm font-semibold text-gray-700 mb-2 font-secondary">Buscar
                                                 Comisiones</label>
                                             <div class="relative">
                                                 <input type="text" name="q" value="{{ request('q') }}"
-                                                    class="w-full rounded-lg border-2 border-gray-300 py-2 px-3 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 transition-all duration-200 placeholder-gray-400 text-sm"
+                                                    class="w-full rounded-lg border-2 border-gray-300 py-2 px-3 focus:border-[var(--ter-500)] focus:ring-2 focus:ring-emerald-200 transition-all duration-200 placeholder-gray-400 text-sm font-secondary"
                                                     placeholder="Buscar por localidad o establecimiento...">
                                                 <div class="absolute right-3 top-1/2 -translate-y-1/2">
                                                     <svg xmlns="http://www.w3.org/2000/svg"
@@ -988,7 +988,7 @@
                                         </div>
                                         <div>
                                             <button type="submit"
-                                                class="btn-responsive bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white font-bold rounded-lg shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 h-11">
+                                                class="btn-responsive bg-gradient-to-r from-[var(--ter-500)] to-[#5a9792] hover:from-[#5a9792] hover:to-[#4a8772] text-white font-bold rounded-lg shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 h-11 font-primary">
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
                                                     viewBox="0 0 24 24" stroke="currentColor">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -1009,12 +1009,12 @@
 
                                 <div id="resultados-com" class="data-table">
                                     <div class="section-header"
-                                        style="background:linear-gradient(135deg,#10b981 0%,#059669 100%);">
+                                        style="background:linear-gradient(135deg,var(--ter-500) 0%,#059669 100%);">
                                         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
-                                            <h3 class="text-base md:text-lg font-bold text-white">Comisiones de Servicio
+                                            <h3 class="text-base md:text-lg font-bold text-white font-primary">Comisiones de Servicio
                                             </h3>
                                             <div
-                                                class="flex items-center gap-2 md:gap-3 text-xs md:text-sm text-white/90">
+                                                class="flex items-center gap-2 md:gap-3 text-xs md:text-sm text-white/90 font-secondary">
                                                 <span class="hidden md:inline">Año: <strong
                                                         class="text-white">{{ request('anio') ?: 'Todos' }}</strong></span>
                                                 <span class="hidden md:inline">•</span>
@@ -1029,7 +1029,7 @@
                                             <caption class="sr-only">Listado de comisiones de servicio</caption>
                                             <thead>
                                                 <tr class="bg-gradient-to-r from-emerald-50 to-green-50">
-                                                    @php $thBase='px-3 md:px-6 py-3 md:py-4 text-left text-xs font-bold tracking-wider uppercase text-emerald-800 border-b-2 border-emerald-200'; @endphp
+                                                    @php $thBase='px-3 md:px-6 py-3 md:py-4 text-left text-xs font-bold tracking-wider uppercase text-[var(--ter-500)] border-b-2 border-emerald-200 font-primary'; @endphp
                                                     <th class="{{ $thBase }} w-20 md:w-28">Fecha</th>
                                                     <th class="{{ $thBase }} w-32 md:w-56">Establecimiento</th>
                                                     <th class="{{ $thBase }} mobile-hidden">Localidad</th>
@@ -1047,41 +1047,41 @@
                                                     <tr
                                                         class="hover:bg-gradient-to-r hover:from-emerald-50/80 hover:to-green-50/80 transition-all duration-200 group">
                                                         <td
-                                                            class="px-3 md:px-6 py-3 md:py-4 text-emerald-900 whitespace-nowrap font-semibold text-xs md:text-sm">
+                                                            class="px-3 md:px-6 py-3 md:py-4 text-[var(--ter-500)] whitespace-nowrap font-semibold text-xs md:text-sm font-secondary">
                                                             {{ \Carbon\Carbon::parse($c->fecha)->format('d/m/Y') }}
                                                         </td>
                                                         <td class="px-3 md:px-6 py-3 md:py-4">
                                                             <div class="max-w-[16rem]">
                                                                 <span
-                                                                    class="block break-words text-gray-800 text-xs md:text-sm">{{ $c->establecimiento }}</span>
+                                                                    class="block break-words text-gray-800 text-xs md:text-sm font-secondary">{{ $c->establecimiento }}</span>
                                                             </div>
                                                         </td>
                                                         <td class="px-3 md:px-6 py-3 md:py-4 mobile-hidden">
                                                             <div class="max-w-[12rem]">
                                                                 <span
-                                                                    class="block break-words text-gray-800 text-xs md:text-sm">{{ $c->localidad }}</span>
+                                                                    class="block break-words text-gray-800 text-xs md:text-sm font-secondary">{{ $c->localidad }}</span>
                                                             </div>
                                                         </td>
                                                         <td class="px-3 md:px-6 py-3 md:py-4 mobile-hidden">
                                                             <div class="max-w-[10rem]">
                                                                 <span
-                                                                    class="block break-words text-gray-800 text-xs md:text-sm">{{ $c->departamento }}</span>
+                                                                    class="block break-words text-gray-800 text-xs md:text-sm font-secondary">{{ $c->departamento }}</span>
                                                             </div>
                                                         </td>
                                                         <td class="px-3 md:px-6 py-3 md:py-4 cell-wrap">
                                                             <div class="max-w-[28rem] md:max-w-[36rem]">
                                                                 <span
-                                                                    class="block break-words text-gray-600 leading-relaxed text-xs md:text-sm">{{ $c->detalle_obra }}</span>
+                                                                    class="block break-words text-gray-600 leading-relaxed text-xs md:text-sm font-secondary">{{ $c->detalle_obra }}</span>
                                                             </div>
                                                         </td>
                                                         <td
-                                                            class="px-3 md:px-6 py-3 md:py-4 text-emerald-900 text-center font-semibold text-xs md:text-sm">
+                                                            class="px-3 md:px-6 py-3 md:py-4 text-[var(--ter-500)] text-center font-semibold text-xs md:text-sm font-secondary">
                                                             {{ $c->personas }}</td>
                                                         <td
-                                                            class="px-3 md:px-6 py-3 md:py-4 text-emerald-900 text-center font-semibold text-xs md:text-sm">
+                                                            class="px-3 md:px-6 py-3 md:py-4 text-[var(--ter-500)] text-center font-semibold text-xs md:text-sm font-secondary">
                                                             {{ $c->dias }}</td>
                                                         <td
-                                                            class="px-3 md:px-6 py-3 md:py-4 text-emerald-900 text-center font-semibold text-xs md:text-sm">
+                                                            class="px-3 md:px-6 py-3 md:py-4 text-[var(--ter-500)] text-center font-semibold text-xs md:text-sm font-secondary">
                                                             {{ $c->agentes }}</td>
                                                         <td class="px-3 md:px-6 py-3 md:py-4">
                                                             @php
@@ -1101,7 +1101,7 @@
                                                                 };
                                                             @endphp
                                                             <span
-                                                                class="status-badge {{ $estadoColor }} border text-xs">{{ $c->estado }}</span>
+                                                                class="status-badge {{ $estadoColor }} border text-xs font-secondary">{{ $c->estado }}</span>
                                                         </td>
                                                     </tr>
                                                 @empty
@@ -1117,10 +1117,10 @@
                                                                         stroke-linejoin="round" stroke-width="2"
                                                                         d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                                                                 </svg>
-                                                                <p class="text-gray-500 text-sm md:text-lg font-medium">
+                                                                <p class="text-gray-500 text-sm md:text-lg font-medium font-secondary">
                                                                     No
                                                                     hay comisiones registradas</p>
-                                                                <p class="text-gray-400 text-xs md:text-sm mt-1">No se
+                                                                <p class="text-gray-400 text-xs md:text-sm mt-1 font-secondary">No se
                                                                     encontraron comisiones</p>
                                                             </div>
                                                         </td>
@@ -1131,7 +1131,7 @@
                                     </div>
 
                                     @if ($scrollCom)
-                                        <div class="px-4 py-2 text-xs md:text-sm text-gray-500 text-center">
+                                        <div class="px-4 py-2 text-xs md:text-sm text-gray-500 text-center font-secondary">
                                             <span class="inline-flex items-center">
                                                 <svg xmlns="http://www.w3.org/2000/svg"
                                                     class="h-3 w-3 md:h-4 md:w-4 mr-1 md:mr-2" fill="none"
@@ -1150,9 +1150,9 @@
                         {{-- Tira indicadora --}}
                         <div class="h-2"
                             :class="{
-                                'bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-600': active==='realizadas',
-                                'bg-gradient-to-r from-sky-400 via-blue-500 to-sky-600': active==='pendientes',
-                                'bg-gradient-to-r from-emerald-400 via-green-500 to-emerald-600': active==='comisiones'
+                                'bg-gradient-to-r from-[var(--sec-500)] via-[var(--sec-500)] to-[var(--sec-500)]': active==='realizadas',
+                                'bg-gradient-to-r from-[var(--pri-500)] via-[var(--pri-700)] to-[var(--pri-500)]': active==='pendientes',
+                                'bg-gradient-to-r from-[var(--ter-500)] via-[var(--ter-500)] to-[var(--ter-500)]': active==='comisiones'
                             }">
                         </div>
                     </div>

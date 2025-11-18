@@ -6,9 +6,9 @@
     <style>
         /* Efectos y colores mejorados (sin cambios visuales fuertes) */
         .search-container {
-            background: linear-gradient(135deg, #B2D6DB 0%, #FFFf 100%);
+            background: linear-gradient(135deg, var(--pri-100) 0%, #FFFf 100%);
             border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+            box-shadow: 0 10px 30px rgba(64, 92, 164, 0.2);
             border: 1px solid rgba(255, 255, 255, 0.1);
             overflow: hidden;
             position: relative;
@@ -21,7 +21,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, #667eea, #764ba2, #667eea);
+            background: linear-gradient(90deg, var(--pri-700), var(--ter-500), var(--pri-700));
             background-size: 200% 100%;
             animation: shimmer 3s ease-in-out infinite;
         }
@@ -62,13 +62,13 @@
 
         .normativa-item:hover {
             background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-            border-left-color: #3b82f6;
+            border-left-color: var(--pri-700);
             transform: translateX(4px);
         }
 
         .document-icon {
-            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+            background: linear-gradient(135deg, var(--pri-700) 0%, var(--pri-900) 100%);
+            box-shadow: 0 4px 12px rgba(64, 92, 164, 0.3);
         }
 
         .search-input {
@@ -78,21 +78,21 @@
         }
 
         .search-input:focus {
-            border-color: #3b82f6;
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+            border-color: var(--pri-700);
+            box-shadow: 0 0 0 3px rgba(64, 92, 164, 0.1);
             background: white;
         }
 
         .btn-primary {
             background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
             border: none;
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+            box-shadow: 0 4px 12px rgba(64, 92, 164, 0.3);
             transition: all 0.3s ease;
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+            box-shadow: 0 6px 20px rgba(64, 92, 164, 0.4);
         }
 
         .btn-secondary {
@@ -101,7 +101,7 @@
         }
 
         .btn-secondary:hover {
-            border-color: #3b82f6;
+            border-color: var(--pri-700);
             transform: translateY(-1px);
         }
 
@@ -129,8 +129,8 @@
                         <div class="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-xl p-3 md:p-4 my-2 border border-blue-200">
                             <!-- Descripción principal -->
                             <div class="text-center mb-3">
-                                <p class="text-gray-700 leading-relaxed text-base md:text-lg">
-                                    El <span class="font-semibold text-blue-700">Digesto Normativo</span>
+                                <p class="text-gray-700 leading-relaxed text-base md:text-lg font-secondary">
+                                    El <span class="font-semibold text-[var(--pri-700)]">Digesto Normativo</span>
                                     reúne toda la normativa vigente
                                     que regula el tema educativo provincial</span>,
                                     facilitando el acceso a leyes, decretos, resoluciones y disposiciones.
@@ -142,16 +142,16 @@
                                 <!-- Característica 1 -->
                                 <div class="feature-card group p-2.5">
                                     <div class="flex items-center gap-3">
-                                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-blue-100 flex items-center justify-center flex-shrink-0">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-blue-600"
+                                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[#e8f1fb] flex items-center justify-center flex-shrink-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-[var(--pri-700)]"
                                                  fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                       d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                                             </svg>
                                         </div>
                                         <div class="flex-1 min-w-0">
-                                            <p class="text-sm font-semibold text-gray-800">Búsqueda avanzada</p>
-                                            <p class="text-xs text-gray-600 mt-1">Por palabras clave y filtros</p>
+                                            <p class="text-sm font-semibold text-gray-800 font-primary">Búsqueda avanzada</p>
+                                            <p class="text-xs text-gray-600 mt-1 font-secondary">Por palabras clave y filtros</p>
                                         </div>
                                     </div>
                                 </div>
@@ -159,16 +159,16 @@
                                 <!-- Característica 2 -->
                                 <div class="feature-card group p-2.5">
                                     <div class="flex items-center gap-3">
-                                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-green-100 flex items-center justify-center flex-shrink-0">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-green-600"
+                                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[#e8f6f5] flex items-center justify-center flex-shrink-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-[var(--ter-500)]"
                                                  fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                       d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                             </svg>
                                         </div>
                                         <div class="flex-1 min-w-0">
-                                            <p class="text-sm font-semibold text-gray-800">Documentos completos</p>
-                                            <p class="text-xs text-gray-600 mt-1">Textos íntegros oficiales</p>
+                                            <p class="text-sm font-semibold text-gray-800 font-primary">Documentos completos</p>
+                                            <p class="text-xs text-gray-600 mt-1 font-secondary">Textos íntegros oficiales</p>
                                         </div>
                                     </div>
                                 </div>
@@ -176,16 +176,16 @@
                                 <!-- Característica 3 -->
                                 <div class="feature-card group p-2.5">
                                     <div class="flex items-center gap-3">
-                                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-purple-100 flex items-center justify-center flex-shrink-0">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-purple-600"
+                                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[#f2f1fa] flex items-center justify-center flex-shrink-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-[var(--acc-500)]"
                                                  fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                       d="M10 21h7a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v11m0 5l4.879-4.879m0 0a3 3 0 104.243-4.242 3 3 0 00-4.243 4.242z" />
                                             </svg>
                                         </div>
                                         <div class="flex-1 min-w-0">
-                                            <p class="text-sm font-semibold text-gray-800">Acceso público</p>
-                                            <p class="text-xs text-gray-600 mt-1">Transparencia garantizada</p>
+                                            <p class="text-sm font-semibold text-gray-800 font-primary">Acceso público</p>
+                                            <p class="text-xs text-gray-600 mt-1 font-secondary">Transparencia garantizada</p>
                                         </div>
                                     </div>
                                 </div>
@@ -203,18 +203,18 @@
                         <div class="search-header px-4 sm:px-6 pt-3 md:pt-4 pb-3 flex items-center justify-between">
                             <div class="flex items-center gap-3">
                                 <div class="h-8 w-8 md:h-10 md:w-10 rounded-lg bg-white shadow-sm flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5 text-blue-600"
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5 text-[var(--pri-700)]"
                                          viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd"
                                               d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
                                               clip-rule="evenodd" />
                                     </svg>
                                 </div>
-                                <h2 class="text-lg md:text-xl font-bold text-gray-900">Buscar normativa</h2>
+                                <h2 class="text-lg md:text-xl font-bold text-gray-900 font-primary">Buscar normativa</h2>
                             </div>
                             @if (($digestos->total() ?? 0) > 0)
                                 <span
-                                    class="hidden sm:inline-flex items-center rounded-full bg-blue-100 text-blue-800 text-xs md:text-sm font-semibold px-2 md:px-3 py-1">
+                                    class="hidden sm:inline-flex items-center rounded-full bg-[#e8f1fb] text-[var(--pri-700)] text-xs md:text-sm font-semibold px-2 md:px-3 py-1 font-primary">
                                     {{ $digestos->total() }} resultados
                                 </span>
                             @endif
@@ -226,7 +226,7 @@
                                 <div class="relative">
                                     <input type="text" name="q" value="{{ $q ?? '' }}"
                                            placeholder="Buscar por título, descripción o palabras clave…"
-                                           class="search-input w-full rounded-xl pl-10 md:pl-11 py-2 md:py-2.5 text-gray-800 transition-all duration-200 text-sm md:text-base"
+                                           class="search-input w-full rounded-xl pl-10 md:pl-11 py-2 md:py-2.5 text-gray-800 transition-all duration-200 text-sm md:text-base font-secondary"
                                            aria-label="Buscar por título o descripción" />
                                     <span class="absolute inset-y-0 left-3 md:left-4 flex items-center pointer-events-none">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5 text-gray-400"
@@ -239,7 +239,7 @@
                                 </div>
 
                                 <button type="submit"
-                                        class="bg-gradient-to-br from-blue-500 to-blue-600 text-white inline-flex items-center justify-center px-4 md:px-5 py-2 md:py-2.5 rounded-xl font-medium shadow-sm transition-colors duration-200 text-sm md:text-base">
+                                        class="bg-gradient-to-br from-[var(--pri-700)] to-[var(--pri-900)] text-white inline-flex items-center justify-center px-4 md:px-5 py-2 md:py-2.5 rounded-xl font-medium shadow-sm transition-colors duration-200 text-sm md:text-base font-primary">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" viewBox="0 0 20 20"
                                          fill="currentColor">
                                         <path fill-rule="evenodd"
@@ -251,7 +251,7 @@
 
                                 @if (!empty($q))
                                     <a href="{{ route('edudata.normativa') }}"
-                                       class="btn-secondary inline-flex items-center justify-center px-4 md:px-5 py-2 md:py-2.5 rounded-xl font-medium shadow-sm transition-colors duration-200 text-sm md:text-base">
+                                       class="btn-secondary inline-flex items-center justify-center px-4 md:px-5 py-2 md:py-2.5 rounded-xl font-medium shadow-sm transition-colors duration-200 text-sm md:text-base font-primary">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2"
                                              viewBox="0 0 20 20" fill="currentColor">
                                             <path fill-rule="evenodd"
@@ -264,7 +264,7 @@
                             </form>
 
                             {{-- Meta info / estado --}}
-                            <div class="mt-2 md:mt-2.5 text-xs md:text-sm text-gray-600 flex items-center flex-wrap gap-x-2 gap-y-1">
+                            <div class="mt-2 md:mt-2.5 text-xs md:text-sm text-gray-600 flex items-center flex-wrap gap-x-2 gap-y-1 font-secondary">
                                 @if (($digestos->total() ?? 0) > 0)
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5 text-green-500"
                                          viewBox="0 0 20 20" fill="currentColor">
@@ -305,7 +305,7 @@
                 {{-- Listado - ESTILO MEJORADO Y COMPACTO --}}
                 <div class="mx-auto">
                     @if (session('error'))
-                        <div class="mb-3 rounded-xl bg-red-50 border border-red-200 text-red-800 px-4 py-3 flex items-start">
+                        <div class="mb-3 rounded-xl bg-red-50 border border-red-200 text-red-800 px-4 py-3 flex items-start font-secondary">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 mt-0.5 flex-shrink-0 text-red-500"
                                  viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd"
@@ -319,7 +319,7 @@
                     <div class="results-container">
                         <div class="results-header px-4 sm:px-6 py-2.5 md:py-3 flex items-center justify-between">
                             <div class="flex items-center gap-3">
-                                <div class="h-8 w-8 md:h-9 md:w-9 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+                                <div class="h-8 w-8 md:h-9 md:w-9 rounded-lg bg-gradient-to-br from-[var(--pri-700)] to-[var(--pri-900)] flex items-center justify-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5 text-white"
                                          viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd"
@@ -327,11 +327,11 @@
                                               clip-rule="evenodd" />
                                     </svg>
                                 </div>
-                                <h3 class="text-base md:text-lg font-bold text-gray-900">Normativas</h3>
+                                <h3 class="text-base md:text-lg font-bold text-gray-900 font-primary">Normativas</h3>
                             </div>
                             @if (!empty($q))
                                 <span
-                                    class="hidden sm:inline text-xs md:text-sm text-blue-700 font-semibold bg-blue-100 px-2 md:px-3 py-1 md:py-1 rounded-lg border border-blue-200">
+                                    class="hidden sm:inline text-xs md:text-sm text-[var(--pri-700)] font-semibold bg-[#e8f1fb] px-2 md:px-3 py-1 md:py-1 rounded-lg border border-blue-200 font-primary">
                                     Filtro: "{{ $q }}"
                                 </span>
                             @endif
@@ -365,7 +365,7 @@
                                                     </div>
 
                                                     <div class="min-w-0 flex-1">
-                                                        <h4 class="text-sm md:text-base font-semibold text-gray-900 leading-relaxed">
+                                                        <h4 class="text-sm md:text-base font-semibold text-gray-900 leading-relaxed font-primary">
                                                             {{ $dig->titulo }}
                                                         </h4>
                                                     </div>
@@ -374,7 +374,7 @@
                                                 {{-- Acción --}}
                                                 <div class="flex-shrink-0">
                                                     <a href="{{ route('edudata.normativa.show', $dig->id) }}"
-                                                       class="bg-gradient-to-br from-blue-500 to-blue-600 text-white w-full md:w-auto inline-flex items-center justify-center gap-2 px-3 md:px-4 py-2 md:py-2.5 text-xs md:text-sm font-medium rounded-xl shadow-sm transition-colors duration-200 group">
+                                                       class="bg-gradient-to-br from-[var(--pri-700)] to-[var(--pri-900)] text-white w-full md:w-auto inline-flex items-center justify-center gap-2 px-3 md:px-4 py-2 md:py-2.5 text-xs md:text-sm font-medium rounded-xl shadow-sm transition-colors duration-200 group font-primary">
                                                         Ver documento
                                                         <svg xmlns="http://www.w3.org/2000/svg"
                                                              class="h-3 w-3 md:h-4 md:w-4 group-hover:translate-x-0.5 transition-transform"
@@ -396,7 +396,7 @@
                                 {{ $digestos->onEachSide(1)->links() }}
                             </div>
                         @else
-                            <div class="p-5 md:p-6 text-center text-gray-600">
+                            <div class="p-5 md:p-6 text-center text-gray-600 font-secondary">
                                 <div
                                     class="mx-auto h-12 w-12 md:h-16 md:w-16 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center mb-2.5 md:mb-3">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 md:h-8 md:w-8 text-gray-400"
@@ -411,7 +411,7 @@
                                         búsqueda</p>
                                     <p class="text-xs md:text-sm">Intenta con otros términos o <a
                                             href="{{ route('edudata.normativa') }}"
-                                            class="text-blue-600 hover:text-blue-700 font-medium transition-colors">ver todas las
+                                            class="text-[var(--pri-700)] hover:text-[var(--pri-900)] font-medium transition-colors">ver todas las
                                             normativas</a></p>
                                 @else
                                     <p class="text-base md:text-lg font-semibold text-gray-800 mb-1">Aún no hay normativas disponibles
