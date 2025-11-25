@@ -380,7 +380,7 @@
                             </p>
                         </div>
 
-                        <!-- Resumen general: se parte de lo que ya había y se suma la info nueva -->
+                        <!-- Resumen general -->
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
                             <!-- Inicial / Primario: se mantiene 431 -->
                             <div class="counter-card group p-4" style="border-left-color: var(--pri-700);">
@@ -392,7 +392,7 @@
                                 </div>
                             </div>
 
-                            <!-- Secundario: se actualiza 2° extraordinaria y el total sube a 1.979 -->
+                            <!-- Secundario actualizado: 1.979 -->
                             <div class="counter-card group p-4" style="border-left-color: var(--pri-500);">
                                 <div class="flex items-center gap-3">
                                     <div class="flex-1 min-w-0">
@@ -402,7 +402,7 @@
                                 </div>
                             </div>
 
-                            <!-- Superior: se suman los nuevos llamados -->
+                            <!-- Superior: 1.062 -->
                             <div class="counter-card group p-4" style="border-left-color: var(--ter-500);">
                                 <div class="flex items-center gap-3">
                                     <div class="flex-1 min-w-0">
@@ -530,7 +530,7 @@
                                         </div>
                                     </div>
 
-                                    {{-- La 6° asamblea ordinaria que ya estaba en la versión anterior se mantiene --}}
+                                    {{-- 6° ordinaria original --}}
                                     <div class="assembly-card" style="border-left-color: var(--pri-700);">
                                         <div class="flex justify-between items-start">
                                             <div>
@@ -576,7 +576,7 @@
                                         </div>
                                     </div>
 
-                                    {{-- 3° extraordinaria que ya existía en el blade original --}}
+                                    {{-- 3° extraordinaria original --}}
                                     <div class="assembly-card" style="border-left-color: var(--sec-500);">
                                         <div class="flex justify-between items-start">
                                             <div>
@@ -602,7 +602,7 @@
                                 </div>
                                 <div class="p-4">
                                     <div class="text-center py-4">
-                                        {{-- 67+66+69+18+50+110 = 380 / 27+13+11 = 51 / Total = 431 --}}
+                                        {{-- 67+66+69+18+50+110 = 380 / 27+13+11 = 51 / Total 431 --}}
                                         <div class="text-4xl md:text-5xl font-bold text-tertiary-500 mb-2">431</div>
                                         <p class="text-lg font-semibold text-gray-700">Cargos Totales Ofrecidos</p>
                                         <div class="mt-4 space-y-2">
@@ -637,7 +637,7 @@
                         </div>
 
                         <div class="results-grid mobile-card-container">
-                            <!-- Asambleas Ordinarias Secundario (se mantienen las 6) -->
+                            <!-- Asambleas Ordinarias Secundario -->
                             <div class="file-card" style="border-left-color: var(--pri-500);">
                                 <div class="section-header"
                                      style="background:linear-gradient(135deg, var(--pri-500) 0%, var(--pri-700) 100%);">
@@ -737,7 +737,6 @@
                                         </div>
                                     </div>
 
-                                    {{-- Actualizado: 2° extraordinaria ahora tiene 43 cargos --}}
                                     <div class="assembly-card" style="border-left-color: var(--acc-500);">
                                         <div class="flex justify-between items-start">
                                             <div>
@@ -789,9 +788,7 @@
                                 </div>
                                 <div class="p-4">
                                     <div class="text-center py-4">
-                                        {{-- Ordinarias: 366+259+462+344+148+298 = 1.877 --}}
-                                        {{-- Extraordinarias: 26+43+15+18 = 102 --}}
-                                        {{-- Total: 1.979 --}}
+                                        {{-- Ordinarias: 1.877 / Extraordinarias: 102 / Total: 1.979 --}}
                                         <div class="text-4xl md:text-5xl font-bold text-primary-700 mb-2">1,979</div>
                                         <p class="text-lg font-semibold text-gray-700">Cargos Totales Ofrecidos</p>
                                         <div class="mt-4 space-y-2">
@@ -826,14 +823,14 @@
                         </div>
 
                         <div class="results-grid mobile-card-container">
-                            <!-- Llamados a Concurso -->
+                            <!-- Llamados a Concurso (resumen por llamado) -->
                             <div class="file-card" style="border-left-color: var(--ter-500);">
                                 <div class="section-header"
                                      style="background:linear-gradient(135deg, var(--ter-500) 0%, #4f8c87 100%);">
                                     <h3 class="text-base md:text-lg font-bold text-white">Llamados a Concurso</h3>
                                 </div>
                                 <div class="p-4 max-h-96 overflow-y-auto mobile-optimized">
-                                    {{-- 1º llamado - 187 --}}
+                                    {{-- 1º LLAMADO - 187 --}}
                                     <div class="assembly-card" style="border-left-color: var(--ter-500);">
                                         <div class="flex justify-between items-start">
                                             <div>
@@ -846,7 +843,7 @@
                                         </div>
                                     </div>
 
-                                    {{-- 2º llamado - 392 --}}
+                                    {{-- 2º LLAMADO - 392 --}}
                                     <div class="assembly-card" style="border-left-color: var(--ter-500);">
                                         <div class="flex justify-between items-start">
                                             <div>
@@ -861,7 +858,7 @@
                                         </div>
                                     </div>
 
-                                    {{-- 3º llamado - 111 --}}
+                                    {{-- 3º LLAMADO - 111 --}}
                                     <div class="assembly-card" style="border-left-color: var(--ter-500);">
                                         <div class="flex justify-between items-start">
                                             <div>
@@ -874,7 +871,7 @@
                                         </div>
                                     </div>
 
-                                    {{-- 4º llamado - 165 --}}
+                                    {{-- 4º LLAMADO - 165 --}}
                                     <div class="assembly-card" style="border-left-color: var(--ter-500);">
                                         <div class="flex justify-between items-start">
                                             <div>
@@ -887,7 +884,7 @@
                                         </div>
                                     </div>
 
-                                    {{-- 5º llamado - cargos nuevos - 119 --}}
+                                    {{-- 5º LLAMADO - CARGOS NUEVOS - 119 --}}
                                     <div class="assembly-card" style="border-left-color: var(--ter-500);">
                                         <div class="flex justify-between items-start">
                                             <div>
@@ -902,7 +899,7 @@
                                         </div>
                                     </div>
 
-                                    {{-- 5º llamado - vacantes de llamados anteriores - 88 --}}
+                                    {{-- 5º LLAMADO - VACANTES LLAMADOS ANTERIORES - 88 --}}
                                     <div class="assembly-card" style="border-left-color: var(--ter-500);">
                                         <div class="flex justify-between items-start">
                                             <div>
@@ -919,41 +916,165 @@
                                 </div>
                             </div>
 
-                            <!-- Distribución por Tipo (texto general, sin chocar con los totales) -->
+                            <!-- NUEVA tarjeta: Detalle por Instituto -->
                             <div class="file-card" style="border-left-color: var(--sec-500);">
                                 <div class="section-header"
                                      style="background:linear-gradient(135deg, var(--sec-500) 0%, #a8b41d 100%);">
-                                    <h3 class="text-base md:text-lg font-bold text-white">Distribución por Tipo</h3>
-                                    <p class="text-xs md:text-sm text-white/90 mt-1">Interinatos y suplencias 2025</p>
+                                    <h3 class="text-base md:text-lg font-bold text-white">Detalle por Instituto</h3>
+                                    <p class="text-xs md:text-sm text-white/90 mt-1">Distribución de cargos por IES</p>
                                 </div>
-                                <div class="p-4">
-                                    <div class="space-y-4">
-                                        <div class="flex items-center justify-between p-3 bg-secondary-50 rounded-lg">
-                                            <div class="flex items-center">
-                                                <div class="w-3 h-3 bg-secondary-500 rounded-full mr-3"></div>
-                                                <span class="font-medium text-gray-700">Interinatos</span>
-                                            </div>
-                                            <span class="font-bold text-secondary-700">
-                                                Mayor proporción de cargos
-                                            </span>
-                                        </div>
-                                        <div class="flex items-center justify-between p-3 bg-primary-50 rounded-lg">
-                                            <div class="flex items-center">
-                                                <div class="w-3 h-3 bg-primary-500 rounded-full mr-3"></div>
-                                                <span class="font-medium text-gray-700">Suplencias</span>
-                                            </div>
-                                            <span class="font-bold text-primary-700">
-                                                Complemento de la cobertura
-                                            </span>
-                                        </div>
+                                <div class="p-4 max-h-96 overflow-y-auto mobile-optimized text-sm space-y-4">
+                                    {{-- 1º llamado --}}
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800 mb-1">
+                                            1º llamado – 24 de junio de 2025 (187 cargos)
+                                        </h4>
+                                        <ul class="list-disc list-inside text-gray-700 space-y-0.5">
+                                            <li>IES Andalgalá: 11</li>
+                                            <li>IES Belén: 9</li>
+                                            <li>IES Capayán: 15</li>
+                                            <li>IES Chavarría: 9</li>
+                                            <li>IES Clara J. Armstrong: 8</li>
+                                            <li>IES Corpacci: sin cargos</li>
+                                            <li>IES Fiambalá: 8</li>
+                                            <li>IES José Cubas: 18</li>
+                                            <li>IES Maldones: 16</li>
+                                            <li>IES Pomán: 22</li>
+                                            <li>IES Recreo: 25</li>
+                                            <li>IES Santa María: 4</li>
+                                            <li>IES Santa Rosa: 4</li>
+                                            <li>IES Tinogasta: 25</li>
+                                            <li>ISAC: 4</li>
+                                            <li>ISEF: 3</li>
+                                            <li>ISTI: 6</li>
+                                        </ul>
                                     </div>
-                                    <div class="mt-6 bg-gray-50 rounded-lg p-4">
-                                        <h4 class="font-semibold text-gray-800 mb-2">Áreas de cobertura</h4>
-                                        <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
-                                            <li>Ciencias Exactas</li>
-                                            <li>Ciencias Sociales</li>
-                                            <li>Humanidades</li>
-                                            <li>Tecnología y otras áreas específicas</li>
+
+                                    {{-- 2º llamado --}}
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800 mb-1">
+                                            2º llamado – 30 de junio / 08 de julio 2025 (392 cargos)
+                                        </h4>
+                                        <ul class="list-disc list-inside text-gray-700 space-y-0.5">
+                                            <li>IES Andalgalá: 47</li>
+                                            <li>IES Belén: 57</li>
+                                            <li>IES Capayán: 28</li>
+                                            <li>IES Chavarría: sin cargos</li>
+                                            <li>IES Clara J. Armstrong: sin cargos</li>
+                                            <li>IES Corpacci: sin cargos</li>
+                                            <li>IES Fiambalá: 33</li>
+                                            <li>IES José Cubas: 8</li>
+                                            <li>IES Maldones: 36</li>
+                                            <li>IES Pomán: 46</li>
+                                            <li>IES Recreo: 27</li>
+                                            <li>IES Santa María: 48</li>
+                                            <li>IES Santa Rosa: 32</li>
+                                            <li>IES Tinogasta: 30</li>
+                                            <li>ISAC: sin cargos</li>
+                                            <li>ISEF: sin cargos</li>
+                                            <li>ISTI: sin cargos</li>
+                                        </ul>
+                                    </div>
+
+                                    {{-- 3º llamado --}}
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800 mb-1">
+                                            3º llamado – 15 de septiembre de 2025 (111 cargos)
+                                        </h4>
+                                        <ul class="list-disc list-inside text-gray-700 space-y-0.5">
+                                            <li>IES Andalgalá: 12</li>
+                                            <li>IES Belén: 12</li>
+                                            <li>IES Capayán: sin cargos</li>
+                                            <li>IES Chavarría: sin cargos</li>
+                                            <li>IES Clara J. Armstrong: 1</li>
+                                            <li>IES Corpacci: 4</li>
+                                            <li>IES Fiambalá: 2</li>
+                                            <li>IES José Cubas: 3</li>
+                                            <li>IES Maldones: 21</li>
+                                            <li>IES Pomán: 12</li>
+                                            <li>IES Recreo: 12</li>
+                                            <li>IES Santa María: 21</li>
+                                            <li>IES Santa Rosa: 6</li>
+                                            <li>IES Tinogasta: 5</li>
+                                            <li>ISAC: sin cargos</li>
+                                            <li>ISEF: sin cargos</li>
+                                            <li>ISTI: sin cargos</li>
+                                        </ul>
+                                    </div>
+
+                                    {{-- 4º llamado --}}
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800 mb-1">
+                                            4º llamado – 19 de septiembre de 2025 (165 cargos)
+                                        </h4>
+                                        <ul class="list-disc list-inside text-gray-700 space-y-0.5">
+                                            <li>IES Andalgalá: 1</li>
+                                            <li>IES Belén: 15</li>
+                                            <li>IES Capayán: 7</li>
+                                            <li>IES Chavarría: 23</li>
+                                            <li>IES Clara J. Armstrong: 8</li>
+                                            <li>IES Corpacci: 4</li>
+                                            <li>IES Fiambalá: sin cargos</li>
+                                            <li>IES José Cubas: 11</li>
+                                            <li>IES Maldones: 15</li>
+                                            <li>IES Pomán: 22</li>
+                                            <li>IES Recreo: sin cargos</li>
+                                            <li>IES Santa María: 6</li>
+                                            <li>IES Santa Rosa: 13</li>
+                                            <li>IES Tinogasta: 15</li>
+                                            <li>ISAC: 21</li>
+                                            <li>ISEF: sin cargos</li>
+                                            <li>ISTI: 4</li>
+                                        </ul>
+                                    </div>
+
+                                    {{-- 5º llamado – Cargos nuevos --}}
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800 mb-1">
+                                            5º llamado – 11 de noviembre de 2025 (Cargos nuevos, 119 cargos)
+                                        </h4>
+                                        <ul class="list-disc list-inside text-gray-700 space-y-0.5">
+                                            <li>IES Andalgalá: 7</li>
+                                            <li>IES Belén: 7</li>
+                                            <li>IES Chavarría: 18</li>
+                                            <li>IES Clara J. Armstrong: 5</li>
+                                            <li>IES Corpacci: sin cargos</li>
+                                            <li>IES Fiambalá: 6</li>
+                                            <li>IES José Cubas: 9</li>
+                                            <li>IES Maldones: 6</li>
+                                            <li>IES Pomán: 2</li>
+                                            <li>IES Recreo: 33</li>
+                                            <li>IES Santa María: 3</li>
+                                            <li>IES Santa Rosa: 4</li>
+                                            <li>IES Tinogasta: 2</li>
+                                            <li>ISAC: 10</li>
+                                            <li>ISEF: 2</li>
+                                            <li>ISTI: 5</li>
+                                        </ul>
+                                    </div>
+
+                                    {{-- 5º llamado – Vacantes llamados anteriores --}}
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800 mb-1">
+                                            5º llamado – 11 de noviembre de 2025 (Vacantes de llamados anteriores, 88 cargos)
+                                        </h4>
+                                        <ul class="list-disc list-inside text-gray-700 space-y-0.5">
+                                            <li>IES Andalgalá: 8</li>
+                                            <li>IES Belén: 9</li>
+                                            <li>IES Chavarría: sin cargos</li>
+                                            <li>IES Clara J. Armstrong: sin cargos</li>
+                                            <li>IES Corpacci: 2</li>
+                                            <li>IES Fiambalá: sin cargos</li>
+                                            <li>IES José Cubas: 2</li>
+                                            <li>IES Maldones: 15</li>
+                                            <li>IES Pomán: 20</li>
+                                            <li>IES Recreo: 4</li>
+                                            <li>IES Santa María: 12</li>
+                                            <li>IES Santa Rosa: 7</li>
+                                            <li>IES Tinogasta: 6</li>
+                                            <li>ISAC: 3</li>
+                                            <li>ISEF: sin cargos</li>
+                                            <li>ISTI: sin cargos</li>
                                         </ul>
                                     </div>
                                 </div>

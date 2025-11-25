@@ -831,12 +831,16 @@
             autoAdvanceInterval: null,
             slides: Array.isArray(slides) && slides.length ? slides : [
                 {
-                    image: '{{ asset('images/coberturas/7asamblea.png') }}',
-                    title: '7ma Asamblea - Información General'
+                    image: '{{ asset('images/coberturas/8va_asamblea2.jpg') }}',
+                    title: '8va Asamblea - Información General'
                 },
                 {
-                    image: '{{ asset('images/coberturas/7asamblea1.png') }}',
-                    title: '7ma Asamblea - Detalles y Agenda'
+                    image: '{{ asset('images/coberturas/8va_asamblea.jpg') }}',
+                    title: '8va Asamblea - Detalles y Agenda'
+                },
+                {
+                    image: '{{ asset('images/coberturas/4ta_asamblea_cabecera.jpg') }}',
+                    title: 'Asamblea Cabecera Cero'
                 }
             ],
             init(){

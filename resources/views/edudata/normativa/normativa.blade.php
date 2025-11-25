@@ -80,49 +80,6 @@
             </div>
         </div>
 
-        {{-- Visor PDF mejorado --}}
-        <div class="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
-            <div class="px-6 py-4 border-b border-gray-200 bg-gradient-to-r from-gray-50 to-white flex items-center justify-between">
-                <div class="flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" clip-rule="evenodd" />
-                    </svg>
-                    <span class="text-sm font-medium text-gray-700">Vista previa del documento</span>
-                </div>
-                <div class="text-xs text-gray-500">
-                    Usa los controles del visor para navegar
-                </div>
-            </div>
-
-            {{-- Usamos la ruta del controlador que sirve SIEMPRE inline (local o externo) --}}
-            <iframe
-                src="{{ route('edudata.normativa.file', $digesto->id) }}#toolbar=1&navpanes=1&scrollbar=1"
-                class="w-full h-[78vh]"
-                title="Visualizador de PDF - {{ $digesto->titulo }}"
-            ></iframe>
-
-            {{-- Fallback mejorado si el iframe no carga --}}
-            <div class="p-6 text-center text-gray-600 bg-gray-50 border-t border-gray-200">
-                <div class="max-w-md mx-auto">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto text-gray-400 mb-2" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd" />
-                    </svg>
-                    <p class="text-sm mb-3">Si el visor no se muestra correctamente, podés:</p>
-                    <div class="flex flex-col sm:flex-row gap-2 justify-center">
-                        <a class="text-sm text-gray-700 hover:text-gray-900 hover:underline font-medium"
-                           href="{{ route('edudata.normativa.download', $digesto->id) }}">
-                            Descargar el archivo
-                        </a>
-                        <span class="hidden sm:inline text-gray-400">•</span>
-                        <a class="text-sm text-gray-700 hover:text-gray-900 hover:underline font-medium"
-                           href="{{ route('edudata.normativa.file', $digesto->id) }}" target="_blank" rel="noopener">
-                            Abrir en una nueva pestaña
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         {{-- Navegación adicional --}}
         <div class="mt-6 flex justify-between items-center">
             <a href="{{ route('edudata.normativa') }}"
