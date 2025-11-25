@@ -131,7 +131,10 @@
         </style>
 
         {{-- ==================== Presentación (solo desktop/tablet) ==================== --}}
-        @include('edudata.partials.presentacion-index')
+        {{-- ==================== Presentación (solo desktop/tablet) ==================== --}}
+        <section class="hidden md:block" x-data x-cloak>
+            @include('edudata.partials.presentacion-index')
+        </section>
 
         {{-- ==================== Sección de estadísticas (compacta) ==================== --}}
         <section class="relative">
@@ -139,13 +142,13 @@
             <div
                 class="absolute inset-x-0 -top-2 h-[2px] bg-gradient-to-r from-transparent via-[color:var(--pri-500)] to-transparent">
             </div>
-
-            <div class="estadisticas-bg">
-                <div class="container mx-auto px-4 py-4">
-                    @include('edudata.partials.estadisticas-index')
+            <section class="hidden md:block" x-data x-cloak>
+                <div class="estadisticas-bg">
+                    <div class="container mx-auto px-4 py-4">
+                        @include('edudata.partials.estadisticas-index')
+                    </div>
                 </div>
-            </div>
-
+            </section>
             <div
                 class="absolute inset-x-0 -bottom-2 h-[2px] bg-gradient-to-r from-transparent via-[color:var(--pri-500)] to-transparent">
             </div>

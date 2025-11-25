@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,63 +16,90 @@
     <meta name="theme-color" content="#222A59">
 
     <!-- Fuentes -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
     <style>
-        :root{
+        :root {
             /* Nueva paleta de colores */
-            --pri-900: #222A59;   /* Azul oscuro principal */
-            --pri-700: #405CA4;   /* Azul medio */
-            --pri-500: #64A1D5;   /* Azul claro */
-            --sec-500: #CBD03E;   /* Verde institucional */
-            --ter-500: #65A8A3;   /* Verde azulado */
-            --acc-500: #807DA8;   /* Violeta complementario */
-            
+            --pri-900: #222A59;
+            /* Azul oscuro principal */
+            --pri-700: #405CA4;
+            /* Azul medio */
+            --pri-500: #64A1D5;
+            /* Azul claro */
+            --sec-500: #CBD03E;
+            /* Verde institucional */
+            --ter-500: #65A8A3;
+            /* Verde azulado */
+            --acc-500: #807DA8;
+            /* Violeta complementario */
+
             /* Colores neutros */
-            --ink: #1f2937;       /* Texto base */
-            --gray-200: #e5e7eb;  /* Bordes */
-            --gray-100: #f3f4f6;  /* Fondos claros */
+            --ink: #1f2937;
+            /* Texto base */
+            --gray-200: #e5e7eb;
+            /* Bordes */
+            --gray-100: #f3f4f6;
+            /* Fondos claros */
         }
 
         /* Definición de fuentes */
         body {
             font-family: 'Open Sans', sans-serif;
         }
-        
+
         .font-primary {
             font-family: 'Helvetica Neue', Arial, sans-serif;
         }
 
-        [x-cloak]{ display:none !important; }
+        [x-cloak] {
+            display: none !important;
+        }
 
         /* Scrollbars coherentes */
-        .scrollbar-thin::-webkit-scrollbar{ width:8px; }
-        .scrollbar-thin::-webkit-scrollbar-thumb{ background-color: var(--pri-500); border-radius:4px; }
-        .scrollbar-thin::-webkit-scrollbar-thumb:hover{ background-color: var(--pri-700); }
-        .scrollbar-thin::-webkit-scrollbar-track{ background-color: #e8f1fb; }
+        .scrollbar-thin::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .scrollbar-thin::-webkit-scrollbar-thumb {
+            background-color: var(--pri-500);
+            border-radius: 4px;
+        }
+
+        .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+            background-color: var(--pri-700);
+        }
+
+        .scrollbar-thin::-webkit-scrollbar-track {
+            background-color: #e8f1fb;
+        }
 
         /* Fondo con patrón para la sección de estadísticas */
-        .estadisticas-bg{
+        .estadisticas-bg {
             position: relative;
         }
-        .estadisticas-bg::before{
-            content:'';
-            position:absolute; inset:0;
-            pointer-events:none;
+
+        .estadisticas-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
         }
 
         /* Utilitarios opcionales para unificar tarjetas */
-        .surface{
-            background:#fff;
-            border:1px solid var(--gray-200);
+        .surface {
+            background: #fff;
+            border: 1px solid var(--gray-200);
             border-radius: 1rem;
-            box-shadow: 0 8px 20px rgba(0,0,0,.06);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, .06);
         }
-        .surface-head{
-            font-weight:700;
-            color:#fff;
+
+        .surface-head {
+            font-weight: 700;
+            color: #fff;
             padding: .75rem 1rem;
-            border-bottom:1px solid rgba(255,255,255,.2);
+            border-bottom: 1px solid rgba(255, 255, 255, .2);
         }
     </style>
 
@@ -116,7 +144,11 @@
     @if (Request::is('edured*'))
         @include('edured.partials.top-navbar')
     @else
-        @include('edudata.partials.top-navbar')
+        <nav class="w-full">
+            <div x-data x-cloak>
+                @include('edudata.partials.top-navbar')
+            </div>
+        </nav>
     @endif
 
     {{-- Contenido principal --}}
@@ -131,4 +163,5 @@
         @include('edudata.partials.bottom-navbar')
     @endif
 </body>
+
 </html>
