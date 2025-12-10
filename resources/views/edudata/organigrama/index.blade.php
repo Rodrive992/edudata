@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Edudata - Organigrama Ministerial')
+@section('title', 'Organigrama Ministerial')
 
 @section('content')
     <div class="container mx-auto px-4 py-6">

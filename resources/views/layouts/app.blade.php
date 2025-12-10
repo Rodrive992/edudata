@@ -143,12 +143,8 @@
     {{-- Top navbar --}}
     @if (Request::is('edured*'))
         @include('edured.partials.top-navbar')
-    @else
-        <nav class="w-full">
-            <div x-data x-cloak>
-                @include('edudata.partials.top-navbar')
-            </div>
-        </nav>
+    @else                   
+                @include('edudata.partials.top-navbar')       
     @endif
 
     {{-- Contenido principal --}}

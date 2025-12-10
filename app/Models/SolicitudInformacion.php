@@ -27,14 +27,23 @@ class SolicitudInformacion extends Model
         'email_solicitante',
         'asunto_solicitud',
         'solicitud_texto',
+        'fecha_respuesta',
+        'usuario_respuesta',
         'estado_solicitud',
+        'mostrar_solicitud',
         'asunto_respuesta_solicitud',
         'respuesta_solicitud',
         'archivo_respuesta_solicitud',
     ];
 
+      protected $casts = [
+        
+        'fecha_respuesta' => 'datetime',
+    ];
+
     // Opcional: Si querés definir valores por defecto
     protected $attributes = [
         'estado_solicitud' => 'pendiente',
+        'mostrar_solicitud'  => 'no',
     ];
 }

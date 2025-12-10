@@ -372,7 +372,7 @@
                     <div class="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-xl p-4 md:p-6 my-4 border border-gray-200">
                         <div class="text-center mb-4 md:mb-6">
                             <p class="text-gray-700 leading-relaxed text-base md:text-lg">
-                                EL <span class="font-semibold text-primary-700">Ministerio de Educación, Ciencia y
+                                El <span class="font-semibold text-primary-700">Ministerio de Educación, Ciencia y
                                     Tecnología</span>
                                 informa la cantidad de cargos ofrecidos en las
                                 asambleas ordinarias y extraordinarias del año 2025,
@@ -382,31 +382,31 @@
 
                         <!-- Resumen general -->
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
-                            <!-- Inicial / Primario: se mantiene 431 -->
+                            <!-- Inicial / Primario -->
                             <div class="counter-card group p-4" style="border-left-color: var(--pri-700);">
                                 <div class="flex items-center gap-3">
                                     <div class="flex-1 min-w-0">
-                                        <div class="counter-number text-primary-700">431</div>
+                                        <div class="counter-number text-primary-700">522</div>
                                         <div class="counter-label">Nivel Inicial, Primario, Especial y Adultos</div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Secundario actualizado: 1.979 -->
+                            <!-- Secundario -->
                             <div class="counter-card group p-4" style="border-left-color: var(--pri-500);">
                                 <div class="flex items-center gap-3">
                                     <div class="flex-1 min-w-0">
-                                        <div class="counter-number text-primary-500">1,979</div>
+                                        <div class="counter-number text-primary-500">2,196</div>
                                         <div class="counter-label">Nivel Secundario y Modalidades</div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Superior: 1.062 -->
+                            <!-- Superior -->
                             <div class="counter-card group p-4" style="border-left-color: var(--ter-500);">
                                 <div class="flex items-center gap-3">
                                     <div class="flex-1 min-w-0">
-                                        <div class="counter-number text-tertiary-500">1,062</div>
+                                        <div class="counter-number text-tertiary-500">914</div>
                                         <div class="counter-label">Nivel Superior</div>
                                     </div>
                                 </div>
@@ -530,7 +530,6 @@
                                         </div>
                                     </div>
 
-                                    {{-- 6° ordinaria original --}}
                                     <div class="assembly-card" style="border-left-color: var(--pri-700);">
                                         <div class="flex justify-between items-start">
                                             <div>
@@ -539,6 +538,30 @@
                                             </div>
                                             <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-bold">
                                                 110 cargos
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="assembly-card" style="border-left-color: var(--pri-700);">
+                                        <div class="flex justify-between items-start">
+                                            <div>
+                                                <h4 class="font-semibold text-gray-800">7° Asamblea ordinaria</h4>
+                                                <p class="text-sm text-gray-600">30 de octubre de 2025</p>
+                                            </div>
+                                            <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-bold">
+                                                91 cargos
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="assembly-card" style="border-left-color: var(--pri-700);">
+                                        <div class="flex justify-between items-start">
+                                            <div>
+                                                <h4 class="font-semibold text-gray-800">8° Asamblea ordinaria</h4>
+                                                <p class="text-sm text-gray-600">26 de noviembre de 2025</p>
+                                            </div>
+                                            <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-bold">
+                                                96 cargos
                                             </span>
                                         </div>
                                     </div>
@@ -576,7 +599,6 @@
                                         </div>
                                     </div>
 
-                                    {{-- 3° extraordinaria original --}}
                                     <div class="assembly-card" style="border-left-color: var(--sec-500);">
                                         <div class="flex justify-between items-start">
                                             <div>
@@ -602,23 +624,13 @@
                                 </div>
                                 <div class="p-4">
                                     <div class="text-center py-4">
-                                        {{-- 67+66+69+18+50+110 = 380 / 27+13+11 = 51 / Total 431 --}}
-                                        <div class="text-4xl md:text-5xl font-bold text-tertiary-500 mb-2">431</div>
+                                        <div class="text-4xl md:text-5xl font-bold text-tertiary-500 mb-2">522</div>
                                         <p class="text-lg font-semibold text-gray-700">Cargos Totales Ofrecidos</p>
-                                        <div class="mt-4 space-y-2">
-                                            <div class="flex justify-between">
-                                                <span class="text-gray-600">Asambleas Ordinarias:</span>
-                                                <span class="font-bold text-gray-800">380 cargos</span>
-                                            </div>
-                                            <div class="flex justify-between">
-                                                <span class="text-gray-600">Asambleas Extraordinarias:</span>
-                                                <span class="font-bold text-gray-800">51 cargos</span>
-                                            </div>
-                                            <div class="flex justify-between border-t pt-2 mt-2">
-                                                <span class="text-gray-800 font-semibold">Total General:</span>
-                                                <span class="font-bold text-tertiary-500">431 cargos</span>
-                                            </div>
-                                        </div>
+                                        <p class="text-xs md:text-sm text-gray-600 mt-3">
+                                            Total informado para el período 2025 (al cierre de la 7° asamblea ordinaria).
+                                            La 8° asamblea ordinaria del 26 de noviembre de 2025 adiciona
+                                            <span class="font-semibold">96 cargos</span> más, detallados en las tarjetas.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -715,6 +727,30 @@
                                             </span>
                                         </div>
                                     </div>
+
+                                    <div class="assembly-card" style="border-left-color: var(--pri-500);">
+                                        <div class="flex justify-between items-start">
+                                            <div>
+                                                <h4 class="font-semibold text-gray-800">7° Asamblea ordinaria</h4>
+                                                <p class="text-sm text-gray-600">29 de octubre de 2025</p>
+                                            </div>
+                                            <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-bold">
+                                                254 cargos
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="assembly-card" style="border-left-color: var(--pri-500);">
+                                        <div class="flex justify-between items-start">
+                                            <div>
+                                                <h4 class="font-semibold text-gray-800">8° Asamblea ordinaria</h4>
+                                                <p class="text-sm text-gray-600">26 de noviembre de 2025</p>
+                                            </div>
+                                            <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-bold">
+                                                215 cargos
+                                            </span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -741,10 +777,10 @@
                                         <div class="flex justify-between items-start">
                                             <div>
                                                 <h4 class="font-semibold text-gray-800">2° Asamblea extraordinaria</h4>
-                                                <p class="text-sm text-gray-600">15 de septiembre de 2025</p>
+                                                <p class="text-sm text-gray-600">14 de octubre de 2025</p>
                                             </div>
                                             <span class="bg-accent-100 text-accent-800 px-3 py-1 rounded-full text-sm font-bold">
-                                                43 cargos
+                                                6 cargos
                                             </span>
                                         </div>
                                     </div>
@@ -766,8 +802,8 @@
                                     <div class="assembly-card" style="border-left-color: var(--acc-500);">
                                         <div class="flex justify-between items-start">
                                             <div>
-                                                <h4 class="font-semibold text-gray-800">4° Asamblea extraordinaria</h4>
-                                                <p class="text-sm text-gray-600">24 de octubre de 2025</p>
+                                                <h4 class="font-semibold text-gray-800">3° Asamblea extraordinaria</h4>
+                                                <p class="text-sm text-gray-600">24 de octubre de 2025 (cabecera 0)</p>
                                             </div>
                                             <span class="bg-accent-100 text-accent-800 px-3 py-1 rounded-full text-sm font-bold">
                                                 18 cargos
@@ -788,23 +824,13 @@
                                 </div>
                                 <div class="p-4">
                                     <div class="text-center py-4">
-                                        {{-- Ordinarias: 1.877 / Extraordinarias: 102 / Total: 1.979 --}}
-                                        <div class="text-4xl md:text-5xl font-bold text-primary-700 mb-2">1,979</div>
+                                        <div class="text-4xl md:text-5xl font-bold text-primary-700 mb-2">2,196</div>
                                         <p class="text-lg font-semibold text-gray-700">Cargos Totales Ofrecidos</p>
-                                        <div class="mt-4 space-y-2">
-                                            <div class="flex justify-between">
-                                                <span class="text-gray-600">Asambleas Ordinarias:</span>
-                                                <span class="font-bold text-gray-800">1,877 cargos</span>
-                                            </div>
-                                            <div class="flex justify-between">
-                                                <span class="text-gray-600">Asambleas Extraordinarias:</span>
-                                                <span class="font-bold text-gray-800">102 cargos</span>
-                                            </div>
-                                            <div class="flex justify-between border-t pt-2 mt-2">
-                                                <span class="text-gray-800 font-semibold">Total General:</span>
-                                                <span class="font-bold text-primary-700">1,979 cargos</span>
-                                            </div>
-                                        </div>
+                                        <p class="text-xs md:text-sm text-gray-600 mt-3">
+                                            Total informado para el período 2025 (al cierre de la 7° asamblea ordinaria).
+                                            La 8° asamblea ordinaria del 26 de noviembre de 2025 adiciona
+                                            <span class="font-semibold">215 cargos</span> más, detallados en las tarjetas.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -843,7 +869,7 @@
                                         </div>
                                     </div>
 
-                                    {{-- 2º LLAMADO - 392 --}}
+                                    {{-- 2º LLAMADO - 455 --}}
                                     <div class="assembly-card" style="border-left-color: var(--ter-500);">
                                         <div class="flex justify-between items-start">
                                             <div>
@@ -853,7 +879,7 @@
                                                 </p>
                                             </div>
                                             <span class="bg-tertiary-100 text-tertiary-800 px-3 py-1 rounded-full text-sm font-bold">
-                                                392 cargos
+                                                455 cargos
                                             </span>
                                         </div>
                                     </div>
@@ -871,7 +897,7 @@
                                         </div>
                                     </div>
 
-                                    {{-- 4º LLAMADO - 165 --}}
+                                    {{-- 4º LLAMADO - 161 --}}
                                     <div class="assembly-card" style="border-left-color: var(--ter-500);">
                                         <div class="flex justify-between items-start">
                                             <div>
@@ -879,204 +905,56 @@
                                                 <p class="text-sm text-gray-600">19 de septiembre de 2025</p>
                                             </div>
                                             <span class="bg-tertiary-100 text-tertiary-800 px-3 py-1 rounded-full text-sm font-bold">
-                                                165 cargos
-                                            </span>
-                                        </div>
-                                    </div>
-
-                                    {{-- 5º LLAMADO - CARGOS NUEVOS - 119 --}}
-                                    <div class="assembly-card" style="border-left-color: var(--ter-500);">
-                                        <div class="flex justify-between items-start">
-                                            <div>
-                                                <h4 class="font-semibold text-gray-800">
-                                                    5º llamado a cobertura – Cargos nuevos
-                                                </h4>
-                                                <p class="text-sm text-gray-600">11 de noviembre de 2025</p>
-                                            </div>
-                                            <span class="bg-tertiary-100 text-tertiary-800 px-3 py-1 rounded-full text-sm font-bold">
-                                                119 cargos
-                                            </span>
-                                        </div>
-                                    </div>
-
-                                    {{-- 5º LLAMADO - VACANTES LLAMADOS ANTERIORES - 88 --}}
-                                    <div class="assembly-card" style="border-left-color: var(--ter-500);">
-                                        <div class="flex justify-between items-start">
-                                            <div>
-                                                <h4 class="font-semibold text-gray-800">
-                                                    5º llamado a cobertura – Vacantes de llamados anteriores
-                                                </h4>
-                                                <p class="text-sm text-gray-600">11 de noviembre de 2025</p>
-                                            </div>
-                                            <span class="bg-tertiary-100 text-tertiary-800 px-3 py-1 rounded-full text-sm font-bold">
-                                                88 cargos
+                                                161 cargos
                                             </span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- NUEVA tarjeta: Detalle por Instituto -->
+                            <!-- Tarjeta: Detalle por Instituto -->
                             <div class="file-card" style="border-left-color: var(--sec-500);">
                                 <div class="section-header"
                                      style="background:linear-gradient(135deg, var(--sec-500) 0%, #a8b41d 100%);">
                                     <h3 class="text-base md:text-lg font-bold text-white">Detalle por Instituto</h3>
-                                    <p class="text-xs md:text-sm text-white/90 mt-1">Distribución de cargos por IES</p>
+                                    <p class="text-xs md:text-sm text-white/90 mt-1">
+                                        Institutos de Educación Superior que participan en los llamados 2025
+                                    </p>
                                 </div>
-                                <div class="p-4 max-h-96 overflow-y-auto mobile-optimized text-sm space-y-4">
-                                    {{-- 1º llamado --}}
-                                    <div>
-                                        <h4 class="font-semibold text-gray-800 mb-1">
-                                            1º llamado – 24 de junio de 2025 (187 cargos)
-                                        </h4>
+                                <div class="p-4 max-h-96 overflow-y-auto mobile-optimized text-sm space-y-3">
+                                    <p class="text-gray-700 mb-2">
+                                        Los llamados a concurso del Nivel Superior involucran a los siguientes
+                                        Institutos de Educación Superior de la Provincia de Catamarca:
+                                    </p>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
                                         <ul class="list-disc list-inside text-gray-700 space-y-0.5">
-                                            <li>IES Andalgalá: 11</li>
-                                            <li>IES Belén: 9</li>
-                                            <li>IES Capayán: 15</li>
-                                            <li>IES Chavarría: 9</li>
-                                            <li>IES Clara J. Armstrong: 8</li>
-                                            <li>IES Corpacci: sin cargos</li>
-                                            <li>IES Fiambalá: 8</li>
-                                            <li>IES José Cubas: 18</li>
-                                            <li>IES Maldones: 16</li>
-                                            <li>IES Pomán: 22</li>
-                                            <li>IES Recreo: 25</li>
-                                            <li>IES Santa María: 4</li>
-                                            <li>IES Santa Rosa: 4</li>
-                                            <li>IES Tinogasta: 25</li>
-                                            <li>ISAC: 4</li>
-                                            <li>ISEF: 3</li>
-                                            <li>ISTI: 6</li>
+                                            <li>IES Andalgalá</li>
+                                            <li>IES Belén</li>
+                                            <li>IES Capayán</li>
+                                            <li>IES Chavarría</li>
+                                            <li>IES Clara J. Armstrong</li>
+                                            <li>IES Corpacci</li>
+                                        </ul>
+                                        <ul class="list-disc list-inside text-gray-700 space-y-0.5">
+                                            <li>IES Fiambalá</li>
+                                            <li>IES José Cubas</li>
+                                            <li>IES Maldones</li>
+                                            <li>IES Pomán</li>
+                                            <li>IES Recreo</li>
+                                            <li>IES Santa María</li>
+                                        </ul>
+                                        <ul class="list-disc list-inside text-gray-700 space-y-0.5">
+                                            <li>IES Santa Rosa</li>
+                                            <li>IES Tinogasta</li>
+                                            <li>ISAC</li>
+                                            <li>ISEF</li>
+                                            <li>ISTI</li>
                                         </ul>
                                     </div>
-
-                                    {{-- 2º llamado --}}
-                                    <div>
-                                        <h4 class="font-semibold text-gray-800 mb-1">
-                                            2º llamado – 30 de junio / 08 de julio 2025 (392 cargos)
-                                        </h4>
-                                        <ul class="list-disc list-inside text-gray-700 space-y-0.5">
-                                            <li>IES Andalgalá: 47</li>
-                                            <li>IES Belén: 57</li>
-                                            <li>IES Capayán: 28</li>
-                                            <li>IES Chavarría: sin cargos</li>
-                                            <li>IES Clara J. Armstrong: sin cargos</li>
-                                            <li>IES Corpacci: sin cargos</li>
-                                            <li>IES Fiambalá: 33</li>
-                                            <li>IES José Cubas: 8</li>
-                                            <li>IES Maldones: 36</li>
-                                            <li>IES Pomán: 46</li>
-                                            <li>IES Recreo: 27</li>
-                                            <li>IES Santa María: 48</li>
-                                            <li>IES Santa Rosa: 32</li>
-                                            <li>IES Tinogasta: 30</li>
-                                            <li>ISAC: sin cargos</li>
-                                            <li>ISEF: sin cargos</li>
-                                            <li>ISTI: sin cargos</li>
-                                        </ul>
-                                    </div>
-
-                                    {{-- 3º llamado --}}
-                                    <div>
-                                        <h4 class="font-semibold text-gray-800 mb-1">
-                                            3º llamado – 15 de septiembre de 2025 (111 cargos)
-                                        </h4>
-                                        <ul class="list-disc list-inside text-gray-700 space-y-0.5">
-                                            <li>IES Andalgalá: 12</li>
-                                            <li>IES Belén: 12</li>
-                                            <li>IES Capayán: sin cargos</li>
-                                            <li>IES Chavarría: sin cargos</li>
-                                            <li>IES Clara J. Armstrong: 1</li>
-                                            <li>IES Corpacci: 4</li>
-                                            <li>IES Fiambalá: 2</li>
-                                            <li>IES José Cubas: 3</li>
-                                            <li>IES Maldones: 21</li>
-                                            <li>IES Pomán: 12</li>
-                                            <li>IES Recreo: 12</li>
-                                            <li>IES Santa María: 21</li>
-                                            <li>IES Santa Rosa: 6</li>
-                                            <li>IES Tinogasta: 5</li>
-                                            <li>ISAC: sin cargos</li>
-                                            <li>ISEF: sin cargos</li>
-                                            <li>ISTI: sin cargos</li>
-                                        </ul>
-                                    </div>
-
-                                    {{-- 4º llamado --}}
-                                    <div>
-                                        <h4 class="font-semibold text-gray-800 mb-1">
-                                            4º llamado – 19 de septiembre de 2025 (165 cargos)
-                                        </h4>
-                                        <ul class="list-disc list-inside text-gray-700 space-y-0.5">
-                                            <li>IES Andalgalá: 1</li>
-                                            <li>IES Belén: 15</li>
-                                            <li>IES Capayán: 7</li>
-                                            <li>IES Chavarría: 23</li>
-                                            <li>IES Clara J. Armstrong: 8</li>
-                                            <li>IES Corpacci: 4</li>
-                                            <li>IES Fiambalá: sin cargos</li>
-                                            <li>IES José Cubas: 11</li>
-                                            <li>IES Maldones: 15</li>
-                                            <li>IES Pomán: 22</li>
-                                            <li>IES Recreo: sin cargos</li>
-                                            <li>IES Santa María: 6</li>
-                                            <li>IES Santa Rosa: 13</li>
-                                            <li>IES Tinogasta: 15</li>
-                                            <li>ISAC: 21</li>
-                                            <li>ISEF: sin cargos</li>
-                                            <li>ISTI: 4</li>
-                                        </ul>
-                                    </div>
-
-                                    {{-- 5º llamado – Cargos nuevos --}}
-                                    <div>
-                                        <h4 class="font-semibold text-gray-800 mb-1">
-                                            5º llamado – 11 de noviembre de 2025 (Cargos nuevos, 119 cargos)
-                                        </h4>
-                                        <ul class="list-disc list-inside text-gray-700 space-y-0.5">
-                                            <li>IES Andalgalá: 7</li>
-                                            <li>IES Belén: 7</li>
-                                            <li>IES Chavarría: 18</li>
-                                            <li>IES Clara J. Armstrong: 5</li>
-                                            <li>IES Corpacci: sin cargos</li>
-                                            <li>IES Fiambalá: 6</li>
-                                            <li>IES José Cubas: 9</li>
-                                            <li>IES Maldones: 6</li>
-                                            <li>IES Pomán: 2</li>
-                                            <li>IES Recreo: 33</li>
-                                            <li>IES Santa María: 3</li>
-                                            <li>IES Santa Rosa: 4</li>
-                                            <li>IES Tinogasta: 2</li>
-                                            <li>ISAC: 10</li>
-                                            <li>ISEF: 2</li>
-                                            <li>ISTI: 5</li>
-                                        </ul>
-                                    </div>
-
-                                    {{-- 5º llamado – Vacantes llamados anteriores --}}
-                                    <div>
-                                        <h4 class="font-semibold text-gray-800 mb-1">
-                                            5º llamado – 11 de noviembre de 2025 (Vacantes de llamados anteriores, 88 cargos)
-                                        </h4>
-                                        <ul class="list-disc list-inside text-gray-700 space-y-0.5">
-                                            <li>IES Andalgalá: 8</li>
-                                            <li>IES Belén: 9</li>
-                                            <li>IES Chavarría: sin cargos</li>
-                                            <li>IES Clara J. Armstrong: sin cargos</li>
-                                            <li>IES Corpacci: 2</li>
-                                            <li>IES Fiambalá: sin cargos</li>
-                                            <li>IES José Cubas: 2</li>
-                                            <li>IES Maldones: 15</li>
-                                            <li>IES Pomán: 20</li>
-                                            <li>IES Recreo: 4</li>
-                                            <li>IES Santa María: 12</li>
-                                            <li>IES Santa Rosa: 7</li>
-                                            <li>IES Tinogasta: 6</li>
-                                            <li>ISAC: 3</li>
-                                            <li>ISEF: sin cargos</li>
-                                            <li>ISTI: sin cargos</li>
-                                        </ul>
-                                    </div>
+                                    <p class="text-xs text-gray-600 mt-2">
+                                        La distribución de cargos por instituto se realiza conforme a los llamados
+                                        y ampliaciones publicados oficialmente por el Ministerio.
+                                    </p>
                                 </div>
                             </div>
 
@@ -1089,22 +967,22 @@
                                 </div>
                                 <div class="p-4">
                                     <div class="text-center py-4">
-                                        {{-- 187+392+111+165+119+88 = 1.062 --}}
-                                        <div class="text-4xl md:text-5xl font-bold text-primary-500 mb-2">1,062</div>
+                                        {{-- 187+455+111+161 = 914 --}}
+                                        <div class="text-4xl md:text-5xl font-bold text-primary-500 mb-2">914</div>
                                         <p class="text-lg font-semibold text-gray-700">Cargos Totales Concursados</p>
                                         <div class="mt-4 space-y-3">
                                             <div class="bg-primary-50 rounded-lg p-3">
                                                 <div class="text-sm text-primary-800 font-semibold">
-                                                    6 llamados a concurso durante 2025
+                                                    4 llamados a concurso durante 2025
                                                 </div>
                                             </div>
-                                            <div class="grid grid-cols-2 md:grid-cols-3 gap-2 text-sm">
+                                            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
                                                 <div class="bg-gray-50 rounded p-2 text-center">
                                                     <div class="font-bold text-gray-800">187</div>
                                                     <div class="text-gray-600">1º llamado</div>
                                                 </div>
                                                 <div class="bg-gray-50 rounded p-2 text-center">
-                                                    <div class="font-bold text-gray-800">392</div>
+                                                    <div class="font-bold text-gray-800">455</div>
                                                     <div class="text-gray-600">2º llamado</div>
                                                 </div>
                                                 <div class="bg-gray-50 rounded p-2 text-center">
@@ -1112,16 +990,8 @@
                                                     <div class="text-gray-600">3º llamado</div>
                                                 </div>
                                                 <div class="bg-gray-50 rounded p-2 text-center">
-                                                    <div class="font-bold text-gray-800">165</div>
+                                                    <div class="font-bold text-gray-800">161</div>
                                                     <div class="text-gray-600">4º llamado</div>
-                                                </div>
-                                                <div class="bg-gray-50 rounded p-2 text-center">
-                                                    <div class="font-bold text-gray-800">119</div>
-                                                    <div class="text-gray-600">5º (nuevos)</div>
-                                                </div>
-                                                <div class="bg-gray-50 rounded p-2 text-center">
-                                                    <div class="font-bold text-gray-800">88</div>
-                                                    <div class="text-gray-600">5º (vacantes)</div>
                                                 </div>
                                             </div>
                                         </div>

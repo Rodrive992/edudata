@@ -13,8 +13,8 @@
                 <div class="absolute inset-0 pointer-events-none">
                     <div
                         class="absolute -inset-x-1 top-0 h-[140%] opacity-[0.08]
-          bg-gradient-to-tr from-white via-transparent to-white
-          animate-[sweep_6s_linear_infinite]">
+                        bg-gradient-to-tr from-white via-transparent to-white
+                        animate-[sweep_6s_linear_infinite]">
                     </div>
                 </div>
 
@@ -228,6 +228,12 @@
                         'color' => $colorPalette[4],
                         'image' => $imgBasePath . 'residencia' . $imgExtension,
                     ],
+                    [
+                        'href' => route('edudata.sumario'),
+                        'alt' => 'Sumario Docente',
+                        'color' => $colorPalette[1],
+                        'image' => $imgBasePath . 'sumario' . $imgExtension,
+                    ],
                 ];
             @endphp
 
@@ -267,7 +273,7 @@
                                         <div class="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
                                         <span class="font-medium">Información actualizada</span>
                                     </div>
-                                    <span class="bg-[#64A1D5] text-white px-1 py-1 ">24-11-2025</span>
+                                    <span class="bg-[#64A1D5] text-white px-1 py-1 ">10-12-2025</span>
                                 </div>
                             </div>
                         </div>

@@ -7,8 +7,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Symfony\Component\HttpFoundation\Response;
+use Carbon\Carbon;
+use App\Mail\RespuestaSolicitudMail;
 
 class SolicitudInformacionController extends Controller
 {
@@ -60,10 +63,11 @@ class SolicitudInformacionController extends Controller
             'asunto_solicitud'          => $data['asunto_solicitud'],
             'solicitud_texto'           => $data['solicitud_texto'],
             'estado_solicitud'          => 'pendiente',
+            'mostrar_solicitud'         => 'no',
         ]);
 
         return redirect()
-            ->route('edudata.solicitud-info')  
+            ->route('edudata.solicitud-info')
             ->with('ok', 'Tu solicitud fue registrada con el N° ' . $sol->id . '. Te contactaremos al correo indicado.');
     }
 
@@ -114,45 +118,61 @@ class SolicitudInformacionController extends Controller
     {
         $data = $request->validate([
             'asunto_respuesta_solicitud'   => ['required', 'string', 'min:5', 'max:150'],
-            'respuesta_solicitud'          => ['required', 'string', 'min:5', 'max:10000'],
+            'respuesta_solicitud'          => ['required', 'string', 'min:5', 'max:20000'],
             'archivo_respuesta_solicitud'  => ['nullable', 'file', 'mimes:pdf,jpg,jpeg,png,webp,doc,docx,xls,xlsx,zip', 'max:8192'],
             'enviar_email'                 => ['nullable', 'boolean'],
         ]);
 
         $rutaArchivo = $solicitud->archivo_respuesta_solicitud;
         if ($request->hasFile('archivo_respuesta_solicitud')) {
-            $rutaArchivo = $request->file('archivo_respuesta_solicitud')->store('solicitudes/respuestas', 'public');
+            $rutaArchivo = $request->file('archivo_respuesta_solicitud')
+                ->store('solicitudes/respuestas', 'public');
         }
+
+        $ahoraAr = Carbon::now('America/Argentina/Buenos_Aires');
+
+        $user = Auth::user();
+        $usuarioRespuesta = $user
+            ? ($user->name ?? $user->usuario ?? $user->email)
+            : 'sistema';
 
         $solicitud->update([
             'asunto_respuesta_solicitud'  => $data['asunto_respuesta_solicitud'],
             'respuesta_solicitud'         => $data['respuesta_solicitud'],
             'archivo_respuesta_solicitud' => $rutaArchivo,
             'estado_solicitud'            => 'respondida',
+            'fecha_respuesta'             => $ahoraAr,
+            'usuario_respuesta'           => $usuarioRespuesta,
         ]);
 
-        // Email opcional
+        $correoEnviado = false;
+
         if ($request->boolean('enviar_email')) {
             try {
-                $asunto = $data['asunto_respuesta_solicitud'];
-                $cuerpo = "Estimado/a {$solicitud->nombre_solicitante} {$solicitud->apellido_solicitante},\n\n" .
-                    "En respuesta a su solicitud #{$solicitud->id} (Asunto: {$solicitud->asunto_solicitud}):\n\n" .
-                    "{$data['respuesta_solicitud']}\n\n" .
-                    "Atentamente,\nDirección de Transparencia Activa";
+                Mail::to($solicitud->email_solicitante)
+                    ->send(new RespuestaSolicitudMail(
+                        $solicitud,
+                        $data['respuesta_solicitud'],
+                        $data['asunto_respuesta_solicitud']
+                    ));
 
-                Mail::raw($cuerpo, function ($message) use ($solicitud, $asunto) {
-                    $message->to($solicitud->email_solicitante, "{$solicitud->nombre_solicitante} {$solicitud->apellido_solicitante}")
-                        ->subject($asunto);
-                });
+                $correoEnviado = true;
             } catch (\Throwable $e) {
-                // opcional: log
+                $correoEnviado = false;
             }
         }
 
+        $mensaje = $correoEnviado
+            ? "Respuesta registrada y correo enviado para la solicitud #{$solicitud->id}."
+            : "Respuesta registrada para la solicitud #{$solicitud->id}. (No se envió correo electrónico).";
+
         return redirect()
-            ->route('edured.herramientas.solicitudes-info.paso2', $solicitud)
-            ->with('ok', "Respuesta enviada para la solicitud #{$solicitud->id}.");
+            ->route('edured.herramientas.solicitudes-info.respuesta', $solicitud)
+            ->with('ok', $mensaje);
     }
+
+
+
 
     /* =========================
        Servir archivos (INLINE)
@@ -291,9 +311,9 @@ class SolicitudInformacionController extends Controller
             default     => 'application/octet-stream',
         };
     }
+
     public function gestionRespuesta(SolicitudInformacion $solicitud)
     {
-        // Aseguramos que tenga estado respondida
         if (strtolower($solicitud->estado_solicitud ?? '') !== 'respondida') {
             return redirect()
                 ->route('edured.herramientas.solicitudes-info.index')

@@ -92,6 +92,9 @@
                                     <li><a href="{{ route('edudata.residencia') }}"
                                             class="{{ $itemBase }} {{ $itemFx }}">Residencia Universitaria
                                             <span class="{{ $itemCaret }}">→</span></a></li>
+                                    <li><a href="{{ route('edudata.sumario') }}"
+                                            class="{{ $itemBase }} {{ $itemFx }}">Sumario Docente
+                                            <span class="{{ $itemCaret }}">→</span></a></li>
                                 </ul>
                             </div>
                         </div>
