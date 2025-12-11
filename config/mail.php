@@ -111,7 +111,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'rodrigovegga992@gmail.com'),
+        'address' => env('MAIL_FROM_ADDRESS', 'transparenciaactiva@catamarca.edu.ar'),
         'name' => env('MAIL_FROM_NAME', 'Dirección de Transparencia Activa'),
     ],
 

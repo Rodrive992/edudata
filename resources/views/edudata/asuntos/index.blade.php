@@ -113,7 +113,7 @@
                             <h2 class="text-lg md:text-xl font-semibold text-[color:var(--ink)]">Actividad Jurídica</h2>
                         </div>
                         <p class="text-[color:var(--ink)] leading-relaxed flex-grow text-sm md:text-base">
-                            Desde el mes de febrero y hasta el 27/08/2025, se han tramitado en total <strong>984
+                            Desde el mes de febrero y hasta el 10/12/2025, se han tramitado en total <strong>1,766
                                 expedientes</strong>,
                             abarcando toda la normativa aplicable al sector docente y no docente en las áreas pedagógica,
                             administrativa y contable del Ministerio de Educación, Ciencia y Tecnología.
@@ -150,7 +150,7 @@
                             </svg>
                             <h3 class="text-base md:text-lg font-semibold text-[color:var(--ink)]">Estadísticas de Expedientes</h3>
                         </div>
-                        <p class="text-xs md:text-sm text-gray-600 mt-1">Período: Febrero 2025 - Agosto 2025 (al 27/08/2025)</p>
+                        <p class="text-xs md:text-sm text-gray-600 mt-1">Período: Febrero 2025 - Diciembre 2025 (hasta 10/12/2025)</p>
                     </div>
 
                     <div class="p-4 md:p-6">
@@ -186,16 +186,33 @@
                                     <p class="text-[color:var(--ter-500)] text-xl md:text-2xl font-bold">146</p>
                                     <p class="text-[color:var(--ter-500)]/80 font-medium text-sm md:text-base">Agosto</p>
                                 </div>
+                                <div class="bg-[color:var(--pri-500)]/5 p-3 md:p-4 rounded-lg border border-[color:var(--pri-500)]/20">
+                                    <p class="text-[color:var(--pri-700)] text-xl md:text-2xl font-bold">208</p>
+                                    <p class="text-[color:var(--pri-600)] font-medium text-sm md:text-base">Septiembre</p>
+                                </div>
+                                <div class="bg-[color:var(--sec-500)]/5 p-3 md:p-4 rounded-lg border border-[color:var(--sec-500)]/20">
+                                    <p class="text-[color:var(--sec-500)] text-xl md:text-2xl font-bold">282</p>
+                                    <p class="text-[color:var(--sec-500)]/80 font-medium text-sm md:text-base">Octubre</p>
+                                </div>
+                                <div class="bg-[color:var(--acc-500)]/5 p-3 md:p-4 rounded-lg border border-[color:var(--acc-500)]/20">
+                                    <p class="text-[color:var(--acc-500)] text-xl md:text-2xl font-bold">216</p>
+                                    <p class="text-[color:var(--acc-500)]/80 font-medium text-sm md:text-base">Noviembre</p>
+                                </div>
+                                <div class="bg-[color:var(--ter-500)]/5 p-3 md:p-4 rounded-lg border border-[color:var(--ter-500)]/20">
+                                    <p class="text-[color:var(--ter-500)] text-xl md:text-2xl font-bold">76</p>
+                                    <p class="text-[color:var(--ter-500)]/80 font-medium text-sm md:text-base">Diciembre*</p>
+                                    <p class="text-xs text-gray-600 mt-1">*hasta 10/12/2025</p>
+                                </div>
                                 <div class="bg-[color:var(--gray-100)] p-3 md:p-4 rounded-lg border border-[color:var(--gray-200)]">
-                                    <p class="text-[color:var(--ink)] text-xl md:text-2xl font-bold">984</p>
+                                    <p class="text-[color:var(--ink)] text-xl md:text-2xl font-bold">1,766</p>
                                     <p class="text-gray-700 font-medium text-sm md:text-base">TOTAL</p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Tipos de tramitación -->
+                        <!-- Tipos de tramitación - TOTALES ACTUALIZADOS -->
                         <div class="mb-6 md:mb-8">
-                            <h4 class="text-base md:text-lg font-semibold text-[color:var(--ink)] mb-4">Tipos de Tramitación</h4>
+                            <h4 class="text-base md:text-lg font-semibold text-[color:var(--ink)] mb-4">Tipos de Tramitación - Totales Acumulados</h4>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                                 <div class="bg-[color:var(--pri-500)]/5 p-4 md:p-5 rounded-lg border border-[color:var(--pri-500)]/20">
                                     <div class="flex items-center mb-3">
@@ -208,7 +225,7 @@
                                         </div>
                                         <h4 class="text-base md:text-lg font-semibold text-[color:var(--pri-700)]">Informes Emitidos</h4>
                                     </div>
-                                    <p class="text-[color:var(--pri-700)] text-2xl md:text-3xl font-bold">361</p>
+                                    <p class="text-[color:var(--pri-700)] text-2xl md:text-3xl font-bold">732</p>
                                     <p class="text-[color:var(--pri-600)] text-sm md:text-base">expedientes tramitados con emisión de informes</p>
                                 </div>
 
@@ -223,31 +240,148 @@
                                         </div>
                                         <h4 class="text-base md:text-lg font-semibold text-[color:var(--acc-500)]">Dictámenes Emitidos</h4>
                                     </div>
-                                    <p class="text-[color:var(--acc-500)] text-2xl md:text-3xl font-bold">623</p>
+                                    <p class="text-[color:var(--acc-500)] text-2xl md:text-3xl font-bold">1,034</p>
                                     <p class="text-[color:var(--acc-500)]/80 text-sm md:text-base">expedientes tramitados con dictámenes</p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Datos de relevancia -->
-                        <div>
-                            <h4 class="text-base md:text-lg font-semibold text-[color:var(--ink)] mb-4">Datos de Relevancia</h4>
+                        <!-- Detalle por meses adicionales -->
+                        <div class="mb-6 md:mb-8">
+                            <h4 class="text-base md:text-lg font-semibold text-[color:var(--ink)] mb-4">Detalle de los Últimos Meses</h4>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+                                <!-- Septiembre -->
+                                <div class="bg-white p-4 md:p-5 rounded-lg border border-[color:var(--gray-200)] shadow-sm">
+                                    <div class="flex items-center mb-3">
+                                        <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[color:var(--pri-500)]/10 flex items-center justify-center mr-3">
+                                            <span class="text-[color:var(--pri-500)] font-bold text-sm md:text-base">S</span>
+                                        </div>
+                                        <h5 class="text-base md:text-lg font-semibold text-[color:var(--ink)]">Septiembre</h5>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <div class="flex justify-between">
+                                            <span class="text-sm text-gray-600">Total expedientes:</span>
+                                            <span class="font-semibold">208</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span class="text-sm text-gray-600">Dictámenes:</span>
+                                            <span class="font-semibold text-[color:var(--acc-500)]">122</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span class="text-sm text-gray-600">Informes:</span>
+                                            <span class="font-semibold text-[color:var(--pri-500)]">86</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Octubre -->
+                                <div class="bg-white p-4 md:p-5 rounded-lg border border-[color:var(--gray-200)] shadow-sm">
+                                    <div class="flex items-center mb-3">
+                                        <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[color:var(--sec-500)]/10 flex items-center justify-center mr-3">
+                                            <span class="text-[color:var(--sec-500)] font-bold text-sm md:text-base">O</span>
+                                        </div>
+                                        <h5 class="text-base md:text-lg font-semibold text-[color:var(--ink)]">Octubre</h5>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <div class="flex justify-between">
+                                            <span class="text-sm text-gray-600">Total expedientes:</span>
+                                            <span class="font-semibold">282</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span class="text-sm text-gray-600">Dictámenes:</span>
+                                            <span class="font-semibold text-[color:var(--acc-500)]">152</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span class="text-sm text-gray-600">Informes:</span>
+                                            <span class="font-semibold text-[color:var(--pri-500)]">130</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Noviembre -->
+                                <div class="bg-white p-4 md:p-5 rounded-lg border border-[color:var(--gray-200)] shadow-sm">
+                                    <div class="flex items-center mb-3">
+                                        <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[color:var(--acc-500)]/10 flex items-center justify-center mr-3">
+                                            <span class="text-[color:var(--acc-500)] font-bold text-sm md:text-base">N</span>
+                                        </div>
+                                        <h5 class="text-base md:text-lg font-semibold text-[color:var(--ink)]">Noviembre</h5>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <div class="flex justify-between">
+                                            <span class="text-sm text-gray-600">Total expedientes:</span>
+                                            <span class="font-semibold">216</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span class="text-sm text-gray-600">Dictámenes:</span>
+                                            <span class="font-semibold text-[color:var(--acc-500)]">107</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span class="text-sm text-gray-600">Informes:</span>
+                                            <span class="font-semibold text-[color:var(--pri-500)]">109</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Datos de relevancia ACTUALIZADOS -->
+                        <div class="mb-6 md:mb-8">
+                            <h4 class="text-base md:text-lg font-semibold text-[color:var(--ink)] mb-4">Datos de Relevancia - Totales Acumulados</h4>
                             <div class="bg-[color:var(--gray-100)] p-4 md:p-5 rounded-lg border border-[color:var(--gray-200)]">
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                                     <div>
                                         <h5 class="font-semibold text-[color:var(--ink)] mb-3 text-sm md:text-base">Temáticas Específicas</h5>
                                         <ul class="list-disc pl-5 space-y-2 text-[color:var(--ink)] text-sm md:text-base">
+                                            <li><strong>523</strong> dictámenes de Liquidaciones Finales</li>
+                                            <li><strong>232</strong> expedientes de Altas Docentes</li>
+                                            <li><strong>60</strong> expedientes de Honorarios</li>
                                             <li><strong>26</strong> expedientes sobre violencia de género</li>
-                                            <li><strong>359</strong> dictámenes de Liquidaciones Finales</li>
-                                            <li><strong>32</strong> expedientes de Honorarios</li>
-                                            <li><strong>78</strong> expedientes de Altas Docentes</li>
+                                            <li><strong>113</strong> expedientes de Licencias Varias</li>
+                                            <li><strong>19</strong> expedientes de Licencia artículo 26</li>
                                         </ul>
                                     </div>
                                     <div>
                                         <h5 class="font-semibold text-[color:var(--ink)] mb-3 text-sm md:text-base">Otras Áreas</h5>
                                         <ul class="list-disc pl-5 space-y-2 text-[color:var(--ink)] text-sm md:text-base">
                                             <li><strong>20</strong> Concursos de Precios o Contrataciones</li>
-                                            <li><strong>50</strong> expedientes de Licencias Varias</li>
+                                            <li><strong>17</strong> Declaraciones de Interés Educativo</li>
+                                            <li><strong>32</strong> Oficios judiciales/recursos varios</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Resumen últimos meses -->
+                        <div>
+                            <h4 class="text-base md:text-lg font-semibold text-[color:var(--ink)] mb-4">Resumen Diciembre (hasta 10/12/2025)</h4>
+                            <div class="bg-gradient-to-r from-[color:var(--pri-500)]/5 to-[color:var(--acc-500)]/5 p-4 md:p-5 rounded-lg border border-[color:var(--pri-500)]/20">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                                    <div>
+                                        <div class="mb-3">
+                                            <p class="text-[color:var(--pri-700)] text-2xl md:text-3xl font-bold">76</p>
+                                            <p class="text-[color:var(--pri-600)] font-medium">expedientes totales</p>
+                                        </div>
+                                        <div class="space-y-2">
+                                            <div class="flex justify-between">
+                                                <span class="text-sm text-gray-700">Dictámenes:</span>
+                                                <span class="font-semibold text-[color:var(--acc-500)]">30</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span class="text-sm text-gray-700">Informes:</span>
+                                                <span class="font-semibold text-[color:var(--pri-500)]">46</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <ul class="space-y-2 text-sm md:text-base">
+                                            <li><strong>14</strong> Liquidaciones finales</li>
+                                            <li><strong>9</strong> Altas Docentes</li>
+                                            <li><strong>7</strong> Honorarios</li>
+                                            <li><strong>6</strong> Licencia artículo 26</li>
+                                            <li><strong>2</strong> Declaración de interés educativo</li>
+                                            <li><strong>6</strong> Oficio judicial/recursos varios</li>
+                                            <li><strong>1</strong> Licencias varias</li>
                                         </ul>
                                     </div>
                                 </div>

@@ -129,7 +129,7 @@ class SolicitudInformacionController extends Controller
                 ->store('solicitudes/respuestas', 'public');
         }
 
-        $ahoraAr = Carbon::now('America/Argentina/Buenos_Aires');
+        $ahoraAr = now(); 
 
         $user = Auth::user();
         $usuarioRespuesta = $user

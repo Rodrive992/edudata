@@ -125,7 +125,7 @@
             <p>
                 Este correo ha sido generado  por el
                 <strong>Portal de Transparencia Activa</strong>.
-                No responda directamente a este mensaje.
+            
             </p>
             <p>
                 Ministerio de Educación, Ciencia y Tecnología – Gobierno de Catamarca.
