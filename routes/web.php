@@ -20,6 +20,7 @@ use App\Http\Controllers\SolicitudInformacionController;
 use App\Http\Controllers\CoberturaCargosController;
 use App\Http\Controllers\DatosEstadisticasController;
 use App\Http\Controllers\SumarioController;
+use App\Http\Controllers\FotosMantenimientoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -147,6 +148,12 @@ Route::prefix('edured')->middleware('auth')->group(function () {
             Route::get('/archivos/{id}/descargar', [MantenimientoRealizadasController::class, 'descargar'])->name('archivos.descargar');
             // Eliminar carga completa (archivo + filas)
             Route::delete('/archivos/{id}', [MantenimientoRealizadasController::class, 'destroyArchivo'])->name('archivos.destroy');
+        });
+         Route::prefix('mantenimiento/fotos')->name('edured.herramientas.mantenimiento.fotos.')->group(function () {
+            Route::get('/', [FotosMantenimientoController::class, 'index'])->name('index');
+            Route::post('/', [FotosMantenimientoController::class, 'store'])->name('store');
+            Route::put('/{foto}', [FotosMantenimientoController::class, 'update'])->name('update');
+            Route::delete('/{foto}', [FotosMantenimientoController::class, 'destroy'])->name('destroy');
         });
     });
 });

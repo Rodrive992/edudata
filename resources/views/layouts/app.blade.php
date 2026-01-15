@@ -20,6 +20,74 @@
         rel="stylesheet">
 
     <style>
+        /* ====== ORGANIGRAMA: COLORES POR JERARQUÍA (PALETA 01–08) ====== */
+
+        /* MINISTRO (07) */
+        .role-ministro .card-accent {
+            background: #C8217E;
+        }
+
+        .role-ministro .role-badge {
+            background: rgba(200, 33, 126, .14);
+            color: #C8217E;
+            border-color: rgba(200, 33, 126, .38);
+        }
+
+        .role-ministro .action-btn {
+            background: #C8217E;
+            color: #fff;
+        }
+
+        .role-ministro .action-btn:hover {
+            background: #222A59;
+            /* 01 para hover elegante */
+        }
+
+        /* SECRETARÍAS (05) */
+        .role-secretaria .card-accent {
+            background: #65A8A3;
+        }
+
+        .role-secretaria .role-badge {
+            background: rgba(101, 168, 163, .16);
+            color: #222A59;
+            /* 01 para buena lectura */
+            border-color: rgba(101, 168, 163, .45);
+        }
+
+        .role-secretaria .action-btn {
+            background: #65A8A3;
+            color: #fff;
+        }
+
+        .role-secretaria .action-btn:hover {
+            background: #405CA4;
+            /* 02 */
+        }
+
+        /* DIRECCIONES (03) */
+        .role-direccion .card-accent {
+            background: #64A1D5;
+        }
+
+        .role-direccion .role-badge {
+            background: rgba(100, 161, 213, .18);
+            color: #222A59;
+            /* 01 */
+            border-color: rgba(100, 161, 213, .48);
+        }
+
+        .role-direccion .action-btn {
+            background: #64A1D5;
+            color: #222A59;
+        }
+
+        .role-direccion .action-btn:hover {
+            background: #807DA8;
+            /* 06 */
+            color: #fff;
+        }
+
         :root {
             /* Nueva paleta de colores */
             --pri-900: #222A59;
@@ -143,8 +211,8 @@
     {{-- Top navbar --}}
     @if (Request::is('edured*'))
         @include('edured.partials.top-navbar')
-    @else                   
-                @include('edudata.partials.top-navbar')       
+    @else
+        @include('edudata.partials.top-navbar')
     @endif
 
     {{-- Contenido principal --}}

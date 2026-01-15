@@ -7,6 +7,7 @@ use App\Models\MantenimientoPendiente;
 use App\Models\MantenimientoComision;
 use App\Models\MantenimientoRealizadas;
 use App\Models\ArchivosMantenimientoRealizadas;
+use App\Models\FotoMantenimiento; // ✅ NUEVO
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Carbon\Carbon;
@@ -27,6 +28,14 @@ class MantenimientoRealizadasController extends Controller
         $localidadPend   = $request->input('localidad');       // pendientes
         $qComisiones     = $request->input('q');               // comisiones (localidad o establecimiento)
 
+        // ===========================
+        // ✅ NUEVO: FOTOS DEL CARRUSEL
+        // ===========================
+        $fotos = FotoMantenimiento::query()
+            ->where('activo', 1)
+            ->orderByDesc('orden')   // 👈 clave
+            ->orderByDesc('id')      // desempate
+            ->get();
         // ===========================
         // SIEMPRE CARGAR LAS TRES
         // ===========================
@@ -55,7 +64,7 @@ class MantenimientoRealizadasController extends Controller
             ->when($qComisiones, function ($q) use ($qComisiones) {
                 $q->where(function ($qq) use ($qComisiones) {
                     $qq->where('localidad', 'like', "%{$qComisiones}%")
-                       ->orWhere('establecimiento', 'like', "%{$qComisiones}%");
+                        ->orWhere('establecimiento', 'like', "%{$qComisiones}%");
                 });
             })
             ->orderByDesc('fecha');
@@ -72,6 +81,9 @@ class MantenimientoRealizadasController extends Controller
             'registros'       => $registros,       // realizadas (groupBy tipo_tarea)
             'pendientes'      => $pendientes,      // siempre cargado
             'comisiones'      => $comisiones,      // siempre cargado
+
+            // ✅ NUEVO: fotos para el carrusel
+            'fotos'           => $fotos,
         ]);
     }
 
@@ -85,7 +97,7 @@ class MantenimientoRealizadasController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'archivo_csv' => ['required','file','mimes:csv,txt','max:10240'],
+            'archivo_csv' => ['required', 'file', 'mimes:csv,txt', 'max:10240'],
         ]);
 
         $file           = $request->file('archivo_csv');
@@ -114,8 +126,12 @@ class MantenimientoRealizadasController extends Controller
 
             // detectar delimitador
             $firstLineRaw = trim(file($fullPath)[0] ?? '');
-            $delims = ["," => substr_count($firstLineRaw, ","), ";" => substr_count($firstLineRaw, ";"),
-                       "\t" => substr_count($firstLineRaw, "\t"), "|" => substr_count($firstLineRaw, "|")];
+            $delims = [
+                ","  => substr_count($firstLineRaw, ","),
+                ";"  => substr_count($firstLineRaw, ";"),
+                "\t" => substr_count($firstLineRaw, "\t"),
+                "|"  => substr_count($firstLineRaw, "|"),
+            ];
             arsort($delims);
             $delimiter = array_key_first($delims) ?? ",";
 
@@ -125,9 +141,11 @@ class MantenimientoRealizadasController extends Controller
             $rowIndex = 0;
 
             foreach ($spl as $row) {
-                if ($row === [null] || $row === false) { continue; }
+                if ($row === [null] || $row === false) {
+                    continue;
+                }
 
-                $row = array_map(function($v){
+                $row = array_map(function ($v) {
                     $v = is_string($v) ? trim($v) : $v;
                     if (is_string($v) && !mb_check_encoding($v, 'UTF-8')) {
                         $v = mb_convert_encoding($v, 'UTF-8', 'ISO-8859-1');
@@ -136,19 +154,26 @@ class MantenimientoRealizadasController extends Controller
                 }, $row);
 
                 // encabezado
-                if ($rowIndex === 0) { $rowIndex++; continue; }
+                if ($rowIndex === 0) {
+                    $rowIndex++;
+                    continue;
+                }
 
                 $fecha           = $row[0] ?? null;
                 $establecimiento = $row[1] ?? null;
                 $tarea           = $row[2] ?? null;
                 $tipo            = $row[3] ?? null;
 
-                if (!$fecha || !$establecimiento || !$tarea || !$tipo) { $rowIndex++; continue; }
+                if (!$fecha || !$establecimiento || !$tarea || !$tipo) {
+                    $rowIndex++;
+                    continue;
+                }
 
                 try {
                     $fechaNorm = Carbon::parse($fecha)->format('Y-m-d');
                 } catch (\Throwable $e) {
-                    $rowIndex++; continue;
+                    $rowIndex++;
+                    continue;
                 }
 
                 $rowsToInsert[] = [
@@ -177,7 +202,6 @@ class MantenimientoRealizadasController extends Controller
             return redirect()
                 ->route('edured.herramientas.mantenimiento.realizadas.archivos.index')
                 ->with('ok', 'Carga #' . $archivo->id . ' registrada. Filas insertadas: ' . count($rowsToInsert));
-
         } catch (\Throwable $e) {
             Storage::disk('public')->delete($rutaRelativa);
             $archivo->delete();
@@ -196,9 +220,11 @@ class MantenimientoRealizadasController extends Controller
     public function descargar($id)
     {
         $a = ArchivosMantenimientoRealizadas::findOrFail($id);
+
         if (!Storage::disk('public')->exists($a->ruta_publica)) {
             return back()->with('error', 'El archivo no se encuentra en el servidor.');
         }
+
         return Storage::disk('public')->download($a->ruta_publica, $a->nombre_original);
     }
 
@@ -207,11 +233,13 @@ class MantenimientoRealizadasController extends Controller
     {
         $a = ArchivosMantenimientoRealizadas::findOrFail($id);
 
-        DB::transaction(function() use ($a) {
+        DB::transaction(function () use ($a) {
             MantenimientoRealizadas::where('cod_carga', $a->id)->delete();
+
             if ($a->ruta_publica && Storage::disk('public')->exists($a->ruta_publica)) {
                 Storage::disk('public')->delete($a->ruta_publica);
             }
+
             $a->delete();
         });
 
