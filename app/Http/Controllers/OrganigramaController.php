@@ -9,7 +9,7 @@ class OrganigramaController extends Controller
 {
     public function index(Request $request)
     {
-        $debug = $request->boolean('debug'); // ?debug=1
+        $debug = $request->boolean('debug');
 
         // =========================
         // 1) MISIONES Y FUNCIONES
@@ -42,14 +42,8 @@ class OrganigramaController extends Controller
         ];
 
         // ==========================================================
-        // 2) MAPA NUMERO -> NOMBRE (DSC_####.jpg)  (PRIMER PLANO)
+        // 2) MAPA NUMERO -> NOMBRE (Actualizado según nuevo documento)
         // ==========================================================
-        // Regla: usar el archivo siguiente.
-        // Excepciones:
-        // - 3663 queda igual
-        // - 3789 queda igual
-        // - 3808 queda igual
-        // - 3686 pasa a 3688
         $fotoIndex = [
             3527 => 'Matías Andrés Cabrera',
             3535 => 'Renzo Augusto Gonzalez',
@@ -61,10 +55,10 @@ class OrganigramaController extends Controller
             3583 => 'Cintia Brizuela',
 
             3654 => 'Deborah Nancy Dumitru',
-            3663 => 'Julieta Fuente',
+            3663 => 'Andrea Julieta Fuente',
             3668 => 'Samhara Saleme',
             3675 => 'Pablo Javier Figueroa',
-            3681 => 'Ivanna Alejandra del V. Altamiranda',  // ojo: en tu nota decías que 3686 pasa a 3688, pero acá lo dejaste en 3686. Mantengo tu array.
+            3681 => 'Ivanna Alejandra del V. Altamiranda',
             3688 => 'María Luz Diaz Rodriguez',
             3695 => 'María Fernanda Carrizo Lopez',
             3699 => 'Alejandro Renée Bambicha',
@@ -73,9 +67,8 @@ class OrganigramaController extends Controller
             3721 => 'Flavia Vanesa Chasampi',
             3730 => 'Florencia Anahí Merep',
             3734 => 'Carlos David Ponce',
-            3745 => 'Ivana Elizabeth Herrera',
             3755 => 'Mariana Del Valle Tapia',
-            3764 => 'Cesar Leon Cangi',
+            3764 => 'Cesar Leon Camji',
             3779 => 'Daiana Montivero',
 
             3789 => 'Roxana María Inés Monasterio',
@@ -87,7 +80,7 @@ class OrganigramaController extends Controller
         ];
 
         // =========================
-        // 3) HELPERS
+        // 3) HELPERS MEJORADOS
         // =========================
         $normalize = function (?string $name): string {
             if (!$name) return '';
@@ -104,7 +97,9 @@ class OrganigramaController extends Controller
             'checked' => [],
         ];
 
-        $photoByName = [];
+        // Mejoramos el mapeo: ahora guardamos por número y por nombre
+        $photoByNum = [];
+        $photoByNameExact = [];
 
         foreach ($fotoIndex as $num => $persona) {
             $fileRelLower = "images/organigrama/DSC_{$num}.jpg";
@@ -120,11 +115,11 @@ class OrganigramaController extends Controller
             if ($existsLower) $url = asset($fileRelLower);
             elseif ($existsUpper) $url = asset($fileRelUpper);
 
-            $variants = glob($dirAbs . DIRECTORY_SEPARATOR . "DSC_{$num}*.jp*g");
-            $variantBasenames = array_map('basename', $variants);
-
+            $photoByNum[$num] = $url;
+            
+            // Guardamos el nombre exacto normalizado
             $key = $normalize($persona);
-            $photoByName[$key] = $url;
+            $photoByNameExact[$key] = $url;
 
             $debugPhotos['checked'][] = [
                 'num' => $num,
@@ -135,44 +130,44 @@ class OrganigramaController extends Controller
                 'exists_lower' => $existsLower,
                 'exists_upper' => $existsUpper,
                 'resolved_url' => $url,
-                'variants_found' => $variantBasenames,
+                'variants_found' => array_map('basename', glob($dirAbs . DIRECTORY_SEPARATOR . "DSC_{$num}*.jp*g")),
             ];
         }
 
-        $photoFor = function (?string $persona) use ($normalize, $photoByName) {
-            if (!$persona) return null;
+        // Función mejorada para buscar fotos
+        $photoFor = function (?string $persona) use ($normalize, $photoByNameExact, $fotoIndex, $photoByNum) {
+            if (!$persona || trim($persona) === '') {
+                return null;
+            }
 
             $target = $normalize($persona);
-
-            // 1) Exacto
-            if (array_key_exists($target, $photoByName) && !empty($photoByName[$target])) {
-                return $photoByName[$target];
+            
+            // 1) Busqueda exacta primero
+            if (array_key_exists($target, $photoByNameExact) && !empty($photoByNameExact[$target])) {
+                return $photoByNameExact[$target];
             }
 
-            // 2) Substring
-            foreach ($photoByName as $k => $url) {
-                if (empty($url)) continue;
-                if (str_contains($target, $k) || str_contains($k, $target)) {
-                    return $url;
+            // 2) Buscar en el índice original por coincidencia exacta
+            foreach ($fotoIndex as $num => $name) {
+                if ($normalize($name) === $target) {
+                    return $photoByNum[$num] ?? null;
                 }
             }
 
-            // 3) Tokens (2+ coincidencias)
-            $tokens = array_values(array_filter(explode(' ', $target)));
-            foreach ($photoByName as $k => $url) {
-                if (empty($url)) continue;
-                $kt = array_values(array_filter(explode(' ', $k)));
-                $common = array_intersect($tokens, $kt);
-                if (count($common) >= 2) {
-                    return $url;
-                }
+            // 3) Para nombres que no tienen foto, NO hacemos matching parcial
+            // Esto evita que "Carolina del Valle Reynoso" tome la foto de "Mariana Del Valle Tapia"
+            
+            // Solo para debugging
+            if (str_contains($target, 'carolina')) {
+                // Carolina NO tiene foto, retornar null
+                return null;
             }
 
             return null;
         };
 
         // =========================
-        // 4) DATOS ORGANIGRAMA
+        // 4) DATOS ORGANIGRAMA (Actualizados según nuevo documento)
         // =========================
         $ministro = [
             'type' => 'ministro',
@@ -227,10 +222,15 @@ class OrganigramaController extends Controller
                 'e' => 'innovacion@catamarca.edu.ar',
             ],
         ];
-        foreach ($secretarias as &$s) $s['photo'] = $photoFor($s['n']);
+        
+        // Asignar fotos a secretarías
+        foreach ($secretarias as &$s) {
+            $s['photo'] = $photoFor($s['n']);
+        }
         unset($s);
 
         $direcciones = [
+            // Secretaría de Innovación Educativa (solo 2 direcciones según nuevo documento)
             [
                 'type' => 'direccion',
                 't' => 'Dirección Provincial de Inteligencia Artificial y Alfabetización Digital',
@@ -239,6 +239,16 @@ class OrganigramaController extends Controller
                 'l' => 'Pabellón N° 13 - CAPE',
                 'e' => 'dirinteligenciaartificial@catamarca.edu.ar',
             ],
+            [
+                'type' => 'direccion',
+                't' => 'Dirección de Sistemas y Desarrollo Tecnológico',
+                'area' => 'Sistemas y Desarrollo Tecnológico',
+                'n' => 'Pablo Pedemonte',
+                'l' => 'Pabellón N° 13 - CAPE',
+                'e' => 'dsdt@catamarca.edu.ar',
+            ],
+
+            // Secretaría de Articulación Institucional (10 direcciones según nuevo documento)
             [
                 'type' => 'direccion',
                 't' => 'Dirección Provincial de Despacho',
@@ -259,15 +269,7 @@ class OrganigramaController extends Controller
                 'type' => 'direccion',
                 't' => 'Dirección Provincial de Asuntos Jurídicos',
                 'area' => 'Asuntos Jurídicos',
-                'n' => 'Carolina del Valle Reynoso',
-                'l' => 'Pabellón N° 11 - CAPE',
-                'e' => 'innovacion@catamarca.edu.ar',
-            ],
-            [
-                'type' => 'direccion',
-                't' => 'Dirección Provincial de Programación y Mantenimiento Edilicio',
-                'area' => 'Programación y Mantenimiento Edilicio',
-                'n' => 'Silvia Ines Zalazar',
+                'n' => 'Carolina del Valle Reynoso', // NO tiene foto
                 'l' => 'Pabellón N° 11 - CAPE',
                 'e' => 'innovacion@catamarca.edu.ar',
             ],
@@ -283,7 +285,7 @@ class OrganigramaController extends Controller
                 'type' => 'direccion',
                 't' => 'Dirección Provincial de Unidad Ejecutora de Programas y Proyectos',
                 'area' => 'Unidad Ejecutora de Programas y Proyectos',
-                'n' => 'Victoria María Gonzalez Rojas',
+                'n' => 'Victoria María Gonzalez Rojas', // NO tiene foto
                 'l' => 'Pabellón N° 11 - CAPE',
                 'e' => 'innovacion@catamarca.edu.ar',
             ],
@@ -291,7 +293,31 @@ class OrganigramaController extends Controller
                 'type' => 'direccion',
                 't' => 'Dirección Provincial de Administración',
                 'area' => 'Administración',
-                'n' => 'Rosa del Valle Galian',
+                'n' => 'Lucas Rojas',
+                'l' => 'Pabellón N° 11 - CAPE',
+                'e' => 'innovacion@catamarca.edu.ar',
+            ],
+            [
+                'type' => 'direccion',
+                't' => 'Dirección Provincial de Programación y Mantenimiento Edilicio',
+                'area' => 'Programación y Mantenimiento Edilicio',
+                'n' => 'Silvia Ines Zalazar', // NO tiene foto
+                'l' => 'Pabellón N° 11 - CAPE',
+                'e' => 'innovacion@catamarca.edu.ar',
+            ],
+            [
+                'type' => 'direccion',
+                't' => 'Dirección de Tesorería',
+                'area' => 'Tesorería',
+                'n' => 'Florencia Anahí Merep',
+                'l' => 'Pabellón N° 11 - CAPE',
+                'e' => 'innovacion@catamarca.edu.ar',
+            ],
+            [
+                'type' => 'direccion',
+                't' => 'Dirección de Compras',
+                'area' => 'Compras',
+                'n' => 'Daiana Montivero',
                 'l' => 'Pabellón N° 11 - CAPE',
                 'e' => 'innovacion@catamarca.edu.ar',
             ],
@@ -303,11 +329,13 @@ class OrganigramaController extends Controller
                 'l' => 'Pabellón N° 11 - CAPE',
                 'e' => 'innovacion@catamarca.edu.ar',
             ],
+
+            // Secretaría de Planeamiento Educativo (2 direcciones según nuevo documento)
             [
                 'type' => 'direccion',
                 't' => 'Dirección Provincial de Desarrollo Profesional y Evaluación Educativa',
                 'area' => 'Desarrollo Profesional y Evaluación Educativa',
-                'n' => 'Melisa Ludmila Schonhals',
+                'n' => 'Melisa Ludmila Schonhals', // NO tiene foto
                 'l' => 'Pabellón N° 11 - CAPE',
                 'e' => 'capacitacion@catamarca.edu.ar',
             ],
@@ -315,10 +343,12 @@ class OrganigramaController extends Controller
                 'type' => 'direccion',
                 't' => 'Dirección Provincial de Estadística Educativa y Análisis Poblacional',
                 'area' => 'Estadística Educativa y Análisis Poblacional',
-                'n' => 'Ivana Elizabeth Herrera',
+                'n' => '', // Sin nombre especificado
                 'l' => 'Pabellón N° 11 - CAPE',
                 'e' => 'estadistica@catamarca.edu.ar',
             ],
+
+            // Secretaría de Educación (9 direcciones según nuevo documento)
             [
                 'type' => 'direccion',
                 't' => 'Dirección Provincial de Educación Inicial',
@@ -331,7 +361,7 @@ class OrganigramaController extends Controller
                 'type' => 'direccion',
                 't' => 'Dirección Provincial de Educación Primaria',
                 'area' => 'Educación Primaria',
-                'n' => 'Cesar Leon Cangi',
+                'n' => 'Cesar Leon Camji',
                 'l' => 'Pabellón N° 14 - CAPE',
                 'e' => 'educacionprimaria@catamarca.edu.ar',
             ],
@@ -355,7 +385,7 @@ class OrganigramaController extends Controller
                 'type' => 'direccion',
                 't' => 'Dirección Provincial de Modalidades Educativas',
                 'area' => 'Modalidades Educativas',
-                'n' => 'Fuente, Andrea Julieta',
+                'n' => 'Andrea Julieta Fuente',
                 'l' => 'Pabellón N° 14 - CAPE',
                 'e' => 'modalidadeseducativas@catamarca.edu.ar',
             ],
@@ -377,30 +407,6 @@ class OrganigramaController extends Controller
             ],
             [
                 'type' => 'direccion',
-                't' => 'Dirección Provincial de Startups y Ecosistema Emprendedor',
-                'area' => 'Startups y Ecosistema Emprendedor',
-                'n' => 'Ivanna Alejandra del V. Altamiranda',
-                'l' => 'Pabellón N° 11 - CAPE',
-                'e' => 'innovacion@catamarca.edu.ar',
-            ],
-            [
-                'type' => 'direccion',
-                't' => 'Dirección Provincial de Ciencia Aplicada y Formación Tecnológica',
-                'area' => 'Ciencia Aplicada y Formación Tecnológica',
-                'n' => 'María Luz Diaz Rodriguez',
-                'l' => 'Pabellón N° 11 - CAPE',
-                'e' => 'innovacion@catamarca.edu.ar',
-            ],
-            [
-                'type' => 'direccion',
-                't' => 'Dirección Provincial de Transformación Digital e Infraestructura Tecnológica',
-                'area' => 'Transformación Digital e Infraestructura Tecnológica',
-                'n' => 'Carlos David Ponce',
-                'l' => 'Pabellón N° 11 - CAPE',
-                'e' => 'innovacion@catamarca.edu.ar',
-            ],
-            [
-                'type' => 'direccion',
                 't' => 'Dirección de Legalización y Registro de Títulos',
                 'area' => 'Legalización y Registro de Títulos',
                 'n' => 'Julio Rubén Quiroga',
@@ -415,30 +421,8 @@ class OrganigramaController extends Controller
                 'l' => 'Maximio Victoria S/N',
                 'e' => 'rup@catamarca.edu.ar',
             ],
-            [
-                'type' => 'direccion',
-                't' => 'Dirección de Tesorería',
-                'area' => 'Tesorería',
-                'n' => 'Florencia Anahí Merep',
-                'l' => 'Pabellón N° 11 - CAPE',
-                'e' => 'innovacion@catamarca.edu.ar',
-            ],
-            [
-                'type' => 'direccion',
-                't' => 'Dirección de Compras',
-                'area' => 'Compras',
-                'n' => 'Daiana Montivero',
-                'l' => 'Pabellón N° 11 - CAPE',
-                'e' => 'innovacion@catamarca.edu.ar',
-            ],
-            [
-                'type' => 'direccion',
-                't' => 'Dirección de Sistemas y Desarrollo Tecnológico',
-                'area' => 'Sistemas y Desarrollo Tecnológico',
-                'n' => 'Pablo Pedemonte',
-                'l' => 'Pabellón N° 13 - CAPE',
-                'e' => 'dsdt@catamarca.edu.ar',
-            ],
+
+            // Secretaría de Ciencia y Tecnología (6 direcciones según nuevo documento)
             [
                 'type' => 'direccion',
                 't' => 'Dirección de Administración, Ejecución y Financiamiento Científico',
@@ -455,23 +439,47 @@ class OrganigramaController extends Controller
                 'l' => 'Pabellón N° 11 - CAPE',
                 'e' => 'innovacion@catamarca.edu.ar',
             ],
+            [
+                'type' => 'direccion',
+                't' => 'Dirección Provincial de Transformación Digital e Infraestructura Tecnológica',
+                'area' => 'Transformación Digital e Infraestructura Tecnológica',
+                'n' => 'Carlos David Ponce',
+                'l' => 'Pabellón N° 11 - CAPE',
+                'e' => 'innovacion@catamarca.edu.ar',
+            ],
+            [
+                'type' => 'direccion',
+                't' => 'Dirección Provincial de Ciencia Aplicada y Formación Tecnológica',
+                'area' => 'Ciencia Aplicada y Formación Tecnológica',
+                'n' => 'María Luz Diaz Rodriguez',
+                'l' => 'Pabellón N° 11 - CAPE',
+                'e' => 'innovacion@catamarca.edu.ar',
+            ],
+            [
+                'type' => 'direccion',
+                't' => 'Dirección Provincial de Startups y Ecosistema Emprendedor',
+                'area' => 'Startups y Ecosistema Emprendedor',
+                'n' => 'Ivanna Alejandra del V. Altamiranda',
+                'l' => 'Pabellón N° 11 - CAPE',
+                'e' => 'innovacion@catamarca.edu.ar',
+            ],
         ];
 
-        foreach ($direcciones as &$d) $d['photo'] = $photoFor($d['n']);
+        // Asignar fotos con la función mejorada
+        foreach ($direcciones as &$d) {
+            $d['photo'] = $photoFor($d['n']);
+        }
         unset($d);
 
         // ==========================================================
-        // 5) DEPENDENCIA: Dirección -> Secretaría (PASADO AL CONTROLLER)
+        // 5) DEPENDENCIA: Dirección -> Secretaría (ACTUALIZADO según nuevo documento)
         // ==========================================================
         $dirToSecretaria = [
-            // Secretaría de Innovación Educativa
+            // Secretaría de Innovación Educativa (solo 2 direcciones según nuevo documento)
             'Dirección Provincial de Inteligencia Artificial y Alfabetización Digital' => 'Secretaría de Innovación Educativa',
-            'Dirección Provincial de Transformación Digital e Infraestructura Tecnológica' => 'Secretaría de Innovación Educativa',
-            'Dirección Provincial de Ciencia Aplicada y Formación Tecnológica' => 'Secretaría de Innovación Educativa',
-            'Dirección Provincial de Startups y Ecosistema Emprendedor' => 'Secretaría de Innovación Educativa',
             'Dirección de Sistemas y Desarrollo Tecnológico' => 'Secretaría de Innovación Educativa',
 
-            // Secretaría de Articulación Institucional
+            // Secretaría de Articulación Institucional (10 direcciones según nuevo documento)
             'Dirección Provincial de Despacho' => 'Secretaría de Articulación Institucional',
             'Dirección Provincial de Sumario Docente' => 'Secretaría de Articulación Institucional',
             'Dirección Provincial de Asuntos Jurídicos' => 'Secretaría de Articulación Institucional',
@@ -481,13 +489,13 @@ class OrganigramaController extends Controller
             'Dirección Provincial de Programación y Mantenimiento Edilicio' => 'Secretaría de Articulación Institucional',
             'Dirección de Tesorería' => 'Secretaría de Articulación Institucional',
             'Dirección de Compras' => 'Secretaría de Articulación Institucional',
-            'Dirección Provincial de Parque Automotor' => 'Secretaría de Articulación Institucional',
+            'Dirección de Parque Automotor' => 'Secretaría de Articulación Institucional',
 
-            // Secretaría de Planeamiento Educativo
+            // Secretaría de Planeamiento Educativo (2 direcciones según nuevo documento)
             'Dirección Provincial de Desarrollo Profesional y Evaluación Educativa' => 'Secretaría de Planeamiento Educativo',
             'Dirección Provincial de Estadística Educativa y Análisis Poblacional' => 'Secretaría de Planeamiento Educativo',
 
-            // Secretaría de Educación
+            // Secretaría de Educación (9 direcciones según nuevo documento)
             'Dirección Provincial de Educación Inicial' => 'Secretaría de Educación',
             'Dirección Provincial de Educación Primaria' => 'Secretaría de Educación',
             'Dirección Provincial de Educación Secundaria' => 'Secretaría de Educación',
@@ -498,9 +506,12 @@ class OrganigramaController extends Controller
             'Dirección de Legalización y Registro de Títulos' => 'Secretaría de Educación',
             'Dirección de Residencia Universitaria' => 'Secretaría de Educación',
 
-            // Secretaría de Ciencia y Tecnología
+            // Secretaría de Ciencia y Tecnología (6 direcciones según nuevo documento)
             'Dirección de Administración, Ejecución y Financiamiento Científico' => 'Secretaría de Ciencia y Tecnología',
             'Dirección de Investigación, Innovación y Extensión' => 'Secretaría de Ciencia y Tecnología',
+            'Dirección Provincial de Transformación Digital e Infraestructura Tecnológica' => 'Secretaría de Ciencia y Tecnología',
+            'Dirección Provincial de Ciencia Aplicada y Formación Tecnológica' => 'Secretaría de Ciencia y Tecnología',
+            'Dirección Provincial de Startups y Ecosistema Emprendedor' => 'Secretaría de Ciencia y Tecnología',
         ];
 
         // Agrupar direcciones por secretaría
@@ -536,8 +547,9 @@ class OrganigramaController extends Controller
             return response()->json([
                 'public_images_organigrama' => $dirAbs,
                 'checked_files' => $debugPhotos['checked'],
-                'tip' => 'Si variants_found tiene algo (ej: DSC_1234 (1).jpg), renombralo a DSC_1234.jpg',
+                'photoByNameExact' => $photoByNameExact,
                 'direcciones_sin_asignar' => $direccionesSinAsignar,
+                'nota' => 'La función photoFor ahora solo hace matching exacto para evitar confusiones',
             ]);
         }
 

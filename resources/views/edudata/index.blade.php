@@ -273,7 +273,7 @@
                                         <div class="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
                                         <span class="font-medium">Información actualizada</span>
                                     </div>
-                                    <span class="bg-[#64A1D5] text-white px-1 py-1 ">12-12-2025</span>
+                                    <span class="bg-[#64A1D5] text-white px-1 py-1 ">15-01-2026</span>
                                 </div>
                             </div>
                         </div>

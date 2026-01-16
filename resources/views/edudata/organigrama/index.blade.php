@@ -75,7 +75,6 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.3s ease;
         }
 
         /* Secretaría sections */
@@ -105,6 +104,57 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+
+        /* ============================================= */
+        /* FIXES Y MEJORAS DE COLOR PARA NOMBRES         */
+        /* ============================================= */
+
+        /* Actualizar colores para dirección */
+        .role-direccion {
+            --accent-color: #3b82f6; /* blue-500 */
+            --accent-color-light: #60a5fa; /* blue-400 */
+            --badge-bg: rgba(59, 130, 246, 0.12);
+            --badge-color: #1d4ed8; /* blue-700 */
+            --badge-border: rgba(59, 130, 246, 0.3);
+            --name-color: #1e40af; /* blue-800 - más oscuro para mejor contraste */
+            --name-color-light: #3b82f6; /* blue-500 */
+        }
+
+        /* Nombres en tarjetas de dirección - con buen contraste */
+        .role-direccion .titular-nombre {
+            background: linear-gradient(90deg, #1e40af 0%, #3b82f6 100%) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
+            color: #1e40af !important; /* Color de respaldo */
+            font-weight: 700;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5); /* Sombra sutil para mejor legibilidad */
+        }
+
+        /* Para textos sin gradiente (fallback) */
+        .card-pro .nombre-director {
+            color: #1e40af !important; /* blue-800 */
+            font-weight: 700;
+        }
+
+        /* También ajustar el color del texto del área/cargo para mejor contraste */
+        .role-direccion .text-gray-900 {
+            color: #111827 !important; /* gray-900 más oscuro */
+        }
+
+        /* Ajustar color de badge para dirección */
+        .role-direccion .role-badge {
+            background: rgba(59, 130, 246, 0.15) !important;
+            color: #1e40af !important; /* blue-800 */
+            border-color: rgba(59, 130, 246, 0.3) !important;
+            font-weight: 700;
+        }
+
+        /* Mejorar contraste en toda la tarjeta */
+        .role-direccion .text-gray-600,
+        .role-direccion .text-gray-700 {
+            color: #4b5563 !important; /* gray-600 para mejor lectura */
         }
 
         /* Filter buttons */
@@ -200,17 +250,6 @@
             --name-color-light: #405ca4;
         }
 
-        /* Dirección specific */
-        .role-direccion {
-            --accent-color: var(--primary-500);
-            --accent-color-light: #64a1d5;
-            --badge-bg: rgba(100, 161, 213, 0.12);
-            --badge-color: var(--primary-500);
-            --badge-border: rgba(100, 161, 213, 0.3);
-            --name-color: var(--primary-500);
-            --name-color-light: #64a1d5;
-        }
-
         /* Email copy button */
         .email-copy-btn {
             background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
@@ -254,21 +293,35 @@
             gap: 1.5rem;
         }
 
-        /* Loading animation for photos */
-        @keyframes pulse {
-
-            0%,
-            100% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 0.5;
-            }
+        /* ============================================= */
+        /* LOADING SIMPLE - Solo modificación del blade  */
+        /* ============================================= */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: white;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.3s ease;
         }
 
-        .photo-loading {
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3b82f6;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         /* Responsive improvements */
@@ -281,23 +334,16 @@
                 padding: 1.25rem;
             }
         }
-
-        /* Fix para nombres en tarjetas de dirección */
-        .role-direccion .titular-nombre {
-            background: none !important;
-            -webkit-text-fill-color: initial !important;
-            color: #1e40af !important;
-            /* primary-800 más oscuro */
-            font-weight: 700;
-        }
-
-        /* Para que todas las tarjetas tengan buen contraste */
-        .card-pro .titular-nombre {
-            -webkit-text-fill-color: initial;
-            color: #1e3a8a;
-            /* primary-900 */
-        }
     </style>
+
+    {{-- SIMPLE LOADING OVERLAY --}}
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="text-center">
+            <div class="loading-spinner mx-auto mb-4"></div>
+            <p class="text-gray-600 font-medium">Cargando organigrama...</p>
+            <p class="text-sm text-gray-400 mt-2">Por favor, espere un momento</p>
+        </div>
+    </div>
 
     <div class="organigrama-container px-4 py-8 lg:px-6 lg:py-10" x-data="{
         tab: 'all',
@@ -342,7 +388,27 @@
             return this.match(item);
         }
     }"
-        @keydown.escape.window="closePhoto()">
+        @keydown.escape.window="closePhoto()"
+        x-init="
+            // Esperar a que todas las imágenes se carguen
+            Promise.all(
+                Array.from(document.images).filter(img => img.src).map(img => {
+                    if (img.complete) return Promise.resolve();
+                    return new Promise(resolve => {
+                        img.addEventListener('load', resolve);
+                        img.addEventListener('error', resolve);
+                    });
+                })
+            ).then(() => {
+                // Ocultar loading overlay después de 500ms mínimo
+                setTimeout(() => {
+                    document.getElementById('loadingOverlay').style.opacity = '0';
+                    setTimeout(() => {
+                        document.getElementById('loadingOverlay').style.display = 'none';
+                    }, 300);
+                }, 500);
+            });
+        ">
 
         {{-- MODAL FOTO --}}
         <div x-cloak x-show="photoOpen" class="fixed inset-0 z-[90] flex items-end md:items-center justify-center p-4"
@@ -387,8 +453,7 @@
                 <div class="p-6 md:p-8">
                     <div class="rounded-xl overflow-hidden border border-gray-200 bg-gray-50 shadow-inner">
                         <img :src="photo.src" :alt="'Foto de ' + photo.nombre"
-                            class="w-full h-[60vh] md:h-[70vh] object-contain bg-gradient-to-br from-gray-50 to-gray-100"
-                            @load="photoLoading = false">
+                            class="w-full h-[60vh] md:h-[70vh] object-contain bg-gradient-to-br from-gray-50 to-gray-100">
                     </div>
                 </div>
 
@@ -523,7 +588,7 @@
                         <div class="flex-1 min-w-0">
                             <div class="flex flex-wrap items-center gap-3 mb-4">
                                 <span class="role-badge">MINISTERIO</span>
-
+                               
                             </div>
 
                             <h3 class="text-3xl font-bold titular-nombre mb-2">{{ $ministro['n'] }}</h3>
@@ -747,7 +812,7 @@
                                                                     fill="none" stroke="currentColor">
                                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                                         stroke-width="2"
-                                                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0  0z" />
                                                                 </svg>
                                                             </div>
                                                             <span
@@ -868,7 +933,7 @@
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-primary-500"
                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0  0z" />
                                             </svg>
                                         </div>
                                         <span class="text-gray-600 truncate">{{ $d['l'] }}</span>
@@ -924,7 +989,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary-600" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0  0z" />
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
@@ -953,4 +1018,62 @@
         </div>
 
     </div>
+
+    <script>
+        // Simple script para manejar el loading
+        document.addEventListener('DOMContentLoaded', function() {
+            const loadingOverlay = document.getElementById('loadingOverlay');
+            
+            // Forzar un mínimo de tiempo de visualización (500ms)
+            setTimeout(function() {
+                // Verificar si las imágenes principales están cargadas
+                const checkImagesLoaded = function() {
+                    const images = document.querySelectorAll('.photo-img');
+                    let loadedCount = 0;
+                    let totalImages = images.length;
+                    
+                    if (totalImages === 0) {
+                        hideLoader();
+                        return;
+                    }
+                    
+                    images.forEach(img => {
+                        if (img.complete) {
+                            loadedCount++;
+                        } else {
+                            img.addEventListener('load', function() {
+                                loadedCount++;
+                                if (loadedCount >= totalImages * 0.8) { // 80% cargado es suficiente
+                                    hideLoader();
+                                }
+                            });
+                            img.addEventListener('error', function() {
+                                loadedCount++;
+                                if (loadedCount >= totalImages * 0.8) {
+                                    hideLoader();
+                                }
+                            });
+                        }
+                    });
+                    
+                    // Si ya están todas cargadas
+                    if (loadedCount >= totalImages) {
+                        hideLoader();
+                    }
+                    
+                    // Timeout de seguridad (5 segundos máximo)
+                    setTimeout(hideLoader, 5000);
+                };
+                
+                checkImagesLoaded();
+            }, 500);
+            
+            function hideLoader() {
+                loadingOverlay.style.opacity = '0';
+                setTimeout(function() {
+                    loadingOverlay.style.display = 'none';
+                }, 300);
+            }
+        });
+    </script>
 @endsection
