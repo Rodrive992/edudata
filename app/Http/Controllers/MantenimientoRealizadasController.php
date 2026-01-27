@@ -45,7 +45,7 @@ class MantenimientoRealizadasController extends Controller
             ->when($anio, fn($q) => $q->whereYear('fecha', $anio))
             ->when($mes,  fn($q) => $q->whereMonth('fecha', $mes))
             ->when($establecimiento, fn($q) => $q->where('establecimiento', 'like', "%{$establecimiento}%"))
-            ->orderBy('fecha');
+            ->orderByDesc('fecha');
 
         // Agrupadas por tipo_tarea (APH, ELEC, DEZM)
         $registros = $realizadasQuery->get()->groupBy('tipo_tarea');

@@ -883,6 +883,10 @@ class OrganigramaController extends Controller
         // 2) MAPA NUMERO -> NOMBRE
         // ==========================================================
         $fotoIndex = [
+            2318 => 'Alejandro Avellaneda',
+            2309 => 'Silvia Ines Salazar',
+            2328 => 'Carolina del Valle Reynoso',
+            3527 => 'Matías Andrés Cabrera',
             3527 => 'Matías Andrés Cabrera',
             3535 => 'Renzo Augusto Gonzalez',
             3539 => 'Cesar Garetto',
@@ -916,6 +920,7 @@ class OrganigramaController extends Controller
             3829 => 'Jesica Alejandra Aybar',
 
             3832 => 'Nicolás Rosales Matienzo',
+            3931 => 'Victoria María Gonzalez Rojas',
         ];
 
         // =========================
@@ -1112,7 +1117,7 @@ class OrganigramaController extends Controller
                 'type' => 'direccion',
                 't' => 'Dirección Provincial de Programación y Mantenimiento Edilicio',
                 'area' => 'Programación y Mantenimiento Edilicio',
-                'n' => 'Silvia Ines Zalazar',
+                'n' => 'Silvia Inés Salazar',
                 'l' => 'Pabellón N° 11 - CAPE',
                 'e' => 'innovacion@catamarca.edu.ar',
                 'mf_key' => 'Dirección Provincial de Programación y Mantenimiento Edilicio',
