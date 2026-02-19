@@ -40,7 +40,6 @@
 
         .role-ministro .action-btn:hover {
             background: #222A59;
-            /* 01 para hover elegante */
         }
 
         /* SECRETARÍAS (05) */
@@ -51,7 +50,6 @@
         .role-secretaria .role-badge {
             background: rgba(101, 168, 163, .16);
             color: #222A59;
-            /* 01 para buena lectura */
             border-color: rgba(101, 168, 163, .45);
         }
 
@@ -62,7 +60,6 @@
 
         .role-secretaria .action-btn:hover {
             background: #405CA4;
-            /* 02 */
         }
 
         /* DIRECCIONES (03) */
@@ -73,7 +70,6 @@
         .role-direccion .role-badge {
             background: rgba(100, 161, 213, .18);
             color: #222A59;
-            /* 01 */
             border-color: rgba(100, 161, 213, .48);
         }
 
@@ -84,35 +80,21 @@
 
         .role-direccion .action-btn:hover {
             background: #807DA8;
-            /* 06 */
             color: #fff;
         }
 
         :root {
-            /* Nueva paleta de colores */
             --pri-900: #222A59;
-            /* Azul oscuro principal */
             --pri-700: #405CA4;
-            /* Azul medio */
             --pri-500: #64A1D5;
-            /* Azul claro */
             --sec-500: #CBD03E;
-            /* Verde institucional */
             --ter-500: #65A8A3;
-            /* Verde azulado */
             --acc-500: #807DA8;
-            /* Violeta complementario */
-
-            /* Colores neutros */
             --ink: #1f2937;
-            /* Texto base */
             --gray-200: #e5e7eb;
-            /* Bordes */
             --gray-100: #f3f4f6;
-            /* Fondos claros */
         }
 
-        /* Definición de fuentes */
         body {
             font-family: 'Open Sans', sans-serif;
         }
@@ -125,7 +107,6 @@
             display: none !important;
         }
 
-        /* Scrollbars coherentes */
         .scrollbar-thin::-webkit-scrollbar {
             width: 8px;
         }
@@ -143,7 +124,6 @@
             background-color: #e8f1fb;
         }
 
-        /* Fondo con patrón para la sección de estadísticas */
         .estadisticas-bg {
             position: relative;
         }
@@ -155,7 +135,6 @@
             pointer-events: none;
         }
 
-        /* Utilitarios opcionales para unificar tarjetas */
         .surface {
             background: #fff;
             border: 1px solid var(--gray-200);
@@ -171,10 +150,8 @@
         }
     </style>
 
-
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Configuración de Tailwind con la nueva paleta -->
     <script>
         tailwind.config = {
             theme: {

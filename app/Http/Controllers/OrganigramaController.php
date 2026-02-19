@@ -1025,7 +1025,7 @@ class OrganigramaController extends Controller
                 'area' => 'Educación',
                 'n' => 'Roxana María Inés Monasterio',
                 'l' => 'Pabellón N° 12 - CAPE',
-                'e' => 'innovacion@catamarca.edu.ar',
+                'e' => 'se@catamarca.edu.ar',
                 'mf_key' => 'Secretaría de Educación',
             ],
             [

@@ -137,9 +137,7 @@
                                     <li><a href="{{ route('edudata.solicitud-info') }}"
                                             class="{{ $itemBase }} {{ $itemFx }}">Ir al formulario<span
                                                 class="{{ $itemCaret }}">→</span></a></li>
-                                    <li><a href="{{ route('edudata.solicitud-info.registro_solicitudes_info') }}"
-                                            class="{{ $itemBase }} {{ $itemFx }}">Registro de
-                                            Solicitudes<span class="{{ $itemCaret }}">→</span></a></li>
+                                
                                 </ul>
                             </div>
                         </div>
