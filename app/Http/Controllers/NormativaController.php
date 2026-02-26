@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Digesto;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Str;
 use Symfony\Component\HttpFoundation\Response;
 
 class NormativaController extends Controller
@@ -42,130 +40,53 @@ class NormativaController extends Controller
     }
 
     /**
-     * Servir el PDF INLINE
+     * Servir el PDF INLINE (NO depende de symlink /storage)
      */
     public function file($id)
     {
         $digesto = Digesto::findOrFail($id);
 
-        [$url, $path, $isExternal] = $this->resolveFileLocation($digesto->ruta_archivo);
-        $filename = $digesto->nombre_archivo
-            ?: ($path ? basename($path) : 'documento.pdf');
+        $disk = Storage::disk('public');
+        $path = (string) ($digesto->ruta_archivo ?? '');
+        $filename = $digesto->nombre_archivo ?: basename($path ?: 'documento.pdf');
 
-        // 1) LOCAL
-        if ($path && file_exists($path)) {
-            return response()->file($path, [
+        // 1) Si el archivo está en storage/app/public/... (disk public)
+        if ($path !== '' && $disk->exists($path)) {
+            return $disk->response($path, $filename, [
                 'Content-Type'        => 'application/pdf',
                 'Content-Disposition' => 'inline; filename="'.$filename.'"',
                 'X-Frame-Options'     => 'SAMEORIGIN',
+                'Cache-Control'       => 'private, max-age=60',
             ]);
         }
 
-        // 2) EXTERNO
-        if ($isExternal && $url) {
-            try {
-                $resp = Http::timeout(20)
-                    ->withHeaders(['Accept' => 'application/pdf,*/*'])
-                    ->get($url);
-
-                if ($resp->successful()) {
-                    return response($resp->body(), 200, [
-                        'Content-Type'        => 'application/pdf',
-                        'Content-Disposition' => 'inline; filename="'.$filename.'"',
-                        'X-Frame-Options'     => 'SAMEORIGIN',
-                        'Cache-Control'       => 'private, max-age=60',
-                    ]);
-                }
-            } catch (\Throwable $e) {
-                // log si querés
-            }
+        // 2) Si en DB guardaste una URL externa absoluta
+        if ($path !== '' && preg_match('#^https?://#i', $path)) {
+            return redirect()->away($path);
         }
 
-        abort(Response::HTTP_NOT_FOUND, 'Archivo no encontrado o no embebible.');
+        abort(Response::HTTP_NOT_FOUND, 'Archivo no encontrado o no disponible.');
     }
 
     /**
-     * Descargar el archivo
+     * Descargar el archivo (NO depende de symlink /storage)
      */
     public function download($id)
     {
         $digesto = Digesto::findOrFail($id);
-        [$url, $path] = $this->resolveFileLocation($digesto->ruta_archivo);
 
-        if ($path && file_exists($path)) {
-            $filename = $digesto->nombre_archivo ?: basename($path);
-            return response()->download($path, $filename);
+        $disk = Storage::disk('public');
+        $path = (string) ($digesto->ruta_archivo ?? '');
+        $filename = $digesto->nombre_archivo ?: basename($path ?: 'documento.pdf');
+
+        if ($path !== '' && $disk->exists($path)) {
+            return $disk->download($path, $filename);
         }
 
-        if ($url) {
-            return redirect()->away($url);
+        if ($path !== '' && preg_match('#^https?://#i', $path)) {
+            return redirect()->away($path);
         }
 
         return back()->with('error', 'No se pudo localizar el archivo para descargar.');
-    }
-
-    /**
-     * Resolver ubicación del archivo
-     */
-    private function resolveFileLocation(?string $ruta): array
-    {
-        if (!$ruta) {
-            return [null, null, false];
-        }
-
-        $ruta = str_replace('\\', '/', trim($ruta));
-
-        // 0) URL absoluta
-        if (preg_match('#^https?://#i', $ruta)) {
-            return [$ruta, null, true];
-        }
-
-        // Normalizar ruta relativa
-        $clean = ltrim($ruta, '/');
-        $clean = preg_replace('#^\./#', '', $clean);
-        $clean = preg_replace('#^\.\./#', '', $clean);
-
-        // === OPCIÓN 1: Compatibilidad con rutas "digesto/..." ===
-        if (Str::startsWith($clean, 'digesto/')) {
-            $archivosCandidate = 'archivos/' . $clean; // ej: archivos/digesto/2025/09/file.pdf
-            $archivosPath = public_path($archivosCandidate);
-            if (file_exists($archivosPath)) {
-                return [asset($archivosCandidate), $archivosPath, false];
-            }
-        }
-
-        // 1) public/archivos/... (recomendado)
-        $publicCandidate = $clean;
-        if (Str::startsWith($publicCandidate, 'public/')) {
-            $publicCandidate = substr($publicCandidate, 7);
-        }
-
-        $publicPath = public_path($publicCandidate);
-        if (file_exists($publicPath)) {
-            return [asset($publicCandidate), $publicPath, false];
-        }
-
-        // 2) storage (fallback)
-        if (Str::startsWith($clean, 'storage/')) {
-            $p = public_path($clean);
-            if (file_exists($p)) {
-                return [asset($clean), $p, false];
-            }
-        }
-
-        // 3) disk public (fallback)
-        $storageCandidate = Str::startsWith($clean, 'public/')
-            ? substr($clean, 7)
-            : $clean;
-
-        if (Storage::disk('public')->exists($storageCandidate)) {
-            return [
-                Storage::disk('public')->url($storageCandidate),
-                Storage::disk('public')->path($storageCandidate),
-                false,
-            ];
-        }
-
-        return [null, null, false];
     }
 }
