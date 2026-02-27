@@ -154,7 +154,7 @@ Route::prefix('edured')->middleware('auth')->group(function () {
         Route::prefix('mantenimiento/realizadas')->name('edured.herramientas.mantenimiento.realizadas.')->group(function () {
             Route::get('/cargar', [MantenimientoRealizadasController::class, 'create'])->name('create');
             Route::post('/cargar', [MantenimientoRealizadasController::class, 'store'])->name('store');
-
+            Route::post('/manual', [MantenimientoRealizadasController::class, 'storeManual'])->name('storeManual');
             Route::get('/archivos', [MantenimientoRealizadasController::class, 'indexArchivos'])->name('archivos.index');
             Route::get('/archivos/{id}/descargar', [MantenimientoRealizadasController::class, 'descargar'])->name('archivos.descargar');
             Route::delete('/archivos/{id}', [MantenimientoRealizadasController::class, 'destroyArchivo'])->name('archivos.destroy');
