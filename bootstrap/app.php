@@ -11,7 +11,8 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        // ✅ Para que Laravel detecte HTTPS real detrás de proxy y NO genere links http
+        $middleware->append(\App\Http\Middleware\TrustProxies::class);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
