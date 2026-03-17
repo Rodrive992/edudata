@@ -998,7 +998,7 @@ class OrganigramaController extends Controller
                 'area' => 'Innovación Educativa',
                 'n' => 'Cesar Garetto',
                 'l' => 'Pabellón N° 13 - CAPE',
-                'e' => 'innovacion@catamarca.edu.ar',
+                'e' => 'secretariainnovacioneducativa@catamarca.edu.ar',
                 'mf_key' => 'Secretaría de Innovación Educativa',
             ],
             [
@@ -1007,7 +1007,7 @@ class OrganigramaController extends Controller
                 'area' => 'Articulación Institucional',
                 'n' => 'Milena Chasampi Rios',
                 'l' => 'Pabellón N° 15 - CAPE',
-                'e' => 'innovacion@catamarca.edu.ar',
+                'e' => 'secrecoordinacioninst@catamarca.edu.ar',
                 'mf_key' => 'Secretaría de Articulación Institucional',
             ],
             [
@@ -1034,7 +1034,7 @@ class OrganigramaController extends Controller
                 'area' => 'Ciencia y Tecnología',
                 'n' => 'Luis Rafael Castro',
                 'l' => 'Pabellón N° 11 - CAPE',
-                'e' => 'innovacion@catamarca.edu.ar',
+                'e' => 'cienciaytecnologia@catamarca.edu.ar',
                 'mf_key' => 'Secretaría de Ciencia y Tecnología',
             ],
         ];
@@ -1061,7 +1061,7 @@ class OrganigramaController extends Controller
                 'area' => 'Legalización y Registro de Títulos',
                 'n' => 'Julio Rubén Quiroga',
                 'l' => 'Pabellón N° 11 - CAPE',
-                'e' => 'innovacion@catamarca.edu.ar',
+                'e' => 'direccionlegalizyregtitulos@catamarca.edu.ar',
                 'mf_key' => 'Dirección de Legalización y Registro de Títulos',
             ],
             [
@@ -1079,7 +1079,7 @@ class OrganigramaController extends Controller
                 'area' => 'Sistemas y Desarrollo Tecnológico',
                 'n' => 'Pablo Pedemonte',
                 'l' => 'Pabellón N° 11 - CAPE', // Quizás cambiar ubicación si está en otro pabellón
-                'e' => 'sistemas@catamarca.edu.ar',
+                'e' => 'dsdt@catamarca.edu.ar',
                 'mf_key' => 'Dirección de Sistemas y Desarrollo Tecnológico',
                 // Puedes agregar un campo para indicar dependencia directa
                 'dependencia_directa' => true,
@@ -1137,7 +1137,7 @@ class OrganigramaController extends Controller
                 'area' => 'Transparencia Activa',
                 'n' => 'Renzo Augusto Gonzalez',
                 'l' => 'Pabellón N° 15 - CAPE',
-                'e' => 'innovacion@catamarca.edu.ar',
+                'e' => 'transparenciaactiva@catamarca.edu.ar',
                 'mf_key' => 'Dirección Provincial de Transparencia Activa',
             ],
             [
@@ -1155,7 +1155,7 @@ class OrganigramaController extends Controller
                 'area' => 'Compras',
                 'n' => 'Daiana Montivero',
                 'l' => 'Pabellón N° 15 - CAPE',
-                'e' => 'innovacion@catamarca.edu.ar',
+                'e' => 'uscontrataciones@catamarca.edu.ar',
                 'mf_key' => 'Dirección de Compras',
             ],
             [
@@ -1269,7 +1269,7 @@ class OrganigramaController extends Controller
                 'area' => 'Administración, Ejecución y Financiamiento Científico',
                 'n' => 'Jesica Alejandra Aybar',
                 'l' => 'Pabellón N° 11 - CAPE',
-                'e' => 'innovacion@catamarca.edu.ar',
+                'e' => 'direjecucionyfinanciamiento@catamarca.edu.ar',
                 'mf_key' => 'Dirección de Administración, Ejecución y Financiamiento Científico',
             ],
             [
@@ -1278,7 +1278,7 @@ class OrganigramaController extends Controller
                 'area' => 'Investigación, Innovación y Extensión',
                 'n' => 'María Fernanda Carrizo Lopez',
                 'l' => 'Pabellón N° 11 - CAPE',
-                'e' => 'innovacion@catamarca.edu.ar',
+                'e' => 'dirinvestigacioneinnovacion@catamarca.edu.ar',
                 'mf_key' => 'Dirección de Investigación, Innovación y Extensión',
             ],
             [
@@ -1287,7 +1287,7 @@ class OrganigramaController extends Controller
                 'area' => 'Startups y Ecosistema Emprendedor',
                 'n' => 'Ivanna Alejandra del V. Altamiranda',
                 'l' => 'Pabellón N° 11 - CAPE',
-                'e' => 'innovacion@catamarca.edu.ar',
+                'e' => 'direccionstartup@catamarca.edu.ar',
                 'mf_key' => 'Dirección Provincial de Startups y Ecosistema Emprendedor',
             ],
             [
@@ -1296,7 +1296,7 @@ class OrganigramaController extends Controller
                 'area' => 'Ciencia Aplicada y Formación Tecnológica',
                 'n' => 'María Luz Diaz Rodriguez',
                 'l' => 'Pabellón N° 11 - CAPE',
-                'e' => 'innovacion@catamarca.edu.ar',
+                'e' => 'dircienciayformaciontecnologica@catamarca.edu.ar',
                 'mf_key' => 'Dirección Provincial de Ciencia Aplicada y Formación Tecnológica',
             ],
             [
@@ -1305,7 +1305,7 @@ class OrganigramaController extends Controller
                 'area' => 'Transformación Digital e Infraestructura Tecnológica',
                 'n' => 'Carlos David Ponce',
                 'l' => 'Pabellón N° 11 - CAPE',
-                'e' => 'innovacion@catamarca.edu.ar',
+                'e' => 'dirinfraestructuratecnologica@catamarca.edu.ar',
                 'mf_key' => 'Dirección Provincial de Transformación Digital e Infraestructura Tecnológica',
             ],
         ];
