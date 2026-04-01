@@ -45,6 +45,7 @@ Route::prefix('edudata')->group(function () {
     Route::get('/asuntos', [AsuntosController::class, 'index'])->name('edudata.asuntos');
     Route::get('/mantenimiento', [MantenimientoRealizadasController::class, 'index'])->name('edudata.mantenimiento');
     Route::get('/formacion', [FormacionController::class, 'index'])->name('edudata.formacion');
+    Route::get('/formacion/capacitaciones-2025', [FormacionController::class, 'capacitaciones2025'])->name('edudata.formacion.2025');
     Route::get('/edutecnica', [EducacionTecnicaController::class, 'index'])->name('edudata.edutecnica');
     Route::get('/innovacion', [InnovacionController::class, 'index'])->name('edudata.innovacion');
     Route::get('/titulos', [TitulosController::class, 'index'])->name('edudata.titulos');
